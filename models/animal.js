@@ -9,7 +9,6 @@ const animalSchema = mongoose.Schema({
   age: Number,
   color: [String],
   imageUrl: String,
-  location: String,
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: 'User'
