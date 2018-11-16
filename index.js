@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 
-const { port } = require('./config/environment');
+const port = require('./config/environment');
+console.log(port, 'is port');
 
 app.use(express.static(`${__dirname}/public`));
 
