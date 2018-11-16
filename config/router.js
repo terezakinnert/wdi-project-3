@@ -3,6 +3,7 @@ const router = require('express').Router();
 // const jwt = require('jsonwebtoken');
 
 const authCtrl = require('../controllers/authCtrl');
+const userCtrl = require('../controllers/userCtrl');
 
 // function secureRoute(req, res, next) {
 //   if(!req.headers.authorization)
@@ -24,6 +25,8 @@ router.route('/register')
 router.route('/login')
   .post(authCtrl.login);
 
+router.route('/users/:id')
+  .get(userCtrl.show);
 
 
 module.exports = router;

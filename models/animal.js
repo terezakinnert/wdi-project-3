@@ -5,7 +5,7 @@ const animalSchema = mongoose.Schema({
   bio: String,
   sex: String,
   species: String,
-  breed: String,
+  breed: [String],
   age: Number,
   color: [String],
   imageUrl: String,

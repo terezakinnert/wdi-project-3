@@ -20,7 +20,8 @@ function login(req, res, next) {
         }, env.secret, { expiresIn: '6d' });
         res.json({
           message: `Welcome back, ${user.username}`,
-          token: token
+          token: token,
+          id: user._id
         });
       } else {
         res.status(401).json({
