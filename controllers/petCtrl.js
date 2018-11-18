@@ -18,8 +18,17 @@ function createRoute(req, res, next) {
     .catch(next);
 }
 
+function updateRoute(req, res, next) {
+  Animal.findById(req.params.id)
+    .then(animal => animal.set(req.body))
+    .then(animal => animal.save())
+    .then(animal => res.json(animal))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
-  create: createRoute
+  create: createRoute,
+  update: updateRoute
 };

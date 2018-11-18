@@ -36,7 +36,8 @@ router.route('/pets')
   .post(petCtrl.create);
 
 router.route('/pets/:id')
-  .get(petCtrl.show);
+  .get(petCtrl.show)
+  .put(petCtrl.update);
 
 
 
