@@ -29,7 +29,7 @@ router.route('/login')
 
 router.route('/users/:id')
   .get(userCtrl.show);
-// the reason this didn't run before was we didn't have any seeds in! (so it couldn't find animal => threw an error)
+// the reason this didn't run before: we didn't have any seeds in! (so it couldn't find animal => threw an error)
 
 router.route('/pets')
   .get(petCtrl.index)
