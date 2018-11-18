@@ -1,25 +1,25 @@
 const router = require('express').Router();
-// const env = require('./environment');
-// const jwt = require('jsonwebtoken');
+const env = require('./environment');
+const jwt = require('jsonwebtoken');
 
 const authCtrl = require('../controllers/authCtrl');
 const userCtrl = require('../controllers/userCtrl');
 
 const petCtrl = require('../controllers/petCtrl');
 
-// function secureRoute(req, res, next) {
-//   if(!req.headers.authorization)
-//     res.status(401).json({ message: 'Unauthorised user'});
-//   const token = req.headers.authorization.replace('Bearer ', '');
-//   jwt.verify(token, env.secret, function(err) {
-//     if (err) {
-//       res.status(401).json({ message: 'Unauthorised user'});
-//     } else {
-//       req.tokenUserId = jwt.decode(token).sub;
-//       next();
-//     }
-//   });
-// }
+function secureRoute(req, res, next) {
+  if(!req.headers.authorization)
+    res.status(401).json({ message: 'Unauthorised user'});
+  const token = req.headers.authorization.replace('Bearer ', '');
+  jwt.verify(token, env.secret, function(err) {
+    if (err) {
+      res.status(401).json({ message: 'Unauthorised user'});
+    } else {
+      req.tokenUserId = jwt.decode(token).sub;
+      next();
+    }
+  });
+}
 
 router.route('/register')
   .post(authCtrl.register);
@@ -33,13 +33,11 @@ router.route('/users/:id')
 
 router.route('/pets')
   .get(petCtrl.index)
-  .post(petCtrl.create);
+  .post(secureRoute, petCtrl.create);
 
 router.route('/pets/:id')
   .get(petCtrl.show)
-  .put(petCtrl.update)
-  .delete(petCtrl.delete);
-
-
+  .put(secureRoute, petCtrl.update)
+  .delete(secureRoute, petCtrl.delete);
 
 module.exports = router;
