@@ -32,10 +32,12 @@ router.route('/users/:id')
 // the reason this didn't run before was we didn't have any seeds in! (so it couldn't find animal => threw an error)
 
 router.route('/pets')
-  .get(petCtrl.index);
-// .post(petCtrl.create);
+  .get(petCtrl.index)
+  .post(petCtrl.create);
 
 router.route('/pets/:id')
   .get(petCtrl.show);
+
+
 
 module.exports = router;

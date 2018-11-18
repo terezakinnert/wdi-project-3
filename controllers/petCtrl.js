@@ -12,7 +12,14 @@ function showRoute(req, res, next) {
     .catch(next);
 }
 
+function createRoute(req, res, next) {
+  Animal.create(req.body)
+    .then(animal => res.json(animal))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
-  show: showRoute
+  show: showRoute,
+  create: createRoute
 };
