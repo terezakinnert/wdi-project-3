@@ -5,7 +5,14 @@ function indexRoute(req, res, next) {
     .catch(next);
 }
 
+function showRoute(req, res, next) {
+  Animal.findById(req.params.id)
+    .populate('animalsOwned')
+    .then(animal => res.json(animal))
+    .catch(next);
+}
 
 module.exports = {
-  index: indexRoute
+  index: indexRoute,
+  show: showRoute
 };
