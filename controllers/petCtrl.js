@@ -26,9 +26,16 @@ function updateRoute(req, res, next) {
     .catch(next);
 }
 
+function deleteRoute(req, res, next) {
+  Animal.findByIdAndDelete(req.params.id)
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   create: createRoute,
-  update: updateRoute
+  update: updateRoute,
+  delete: deleteRoute
 };

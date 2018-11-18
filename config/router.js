@@ -37,7 +37,8 @@ router.route('/pets')
 
 router.route('/pets/:id')
   .get(petCtrl.show)
-  .put(petCtrl.update);
+  .put(petCtrl.update)
+  .delete(petCtrl.delete);
 
 
 
