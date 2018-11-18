@@ -5,6 +5,8 @@ const router = require('express').Router();
 const authCtrl = require('../controllers/authCtrl');
 const userCtrl = require('../controllers/userCtrl');
 
+const petCtrl = require('../controllers/petCtrl');
+
 // function secureRoute(req, res, next) {
 //   if(!req.headers.authorization)
 //     res.status(401).json({ message: 'Unauthorised user'});
@@ -28,5 +30,8 @@ router.route('/login')
 router.route('/users/:id')
   .get(userCtrl.show);
 
+router.route('/pets')
+  .get(petCtrl.index);
+// .post(petCtrl.create);
 
 module.exports = router;
