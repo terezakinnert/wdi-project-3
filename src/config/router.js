@@ -12,12 +12,12 @@ function Router($stateProvider) {
       url: '/'
     })
     .state('register', {
-      templateUrl: './views/register.html',
+      templateUrl: './views/auth/register.html',
       url: '/register',
       controller: registerController
     })
     .state('login', {
-      templateUrl: './views/login.html',
+      templateUrl: './views/auth/login.html',
       url: '/login',
       controller: loginController
     })
