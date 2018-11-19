@@ -5,7 +5,7 @@ import animalsIndexController from '../controllers/animals/indexController';
 import showController from '../controllers/animals/showController';
 
 
-function Router($stateProvider) {
+function Router($urlRouterProvider, $stateProvider) {
   $stateProvider
     .state('home', {
       templateUrl: './views/home.html',
@@ -68,6 +68,7 @@ function Router($stateProvider) {
         };
       }
     });
+  $urlRouterProvider.otherwise('/');
 }
 
 export default Router;
