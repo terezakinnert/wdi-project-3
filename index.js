@@ -1,12 +1,25 @@
 const express = require('express');
 const app = express();
+const env = require('./config/environment');
 
-const { port } = require('./config/environment');
+const mongoose = require('mongoose');
+mongoose.connect(env.dbUri);
 
-app.use(express.static(`${__dirname}/public`));
+const router = require('./config/router');
 
-app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
-app.listen(port, () => console.log(`Express is running on port ${port}`));
+const morgan = require('morgan');
+app.use(morgan('dev'));
+
+console.log(env.port, 'is port');
+
+// app.use(express.static(`${__dirname}/public`));
+// app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+
+app.use('/api', router);
+
+app.listen(env.port, () => console.log(`Express is running on port ${env.port}`));
 
 module.exports = app;
