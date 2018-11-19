@@ -6,6 +6,7 @@ const authCtrl = require('../controllers/authCtrl');
 const userCtrl = require('../controllers/userCtrl');
 const petCtrl = require('../controllers/petCtrl');
 const commentsCtrl = require('../controllers/commentsCtrl');
+const bookingCtrl = require('../controllers/bookingCtrl');
 
 function secureRoute(req, res, next) {
   if(!req.headers.authorization)
@@ -45,5 +46,12 @@ router.route('/pets/:animalId/comments')
 
 router.route('/pets/:animalId/comments/:commentId')
   .delete(secureRoute, commentsCtrl.delete);
+
+router.route('/pets/:animalId/bookings')
+  .post(bookingCtrl.create);
+
+router.route('/pets/:animalId/bookings/:bookingId')
+  .put(bookingCtrl.update)
+  .delete(bookingCtrl.delete);
 
 module.exports = router;

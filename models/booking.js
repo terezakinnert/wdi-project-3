@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const bookingSchema = mongoose.Schema({
   owner: {
     type: mongoose.Schema.ObjectId,
     ref: 'User'
@@ -13,5 +13,5 @@ const userSchema = mongoose.Schema({
   dropoff: Date
 });
 
-const userModel = mongoose.model('User', userSchema);
-module.exports = userModel;
+const bookingModel = mongoose.model('Booking', bookingSchema);
+module.exports = bookingModel;
