@@ -4,8 +4,8 @@ const jwt = require('jsonwebtoken');
 
 const authCtrl = require('../controllers/authCtrl');
 const userCtrl = require('../controllers/userCtrl');
-
 const petCtrl = require('../controllers/petCtrl');
+const commentsCtrl = require('../controllers/commentsCtrl');
 
 function secureRoute(req, res, next) {
   if(!req.headers.authorization)
@@ -39,5 +39,8 @@ router.route('/pets/:id')
   .get(petCtrl.show)
   .put(secureRoute, petCtrl.update)
   .delete(secureRoute, petCtrl.delete);
+
+router.route('/pets/:animalId/comments')
+  .post(commentsCtrl.create);
 
 module.exports = router;
