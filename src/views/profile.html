@@ -1,0 +1,18 @@
+<div class="card">
+<h1 style="font-size: 3.4em">{{ user.username }} </h1>
+<img height = 40px width = 40px src="{{ user.countryIcon }}"/><img height = 40px width = 40px src="{{ user.networkIcon }}"/><img height = 40px width = 40px src="{{ user.governingBodyIcon }}"/>
+
+</div><br><br><br>
+
+<div class="columns is-multiline">
+  <!-- show only the filetered ones -->
+  <div ng-repeat="animal in user.animalsCreated" class="column is-4">
+    <a ui-sref="animalsShow({ id: animal._id })">
+      <div class="card">
+        <div class="card-header" style="max-height: 40px;">
+          <img height = 35px width = 40px src="https://cdn.iconscout.com/icon/free/png-256/london-17-285932.png" alt="">
+          <h2 class="is-4" style="font-size: 1.7em;">{{ animal.name }}</h2>
+        </div>
+      </div>
+    </a>
+  </div>

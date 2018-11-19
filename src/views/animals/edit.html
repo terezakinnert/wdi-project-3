@@ -1,0 +1,21 @@
+<h1 class="title is-1">Edit your Pet</h1>
+<div class="columns is-multiline">
+  <div class="column is-6">
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <form ng-submit="handleSubmit()">
+          <input class="column is-12" ng-model=" animal.name" placeholder = "Name">
+          <input class="column is-12" ng-model=" animal.age" placeholder = "Dropdown (Year + Months) / or enter birthdate">
+          <input class="column is-12"ng-model=" animal.bio" placeholder = "Tell us about {{ animal.name }}">
+          <input class="column is-12"ng-model=" animal.sex"placeholder = "Male / Female (Radio buttons)">
+          <input class="column is-12"ng-model=" animal.species"placeholder = "Cat/Dog (Dropdown?)">
+          <input class="column is-12"ng-model=" animal.breed"placeholder = "Dropdown based on sepcies (Ext Api?)">
+          <input class="column is-12"ng-model=" animal.colour"placeholder = "Colours (Dropdown? Pallet?)"><br>
+          <input class="column is-12"ng-model=" animal.owner.location"placeholder = "Prepopulate User?"><br>
+          <input class="column is-12"ng-model=" animal.availableOn"placeholder = "Calendar select (I will ask Ellie)"><br>
+          <button class="button is-link">Edit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

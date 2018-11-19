@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html ng-app='PetApp'>
   <head>
     <meta charset="utf-8">
-    <title>WDI Project 3</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>PetApp</title>
   </head>
-  <body>
-    <h1>Hello World!</h1>
+  <body ng-controller="masterController">
+    <nav class="navbar is-light">
+      <div class="navbar-end">
+        <a class="navbar-item" ui-sref="home">Home</a>
+        <a class="navbar-item" ui-sref="explore">Explore</a>
+        <a class="navbar-item" ui-sref="animalsIndex">Menagerie</a>
+        <a class="navbar-item" ui-sref="animalsNew">Add your Pet</a>
+        <a class="navbar-item" ui-sref="register">Register</a>
+        <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Login</a>
+        <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log Out {{ username }}</a>
+        <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profileShow({ id: userId})">My Profile</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <i class="far fa-user"></i>
+          </a>
+          <div class="navbar-dropdown">
+            <a href="/option1" class="navbar-item">
+              Dropdown Option 1
+            </a>
+            <a href="/option2" class="navbar-item">
+              Dropdown Option 2
+            </a>
+            <a href="/option3" class="navbar-item">
+              Dropdown Option 3
+            </a>
+            <a href="/option4" class="navbar-item">
+              Dropdown Option 4
+            </a>
+            <a href="/option5" class="navbar-item">
+              Dropdown Option 5
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div ui-view></div>
+    </div>
+    <footer class="footer is-light has-text-centered"><br>
+      <div class="has-text-centered">
+        A Terezid Production 🐶
+      </div><br>
+
+    </footer>
   </body>
 </html>

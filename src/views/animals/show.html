@@ -1,0 +1,31 @@
+<div class="columns">
+  <div class=" column is-6 text-is-centered" style = "height: 450px; display: flex; justify-content: center; align-items: center; background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Underground_no-text.svg/2000px-Underground_no-text.svg.png'); background-size: cover; background-repeat: no-repeat;">
+    <div class="text-is-centered"style = "font-size: 40px; color: white;">
+      {{ animal.name }}
+    </div>
+
+  </div>
+  <div class="column is-6">
+    <h2 class="title is-2">{{ animal.name }}</h2>
+
+    <h3 class="subtitle is-3">About {{ animal.name }} animal</h3>
+    <p>
+    {{ animal.bio }}</p>
+    <p>
+      <button ng-if="animal.ownedBy._id === userId" ng-if="isAutheticated()" ui-sref="animalsEdit({ id: animal._id })">Edit</button>
+      <button ng-if="animal.ownedBy._id === userId" ng-if="isAutheticated()" ng-click="handleDelete()">Delete</button><br><br><br><br><br><br>
+    </p>
+
+    <div class="comments">
+      <div ng-repeat="comment in animal.comments">
+        <span style="font-weight: bold;">{{ comment.user.username }}</span>
+        <span>{{ comment.text }}</span>
+        <button ng-if="comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+      </div>
+
+      <form ng-submit="createComment()">
+        <input type="text" ng-model="comment.text">
+        <button class="button">Comment</button>
+      </form>
+    </div>
+</div>
