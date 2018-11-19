@@ -44,7 +44,7 @@ function Router($stateProvider) {
           console.log('Form was submitted!', $scope.testing);
           $http({
             method: 'POST',
-            url: '/api/animals',
+            url: '/api/pets',
             data: $scope.animal
           }).then(result => $state.go('animalsIndex'));
         };
