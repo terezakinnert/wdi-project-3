@@ -1,7 +1,7 @@
-import animalsIndexController from '../controllers/animals/indexController';
-import loginController from '../controllers/loginController';
-import registerController from '../controllers/registerController';
+import loginController from '../controllers/auth/loginController';
+import registerController from '../controllers/auth/registerController';
 import profileController from '../controllers/profileController';
+import animalsIndexController from '../controllers/animals/indexController';
 import showController from '../controllers/animals/showController';
 
 
@@ -10,6 +10,11 @@ function Router($stateProvider) {
     .state('home', {
       templateUrl: './views/home.html',
       url: '/'
+    })
+    .state('register', {
+      templateUrl: './views/register.html',
+      url: '/register',
+      controller: registerController
     })
     .state('login', {
       templateUrl: './views/login.html',
@@ -20,11 +25,6 @@ function Router($stateProvider) {
       templateUrl: './views/profile.html',
       url: '/profile/:id',
       controller: profileController
-    })
-    .state('register', {
-      templateUrl: './views/register.html',
-      url: '/register',
-      controller: registerController
     })
     .state('animalsIndex', {
       templateUrl: './views/animals/index.html',

@@ -13,7 +13,6 @@ const animalSchema = mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'User'
   },
-
   rating: [Number],
   availableOn: {
     type: mongoose.Schema.ObjectId,

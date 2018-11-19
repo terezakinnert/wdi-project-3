@@ -2,6 +2,7 @@ const Booking = require('../models/booking');
 
 function createBooking(req, res, next) {
   Booking.create(req.body)
+    // .then(booking => Booking.populate(booking, 'owner availableOn'))
     .then(booking => res.json(booking))
     .catch(next);
 }
