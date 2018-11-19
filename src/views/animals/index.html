@@ -11,16 +11,18 @@
   </form>
 
   <div class="columns is-multiline">
-    <!-- show only the filetered ones -->
-    <div ng-repeat="animal in filteredAimals" class="column is-4">
+    <!-- show only the filtered animals -->
+    <div ng-repeat="animal in filteredAnimals" class="column is-4">
+
       <a ui-sref="animalsShow({ id: animal._id })">
         <div class="card">
           <div class="card-header" style="max-height: 40px;">
-            <img height = 35px width = 40px src="https://cdn.iconscout.com/icon/free/png-256/london-17-285932.png" alt="">
+            <img height = 35px width = 40px src="" alt="">
             <h2 class="is-4" style="font-size: 1.7em;">{{ animal.name }}</h2>
           </div>
         </div>
       </a>
+
     </div>
   </div>
 

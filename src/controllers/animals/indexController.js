@@ -1,7 +1,7 @@
 function indexController($scope, $http) {
   $http({
     method: 'GET',
-    url: '/api/animals'
+    url: '/api/pets'
   }).then(result => {
     $scope.allAnimals = result.data;
     $scope.filteredAnimals = $scope.allAnimals;
