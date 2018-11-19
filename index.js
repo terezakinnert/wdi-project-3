@@ -13,10 +13,7 @@ app.use(bodyParser.json());
 const morgan = require('morgan');
 app.use(morgan('dev'));
 
-console.log(env.port, 'is port');
-
-// app.use(express.static(`${__dirname}/public`));
-// app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+app.use(express.static(`${__dirname}/public`));
 
 app.use('/api', router);
 
