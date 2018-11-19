@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const bookingSchema = mongoose.Schema({
-  owner: {
+  booker: {
     type: mongoose.Schema.ObjectId,
     ref: 'User'
   },

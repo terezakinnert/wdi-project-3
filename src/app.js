@@ -4,7 +4,6 @@ import Router from './config/router';
 import 'bulma';
 import 'satellizer';
 import './css/style.scss';
-import './css/style.css';
 import masterController from './controllers/masterController';
 
 angular.module('PetApp', ['ui.router', 'satellizer'])

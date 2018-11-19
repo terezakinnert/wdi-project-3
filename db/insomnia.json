@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-11-19T12:29:44.703Z",
+	"__export_date": "2018-11-19T15:15:27.485Z",
 	"__export_source": "insomnia.desktop.app:v6.2.0",
 	"resources": [
 		{
@@ -70,6 +70,17 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_c940ed14c3474f659a7bdf16fc885b9d",
+			"created": 1542630689025,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1542630689025,
+			"modified": 1542630689025,
+			"name": "booking",
+			"parentId": "wrk_c7f87a3934b14bfd97f80e4e9523d84e",
+			"_type": "request_group"
+		},
+		{
 			"_id": "req_815ca00796794c85b49d070a220f1660",
 			"authentication": {},
 			"body": {
@@ -88,7 +99,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1542334396733,
 			"method": "POST",
-			"modified": 1542629053853,
+			"modified": 1542639709315,
 			"name": "login",
 			"parameters": [],
 			"parentId": "fld_80afbdb94dab4c29ac1c231403486e2e",
@@ -143,7 +154,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1542356693053,
 			"method": "POST",
-			"modified": 1542625891646,
+			"modified": 1542630682223,
 			"name": "register",
 			"parameters": [],
 			"parentId": "fld_80afbdb94dab4c29ac1c231403486e2e",
@@ -166,7 +177,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1542556628035,
 			"method": "GET",
-			"modified": 1542627840304,
+			"modified": 1542639434409,
 			"name": "index",
 			"parameters": [],
 			"parentId": "fld_e17449c279c346528eb38f991ee611fe",
@@ -176,7 +187,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ baseUrl  }}/pets",
+			"url": "5bf2af1c8e93275c67d24410",
 			"_type": "request"
 		},
 		{
@@ -189,7 +200,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1542556628028.75,
 			"method": "GET",
-			"modified": 1542628688349,
+			"modified": 1542638764008,
 			"name": "show",
 			"parameters": [],
 			"parentId": "fld_e17449c279c346528eb38f991ee611fe",
@@ -226,7 +237,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1542556628022.5,
 			"method": "POST",
-			"modified": 1542627844021,
+			"modified": 1542631369866,
 			"name": "create",
 			"parameters": [],
 			"parentId": "fld_e17449c279c346528eb38f991ee611fe",
@@ -315,7 +326,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{ \n\t\"text\": \"another test!\"\n}"
+				"text": "{ \n\t\"text\": \"does this pull the user info as well???\"\n}"
 			},
 			"created": 1542626929219,
 			"description": "",
@@ -334,7 +345,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1542626929219,
 			"method": "POST",
-			"modified": 1542629135825,
+			"modified": 1542639288449,
 			"name": "create comment",
 			"parameters": [],
 			"parentId": "fld_67b31c9fdd074d44b0120539205120da",
@@ -368,7 +379,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1542591778627,
 			"method": "DELETE",
-			"modified": 1542629144057,
+			"modified": 1542631029343,
 			"name": "delete comment",
 			"parameters": [],
 			"parentId": "fld_67b31c9fdd074d44b0120539205120da",
@@ -379,6 +390,103 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "{{ baseUrl  }}/pets/{% response 'body', 'req_045ed13458cf45f08fe9f7d70f35a5c1', '$._id' %}/comments/5bf2a59d4a951d13464238bc",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6c5ae01ec4a04484b014e2f6e8aa0bb7",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"pickup\": \"Thurs Jun 05 2012 00:00:00 GMT+0100 (CET)\",\n\t\"dropoff\": \"Fri Jun 06 2012 00:00:00 GMT+0100 (CET)\"\n}"
+			},
+			"created": 1542630707802,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_20ee51303a5b40cc86ca4caabb3f72e7",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_7ce33633756346e8836cfe9c83be1dda",
+					"name": "Authorization",
+					"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhdmlkIiwic3ViIjoiNWJmMjlhNjQxZjk3ODExMGIwNTEyZDZkIiwiaWF0IjoxNTQyNjM5NzAzLCJleHAiOjE1NDMxNTgxMDN9.ozN8Q6pjTWtdMjdV3OC4QHDfF1V_MWyg5kPOL0E4WXQ"
+				},
+				{
+					"id": "pair_4c8c4956c3c84679ac98d744080cfaca",
+					"name": "",
+					"value": ""
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542630707802,
+			"method": "POST",
+			"modified": 1542639720725,
+			"name": "create booking",
+			"parameters": [],
+			"parentId": "fld_c940ed14c3474f659a7bdf16fc885b9d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}/pets/5bf2999c940e0c10bbf29160/bookings",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a689ca65c8294644a85f5eeee74edd29",
+			"authentication": {},
+			"body": {},
+			"created": 1542631459613,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1542628818510.5,
+			"method": "DELETE",
+			"modified": 1542636821977,
+			"name": "delete booking",
+			"parameters": [],
+			"parentId": "fld_c940ed14c3474f659a7bdf16fc885b9d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}/pets/5bf2af1c8e93275c67d24410/bookings/5bf2c50acab7d31c119ce50a",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1de7a9c31d514d2084add152aad41ea1",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"pickup\": \"Mon Sep 02 2012 00:00:00 GMT+0100 (CET)\",\n\t\"dropoff\": \"Wed Sep 04 2012 00:00:00 GMT+0100 (CET)\"\n}"
+			},
+			"created": 1542631553509,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_20ee51303a5b40cc86ca4caabb3f72e7",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1542629763156.25,
+			"method": "PUT",
+			"modified": 1542638243016,
+			"name": "update booking",
+			"parameters": [],
+			"parentId": "fld_c940ed14c3474f659a7bdf16fc885b9d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}/pets/5bf2af1c8e93275c67d24410/bookings/5bf2b1e7293a9f5d51180f1a",
 			"_type": "request"
 		}
 	]

@@ -48,7 +48,7 @@ router.route('/pets/:animalId/comments/:commentId')
   .delete(secureRoute, commentsCtrl.delete);
 
 router.route('/pets/:animalId/bookings')
-  .post(bookingCtrl.create);
+  .post(secureRoute, bookingCtrl.create);
 
 router.route('/pets/:animalId/bookings/:bookingId')
   .put(bookingCtrl.update)
