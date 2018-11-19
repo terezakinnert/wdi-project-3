@@ -41,9 +41,9 @@ router.route('/pets/:id')
   .delete(secureRoute, petCtrl.delete);
 
 router.route('/pets/:animalId/comments')
-  .post(commentsCtrl.create);
+  .post(secureRoute, commentsCtrl.create);
 
 router.route('/pets/:animalId/comments/:commentId')
-  .delete(commentsCtrl.delete);
+  .delete(secureRoute, commentsCtrl.delete);
 
 module.exports = router;
