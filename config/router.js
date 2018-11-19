@@ -43,4 +43,7 @@ router.route('/pets/:id')
 router.route('/pets/:animalId/comments')
   .post(commentsCtrl.create);
 
+router.route('/pets/:animalId/comments/:commentId')
+  .delete(commentsCtrl.delete);
+
 module.exports = router;
