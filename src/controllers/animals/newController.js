@@ -4,7 +4,7 @@ function animalsNewController($http, $scope, $state, $auth) {
     console.log('Form submitted');
     $http({
       method: 'POST',
-      url: '/api/animals',
+      url: '/api/pets',
       data: $scope.animal
     }).then(() => $state.go('animalsIndex'));
   };
