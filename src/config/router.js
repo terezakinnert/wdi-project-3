@@ -6,6 +6,7 @@ import usersShowController from '../controllers/users/usersShowController';
 
 import animalsIndexController from '../controllers/animals/indexController';
 import animalsShowController from '../controllers/animals/showController';
+import animalsEditController from '../controllers/animals/editController';
 
 import bookingsIndexController from '../controllers/bookings/bookingsIndexController';
 // import bookingsShowController from '../controllers/bookings/bookingsShowContoller';
@@ -61,28 +62,15 @@ function Router($urlRouterProvider, $stateProvider) {
         };
       }
     })
+    .state('animalsEdit', {
+      templateUrl: './views/animals/edit.html',
+      url: '/animals/:id/edit',
+      controller: animalsEditController
+    })
     .state('bookingIndex', {
       templateUrl: './views/bookings/bookingsIndex.html',
       url: '/animals/:id/bookings',
       controller: bookingsIndexController
-    })
-    .state('animalsEdit', {
-      templateUrl: './views/animals/edit.html',
-      url: '/animals/:id/edit',
-      controller: function($scope, $state, $http) {
-        $http({
-          method: 'GET',
-          url: `/api/animals/${$state.params.id}`
-        }).then(result => $scope.animal = result.data);
-        $scope.handleSubmit = function() {
-          // Here we request the UPDATE route:
-          $http({
-            method: 'PUT',
-            url: `/api/animals/${$state.params.id}`,
-            data: $scope.animal
-          }).then(result => $state.go('animalsIndex'));
-        };
-      }
     });
   $urlRouterProvider.otherwise('/');
 }
