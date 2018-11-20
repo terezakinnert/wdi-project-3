@@ -7,6 +7,7 @@ import usersShowController from '../controllers/users/usersShowController';
 import animalsIndexController from '../controllers/animals/indexController';
 import animalsShowController from '../controllers/animals/showController';
 import animalsEditController from '../controllers/animals/editController';
+import animalsNewController from '../controllers/animals/newController';
 
 import bookingsIndexController from '../controllers/bookings/bookingsIndexController';
 // import bookingsShowController from '../controllers/bookings/bookingsShowContoller';
@@ -51,16 +52,7 @@ function Router($urlRouterProvider, $stateProvider) {
     .state('animalsNew', {
       url: '/animals/new',
       templateUrl: './views/animals/new.html',
-      controller: function($scope, $http, $state) {
-        $scope.handleSubmit = function() {
-          console.log('Form was submitted!', $scope.testing);
-          $http({
-            method: 'POST',
-            url: '/api/pets',
-            data: $scope.animal
-          }).then(result => $state.go('animalsIndex'));
-        };
-      }
+      controller: animalsNewController
     })
     .state('animalsEdit', {
       templateUrl: './views/animals/edit.html',
