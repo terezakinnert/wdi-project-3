@@ -5,6 +5,8 @@ const userSchema = mongoose.Schema({
   username: String,
   email: String,
   password: String,
+  givenName: String,
+  surname: String,
   location: String,
   animalsOwned: [{
     type: mongoose.Schema.ObjectId,

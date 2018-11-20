@@ -17,18 +17,24 @@ const userData = [
     _id: userId[0],
     username: 'dcomer',
     email: 'dcomer@app.com',
+    givenName: 'David',
+    surname: 'Comer',
     password: 'pass'
   },
   {
     _id: userId[1],
     username: 'tkinnertova',
     email: 'tkinnertova@app.com',
+    givenName: 'Tereza',
+    surname: 'Kinnertova',
     password: 'pass'
   },
   {
     _id: userId[2],
     username: 'tbirch',
     email: 'tbirch@app.com',
+    givenName: 'Theo',
+    surname: 'Birch',
     password: 'pass'
   }
 ];
