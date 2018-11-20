@@ -12,7 +12,7 @@
         <a class="navbar-item" ui-sref="explore">Explore</a>
         <a class="navbar-item" ui-sref="animalsIndex">Menagerie</a>
         <a class="navbar-item" ui-sref="animalsNew">Add your Pet</a>
-        <a class="navbar-item" ui-sref="register">Register</a>
+        <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
         <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Login</a>
         <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log Out {{ username }}</a>
         <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profileShow({ id: userId})">My Profile</a>
