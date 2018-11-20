@@ -27,15 +27,12 @@ function showController($state, $scope, $http) {
   $scope.deleteComment = function(comment) {
     $http({
       method: 'DELETE',
-      url: `/api/pets/${$state.params.id}/comments/${comment._Id}`
-    })
-      .then(result => $scope.animal = result.data);
+      url: `/api/pets/${$state.params.id}/comments/${comment._id}`
+    }).then(result => $scope.animal = result.data);
   };
 }
 
 export default showController;
-
-
 //
 //
 // $scope.deleteComment = function(comment) {

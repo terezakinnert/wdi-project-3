@@ -82,7 +82,7 @@
       <div ng-repeat="comment in animal.comments">
         <span style="font-weight: bold;">{{ comment.user.username }}</span>
         <span>{{ comment.text }}</span>
-        <button ng-if="comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+        <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
       </div>
 
 <!-- Comment Form -->
