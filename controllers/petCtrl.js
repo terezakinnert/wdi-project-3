@@ -1,7 +1,10 @@
 const Animal = require('../models/animal');
 
 function indexRoute(req, res, next) {
-  Animal.find().then(animals => res.json(animals))
+  Animal
+    .find()
+    .populate('owner bookings')
+    .then(animals => res.json(animals))
     .catch(next);
 }
 
@@ -13,8 +16,12 @@ function showRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
+  req.body.owner = req.tokenUserId;
   Animal.create(req.body)
-    .then(animal => res.json(animal))
+    .then((animal) => {
+      console.log(animal, 'animal?');
+      res.json(animal);
+    })
     .catch(next);
 }
 

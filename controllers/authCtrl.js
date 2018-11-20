@@ -18,6 +18,7 @@ function login(req, res, next) {
           username: user.username,
           sub: user._id
         }, env.secret, { expiresIn: '6d' });
+        console.log('username???', user, user.username);
         res.json({
           message: `Welcome back, ${user.username}`,
           token: token,

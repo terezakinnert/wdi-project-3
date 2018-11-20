@@ -19,7 +19,8 @@
               <em> <span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
               My Human: <a href="#">{{ animal.owner.username }}</a>
             </p>
-
+            <div class="button"><a ui-sref="bookingIndex({ id: animal._id })">Bookings</a>
+            </div>
           </div>
 
           <div class="columns is-multiline">
