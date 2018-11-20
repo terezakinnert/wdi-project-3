@@ -12,7 +12,9 @@ function createBooking(req, res, next) {
 }
 
 function bookingIndex(req, res, next) {
-  Booking.find().then(bookings => res.json(bookings))
+  Booking.find()
+    .populate('animal booker')
+    .then(bookings => res.json(bookings))
     .catch(next);
 }
 
