@@ -3,6 +3,7 @@ import registerController from '../controllers/auth/registerController';
 import profileController from '../controllers/profileController';
 import animalsIndexController from '../controllers/animals/indexController';
 import showController from '../controllers/animals/showController';
+import bookingIndexController from '../controllers/bookings/bookingIndex';
 
 
 function Router($urlRouterProvider, $stateProvider) {
@@ -49,6 +50,11 @@ function Router($urlRouterProvider, $stateProvider) {
           }).then(result => $state.go('animalsIndex'));
         };
       }
+    })
+    .state('bookingIndex', {
+      templateUrl: './views/bookings/bookingIndex.html',
+      url: '/animals/:id/bookings',
+      controller: bookingIndexController
     })
     .state('animalsEdit', {
       templateUrl: './views/animals/edit.html',
