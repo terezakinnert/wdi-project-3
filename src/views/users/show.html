@@ -1,2 +1,6 @@
 <div class="card">
-<h1 style="font-size: 3.4em">{{ user.username }} </h1>
+<h1>{{ user.username }} </h1>
+<h1>{{ user.givenName }} </h1>
+<h1>{{ user.surname }} </h1>
+<h1>{{ user.email }} </h1>
+<h1 ng-repeat="animal in user.animalsOwned"> {{ animal.name }} </h1>
