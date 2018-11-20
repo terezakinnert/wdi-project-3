@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
 <div class='columns is-multiline is-centered'>
   <div class='column is-8 container profile'>
     <div class='section profile-heading'>
@@ -12,6 +16,8 @@
           <div class='column is-12 name'>
             <p>
               <span class='title is-bold'>{{ animal.name }}</span>
+              <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
+              {{animal.species.toLowerCase()}}
               <br>
             </p>
             <p class='tagline'>
@@ -40,9 +46,9 @@
             <!--Star Rating -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
-              <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad Boy</p>
-              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a>Good Boy</p>
-              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a>Really Good Boy</p>
+              <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad {{animal.sex}}</p>
+              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a>Good {{animal.sex}}</p>
+              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a>Really Good {{animal.sex}}</p>
             </div>
 
 
