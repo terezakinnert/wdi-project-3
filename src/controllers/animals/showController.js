@@ -13,7 +13,6 @@ function showController($state, $scope, $http) {
   };
 
   $scope.createComment = function() {
-    // console.log('WHYYYYYYY', $state.params.id, 'this is $scope.comment', $scope.comment);
     $http({
       method: 'POST',
       url: `/api/pets/${$state.params.id}/comments`,
@@ -24,6 +23,7 @@ function showController($state, $scope, $http) {
         $scope.comment.text = null;
       });
   };
+
   $scope.deleteComment = function(comment) {
     $http({
       method: 'DELETE',
@@ -33,11 +33,3 @@ function showController($state, $scope, $http) {
 }
 
 export default showController;
-//
-//
-// $scope.deleteComment = function(comment) {
-//   $http({
-//     method: 'DELETE',
-//     url: `/api/fishes/${$state.params.id}/comments/${comment._id}`
-//   }).then(result => $scope.fish = result.data);
-// };
