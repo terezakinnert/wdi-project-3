@@ -1,20 +1,69 @@
-<div class="columns">
-  <div class=" column is-6 text-is-centered">
-    <figure>
-      <img ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
-    </figure>
+<div class='columns is-multiline is-centered'>
+  <div class='column is-8 container profile'>
+    <div class='section profile-heading'>
+      <div class='columns is-mobile is-multiline'>
+        <div class='column is-3'>
+          <span class='header-icon user-profile-image'>
+            <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
+          </span>
+        </div>
 
-    <div class="text-is-centered"style = "font-size: 40px; color: white;">
-      {{ animal.name }}
+        <div class="column is-9">
+          <div class='column is-12 name'>
+            <p>
+              <span class='title is-bold'>{{ animal.name }}</span>
+              <br>
+            </p>
+            <p class='tagline'>
+              <strong>{{ animal.species }}  |  {{ animal.age }}  |  {{ animal.color }}</strong><br>
+              <em>{{ animal.breed }}</em><br>
+              My Human: <a href="#">{{ animal.owner }}</a>
+            </p>
+
+          </div>
+
+          <div class="columns is-multiline">
+
+            <!--Holidays -->
+            <div class='column is-4 has-text-centered'>
+              <p class='stat-val'>99</p>
+              <p class='stat-key'><a href="">holidays</a></p>
+            </div>
+
+            <!--Reviews -->
+            <div class='column is-4 has-text-centered'>
+              <p class='stat-val'>99</p>
+              <p class='stat-key'><a href="#">reviews</a></p>
+            </div>
+
+            <!--Star Rating -->
+            <div class='column is-4 has-text-centered'>
+              <p class='stat-val'>{{ animal.rating }}</p>
+              <p class='stat-key'><a href="#">⭐️</a></p>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
-  <div class="column is-6">
+</div>
+
+<div class='columns is-multiline is-centered'>
+  <div class="column is-1">
+  </div>
+
+  <div class="column is-5">
     <h2 class="title is-2">{{ animal.name }}</h2>
 
     <h3 class="subtitle is-3">About {{ animal.name }}</h3>
     <p>
-    {{ animal.bio }}</p>
+    My name is {{ animal.name }} the {{ animal.species }} and I belong to {{ animal.owner }}.
+    I am a {{ animal.age }}-year-old {{ animal.colour }} <span ng-repeat="breed in animal.breed">{{ animal.breed }}</span>.
+    I live in {{ animal.owner.location }}<br>
+    {{ animal.bio }}
+    </p>
     <p>
       <button ng-if="animal.ownedBy._id === userId" ng-if="isAutheticated()" ui-sref="animalsEdit({ id: animal._id })">Edit</button>
       <button ng-if="animal.ownedBy._id === userId" ng-if="isAutheticated()" ng-click="handleDelete()">Delete</button><br><br><br><br><br><br>
@@ -32,4 +81,14 @@
         <button class="button">Comment</button>
       </form>
     </div>
+  </div>
+
+    <div class="column is-5">
+    </div>
+
+    <div class="column is-1">
+    </div>
+
+
+
 </div>
