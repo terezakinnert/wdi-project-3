@@ -11,7 +11,7 @@
             <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
           </span>
         </div>
-
+<!-- Pet Header -->
         <div class="column is-9">
           <div class='column is-12 name'>
             <p>
@@ -31,19 +31,19 @@
 
           <div class="columns is-multiline">
 
-            <!--Holidays -->
+<!--Holidays -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.bookings.length }}</p>
               <p class='stat-key'><a ui-sref="bookingIndex({ id: animal._id })">bookings</a></p>
             </div>
 
-            <!--Reviews -->
+<!--Reviews -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>99</p>
               <p class='stat-key'><a href="#">reviews</a></p>
             </div>
 
-            <!--Star Rating -->
+<!--Star Rating -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
               <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad {{animal.sex}}</p>
@@ -58,46 +58,46 @@
 </div>
 
 <div class='columns is-multiline is-centered'>
-  <div class="column is-1">
-  </div>
-
+  <div class="column is-1"></div>
   <div class="column is-5">
-    <h2 class="title is-2">{{ animal.name }}</h2>
-
+<!-- Bio -->
     <h3 class="subtitle is-3">About {{ animal.name }}</h3>
     <div>
-    My name is {{ animal.name }} the {{ animal.species }} and I belong to {{ animal.owner.givenName }}.
-    I am a {{ animal.age }}-year-old {{ animal.colour }} <span ng-repeat="breed in animal.breed">{{ breed }}</span>.
-    I live in {{ animal.location }}<br>
-    {{ animal.bio }}
+      My name is {{ animal.name }} the {{ animal.species }} and I belong to {{ animal.owner.givenName }}.
+      I am a {{ animal.age }}-year-old {{ animal.colour }} <span ng-repeat="breed in animal.breed">{{ breed }}</span>.
+      I live in {{ animal.location }}<br>
+      {{ animal.bio }}
     </div>
+<!-- Edit & Delete Buttons -->
     <div>
       <form>
         <button class="button" ng-if="isAuthenticated() && animal.owner._id === userId" ui-sref="animalsEdit({ id: animal._id })" >Edit</button>
         <button class="button" ng-if="isAuthenticated() && animal.owner._id === userId" ng-click="handleDelete()">Delete</button>
-    </form>
+      </form>
     </div>
 
+<!-- Comments -->
     <div class="comments">
+      <h5 class="subtitle is-5">Comments</h5>
       <div ng-repeat="comment in animal.comments">
         <span style="font-weight: bold;">{{ comment.user.username }}</span>
         <span>{{ comment.text }}</span>
         <button ng-if="comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
       </div>
 
+<!-- Comment Form -->
+      <h6 class="subtitle is-6">Add a Comment</h6>
       <form ng-submit="createComment()">
-        <input type="text" ng-model="comment.text">
+        <textarea name="text" ng-model="comment.text" class="textarea"></textarea>
         <button class="button">Comment</button>
       </form>
     </div>
   </div>
 
-    <div class="column is-5">
-    </div>
+  <div class="column is-5">
+  </div>
 
-    <div class="column is-1">
-    </div>
-
-
+  <div class="column is-1">
+  </div>
 
 </div>
