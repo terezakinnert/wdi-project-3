@@ -1,4 +1,11 @@
 function showController($state, $scope, $http) {
+  $http({
+    method: 'GET',
+    url: `/api/pets/${$state.params.id}`
+  }).then(result => {
+    console.log('what is the result', result);
+    $scope.animal = result.data;
+  });
   $scope.handleDelete = function() {
     $http({
       method: 'DELETE',
@@ -21,12 +28,6 @@ function showController($state, $scope, $http) {
     })
       .then(result => $scope.animal = result.data);
   };
-  $http({
-    method: 'GET',
-    url: `/api/pets/${$state.params.id}`
-  }).then(result => {
-    $scope.animal = result.data;
-  });
 }
 
 export default showController;

@@ -48,10 +48,10 @@ router.route('/pets/:animalId/comments/:commentId')
   .delete(secureRoute, commentsCtrl.delete);
 
 router.route('/pets/:animalId/bookings')
-  .post(secureRoute, bookingCtrl.create);
+  .post(secureRoute, bookingCtrl.create)
+  .get(bookingCtrl.index);
 
 router.route('/pets/:animalId/bookings/:bookingId')
-  .put(bookingCtrl.update)
   .delete(bookingCtrl.delete);
 
 module.exports = router;

@@ -11,15 +11,21 @@ function createBooking(req, res, next) {
     .catch(next);
 }
 
-// show page! (booking confirmation)
-
-function updateBooking(req, res, next) {
-  Booking.findById(req.params.bookingId)
-    .then(booking => booking.set(req.body))
-    .then(booking => booking.save())
-    .then(booking => res.json(booking))
+function bookingIndex(req, res, next) {
+  Booking.find().then(bookings => res.json(bookings))
     .catch(next);
 }
+
+// show page! (booking confirmation)
+
+
+// function updateBooking(req, res, next) {
+//   Booking.findById(req.params.bookingId)
+//     .then(booking => booking.set(req.body))
+//     .then(booking => booking.save())
+//     .then(booking => res.json(booking))
+//     .catch(next);
+// }
 
 function deleteBooking(req, res, next) {
   Booking.findByIdAndDelete(req.params.bookingId)
@@ -29,6 +35,6 @@ function deleteBooking(req, res, next) {
 
 module.exports = {
   create: createBooking,
-  update: updateBooking,
+  index: bookingIndex,
   delete: deleteBooking
 };
