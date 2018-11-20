@@ -1,5 +1,3 @@
-//this controller is global so things put on $scope here are available everywhere
-
 function masterController($scope, $auth, $state) {
   $scope.isAuthenticated = function () {
     if ($auth.isAuthenticated()) {
@@ -15,5 +13,3 @@ function masterController($scope, $auth, $state) {
 }
 
 export default masterController;
-
-//wht we had in the index controller now goes in here

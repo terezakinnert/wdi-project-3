@@ -3,7 +3,7 @@ function showController($state, $scope, $http) {
     method: 'GET',
     url: `/api/pets/${$state.params.id}`
   }).then(result => {
-    console.log('what is the result', result);
+    // console.log('what is the result', result);
     $scope.animal = result.data;
   });
   $scope.handleDelete = function() {
@@ -13,7 +13,7 @@ function showController($state, $scope, $http) {
     }).then(() => $state.go('animalsIndex'));
   };
   $scope.createComment = function() {
-    console.log('WHYYYYYYY', $state.params.id, 'this is $scope.comment', $scope.comment);
+    // console.log('WHYYYYYYY', $state.params.id, 'this is $scope.comment', $scope.comment);
     $http({
       method: 'POST',
       url: `/api/pets/${$state.params.id}/comments`,
