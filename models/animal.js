@@ -40,7 +40,7 @@ animalSchema.virtual('bookings', {
 animalSchema.virtual('meanRating')
   .get(function() {
     const averageRating = array => array.reduce((a, b) => a + b, 0) / array.length;
-    const result = averageRating(this.rating);
+    const result = averageRating(this.rating).toFixed(2);
     return result;
   });
 

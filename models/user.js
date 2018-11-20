@@ -8,10 +8,6 @@ const userSchema = mongoose.Schema({
   givenName: String,
   surname: String,
   location: String,
-  // animalsOwned: [{
-  //   type: mongoose.Schema.ObjectId,
-  //   ref: 'Animal'
-  // }],
   profileImageUrl: String,
   age: Number,
   bio: String
