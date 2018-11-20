@@ -17,7 +17,7 @@
             <p class='tagline'>
               <strong>{{ animal.species }}  |  {{ animal.age }}  |  <span ng-repeat="color in animal.color">{{ color }}</span></strong><br>
               <em> <span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
-              My Human: <a href="#">{{ animal.owner.username }}</a>
+              My Human: <a ui-sref="profileShow({ id: owner._id})">{{ animal.owner.username }}</a>
             </p>
             <div class="button"><a ui-sref="bookingIndex({ id: animal._id })">Bookings</a>
             </div>
