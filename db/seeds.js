@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const env = require('../config/environment');
 const Animal = require('../models/animal');
 const User = require('../models/user');
+const Booking = require('../models/booking');
 mongoose.connect(env.dbUri);
 
 
@@ -48,8 +49,8 @@ const animalData = [
   // { name: 'Sylvester', bio: '', sex: 'Male', species: 'Cat', breed: ['Domestic Shorthair'], age: 3, color: ['White'], imageUrl: '', location: 'W3 7JE', owner: 'amallah', rating: [], availableOn: {} },
   // { name: 'Max', bio: '', sex: 'Male', species: 'Dog', breed: ['German Shepherd', 'Mamalute'], age: 1, color: ['Grey', 'White'], imageUrl: '', location: 'TN13 1AB ', owner: 'kadamson', rating: [], availableOn: {} },
   // { name: 'Nala', bio: '', sex: 'Female', species: 'Dog', breed: ['Border Collie'], age: 1, color: ['Brown'], imageUrl: '', location: 'TN13 1AB ', owner: 'kadamson', rating: [], availableOn: {} },
-  // { name: 'Becky', bio: '', sex: 'Male', species: 'Snake', breed: ['Royal Python Morph'], age: 1, color: ['Black', 'Brown', 'White'], imageUrl: 'https://imgur.com/UJVcWq0', location: 'E16 1DQ', owner: 'fcoker', rating: [], availableOn: {} },
-  // { name: 'Judas', bio: 'I'm a lover, not a biter. LOL, jk - monch monch bitch. NYOM NYOM NYOM.', sex: 'Female', species: 'Snake', breed: ['Royal Python Moprh'], age: 1, color: ['Black', 'Brown', 'White'], imageUrl: 'https://imgur.com/xwVn4c6', location: 'E16 1DQ', owner: 'fcoker', rating: [2, 1, 2], availableOn: {} },
+  // { name: 'Becky', bio: '', sex: 'Female', species: 'Snake', breed: ['Royal Python Morph'], age: 1, color: ['Black', 'Brown', 'White'], imageUrl: 'https://imgur.com/UJVcWq0', location: 'E16 1DQ', owner: 'fcoker', rating: [], availableOn: {} },
+  // { name: 'Judas', bio: 'I'm a lover, not a biter. LOL, jk - monch monch bitch. NYOM NYOM NYOM.', sex: 'Male', species: 'Snake', breed: ['Royal Python Moprh'], age: 1, color: ['Black', 'Brown', 'White'], imageUrl: 'https://imgur.com/xwVn4c6', location: 'E16 1DQ', owner: 'fcoker', rating: [2, 1, 2], availableOn: {} },
   // { name: 'Albert', bio: '', sex: 'Male', species: 'Dog', breed: ['Staffordshire Bull Terrier'], age: 1, color: ['Black'], imageUrl: 'https://imgur.com/FP1DGqx', location: 'W6 0EZ', owner: 'tbirch', rating: [2, 1, 3, 2, 2], availableOn: {} },
   // { name: 'Sunny', bio: '', sex: 'Female', species: 'Dog', breed: ['Golden Retreiver'], age: 1, color: ['Golden'], imageUrl: '', location: '', owner: 'zbarrington', rating: [], availableOn: {} },
   // { name: 'Marley', bio: '', sex: 'Male', species: 'Dog', breed: ['Golden Labrador'], age: 1, color: ['Golden'], imageUrl: 'https://imgur.com/Ys81Fdy', location: 'SW19 7NL', owner: 'jlalley', rating: [], availableOn: {} },
@@ -62,6 +63,7 @@ const animalData = [
 
 Animal.collection.drop();
 User.collection.drop();
+Booking.collection.drop();
 
 Animal.create(animalData)
   .then(animals => {

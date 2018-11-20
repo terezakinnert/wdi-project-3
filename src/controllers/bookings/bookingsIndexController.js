@@ -1,4 +1,4 @@
-function bookingIndexController($scope, $http) {
+function bookingsIndexController($scope, $http) {
   $http({
     method: 'GET',
     url: '/api/pets/:petId/bookings'
@@ -8,4 +8,4 @@ function bookingIndexController($scope, $http) {
   });
 }
 
-export default bookingIndexController;
+export default bookingsIndexController;

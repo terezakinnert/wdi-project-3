@@ -1,9 +1,14 @@
 import loginController from '../controllers/auth/loginController';
 import registerController from '../controllers/auth/registerController';
-import profileController from '../controllers/profileController';
+
+import usersIndexController from '../controllers/users/usersIndexController';
+import usersShowController from '../controllers/users/usersShowController';
+
 import animalsIndexController from '../controllers/animals/indexController';
-import showController from '../controllers/animals/showController';
-import bookingIndexController from '../controllers/bookings/bookingIndex';
+import animalsShowController from '../controllers/animals/showController';
+
+import bookingsIndexController from '../controllers/bookings/bookingsIndexController';
+// import bookingsShowController from '../controllers/bookings/bookingsShowContoller';
 
 
 function Router($urlRouterProvider, $stateProvider) {
@@ -22,10 +27,15 @@ function Router($urlRouterProvider, $stateProvider) {
       url: '/login',
       controller: loginController
     })
-    .state('profileShow', {
-      templateUrl: './views/profile.html',
-      url: '/profile/:id',
-      controller: profileController
+    .state('usersIndex', {
+      templateUrl: './views/users/index.html',
+      url: '/users',
+      controller: usersIndexController
+    })
+    .state('usersShow', {
+      templateUrl: './views/users/show.html',
+      url: '/users/:id',
+      controller: usersShowController
     })
     .state('animalsIndex', {
       templateUrl: './views/animals/index.html',
@@ -35,7 +45,7 @@ function Router($urlRouterProvider, $stateProvider) {
     .state('animalsShow', {
       templateUrl: './views/animals/show.html',
       url: '/animals/:id',
-      controller: showController
+      controller: animalsShowController
     })
     .state('animalsNew', {
       url: '/animals/new',
@@ -52,9 +62,9 @@ function Router($urlRouterProvider, $stateProvider) {
       }
     })
     .state('bookingIndex', {
-      templateUrl: './views/bookings/bookingIndex.html',
+      templateUrl: './views/bookings/bookingsIndex.html',
       url: '/animals/:id/bookings',
-      controller: bookingIndexController
+      controller: bookingsIndexController
     })
     .state('animalsEdit', {
       templateUrl: './views/animals/edit.html',
