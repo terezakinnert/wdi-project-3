@@ -13,6 +13,20 @@ const userId = [
   '5be9aa1bac3c11cea4303505'
 ];
 
+const animalId = [
+  '5bf4372642d7606cb408c567',
+  '5bf4373042d7606cb408c568',
+  '5bf4373042d7606cb408c569',
+  '5bf4373042d7606cb408c56a'
+];
+
+const bookingData = [{
+  booker: userId[0],
+  animal: animalId[1],
+  pickup: new Date(),
+  dropoff: new Date()
+}];
+
 const userData = [
   {
     _id: userId[0],
@@ -41,9 +55,9 @@ const userData = [
 ];
 
 const animalData = [
-  { name: 'Reggie', bio: 'I was found on the side of a motorway in Oxford when I was a pup. I hate direct eye contact and my favourite foods are bacon and cushions.', sex: 'Male', species: 'Dog', breed: ['Greyhound', 'Whippet'], age: 5, color: [ 'Brown', 'White'], imageUrl: 'https://imgur.com/bDBMlEA.png', location: 'B91 1NW', owner: userId[0], rating: [5, 5, 5, 5, 5] }
-  // { name: 'Charlie', bio: 'I am so needy you can't even comprehend. My humans left the fridge open once and I ate two sticks of butter and an entire birthday cake. You best pay me your full attention on walks because I will absolutely roll in shit when you're not looking.', sex: 'Male', species: 'Dog', breed: ['Lurcher'], age: 3, color: [ 'Brown'], imageUrl: 'https://imgur.com/PBCkJJz.png', location: 'B91 1TR', owner: 'dcomer', rating: [1, 1, 1, 1, 1], availableOn: {} },
-  // { name: 'Leila', bio: 'I am a dog too', sex: 'Female', species: 'Dog', breed: ['Labrador'], age: 11, color: [ 'Black'], imageUrl: 'https://imgur.com/DHwHBEF.png', location: 'HP5 1DL', owner: 'efarrer', rating: [5, 4, 5, 4, 4], availableOn: {} },
+  { _id: animalId[0], name: 'Reggie', bio: 'I was found on the side of a motorway in Oxford when I was a pup. I hate direct eye contact and my favourite foods are bacon and cushions.', sex: 'Male', species: 'Dog', breed: ['Greyhound', 'Whippet'], age: 5, color: [ 'Brown', 'White'], imageUrl: 'https://imgur.com/bDBMlEA.png', location: 'B91 1NW', owner: userId[0], rating: [5, 5, 5, 5, 5] },
+  { _id: animalId[1], name: 'Charlie', bio: 'I am so needy you can\'t even comprehend. My humans left the fridge open once and I ate two sticks of butter and an entire birthday cake. You best pay me your full attention on walks because I will absolutely roll in shit when you\'re not looking.', sex: 'Male', species: 'Dog', breed: ['Lurcher'], age: 3, color: [ 'Brown'], imageUrl: 'https://imgur.com/PBCkJJz.png', location: 'B91 1TR', owner: userId[0], rating: [1, 1, 1, 1, 1] },
+  { _id: animalId[2], name: 'Leila', bio: 'I am a dog too', sex: 'Female', species: 'Dog', breed: ['Labrador'], age: 11, color: [ 'Black'], imageUrl: 'https://imgur.com/DHwHBEF.png', location: 'HP5 1DL', owner: userId[2], rating: [5, 4, 5, 4, 4] }
   // { name: 'Rocky II', bio: '', sex: 'Male', species: 'Dog', breed: ['German Shepherd'], age: 14, color: [ 'Black', 'Ginger' ], imageUrl: 'https://imgur.com/n1HT62i', location: 'W3 7JE', owner: 'amallah', rating: [], availableOn: {} },
   // { name: 'Whiskey', bio: '', sex: 'Male', species: 'Cat', breed: ['Domestic Shorthair'], age: 4, color: ['Ginger'], imageUrl: '', location: 'W3 7JE', owner: 'amallah', rating: [], availableOn: {} },
   // { name: 'Sylvester', bio: '', sex: 'Male', species: 'Cat', breed: ['Domestic Shorthair'], age: 3, color: ['White'], imageUrl: '', location: 'W3 7JE', owner: 'amallah', rating: [], availableOn: {} },
@@ -71,6 +85,10 @@ Animal.create(animalData)
     User.create(userData)
       .then(user => {
         console.log(`Created ${user.length} users`);
-        mongoose.connection.close();
+        Booking.create(bookingData)
+          .then(bookings => {
+            console.log(`Created ${bookings.length} bookings`);
+            mongoose.connection.close();
+          });
       });
   });

@@ -28,5 +28,28 @@ const animalSchema = mongoose.Schema({
   }]
 });
 
+
+// virtual for number of bookings
+animalSchema.virtual('bookings', {
+  ref: 'Booking',
+  localField: '_id',
+  foreignField: 'animal'
+});
+
+// average rating virtual
+animalSchema.virtual('meanRating')
+  .get(function() {
+    const averageRating = array => array.reduce((a, b) => a + b, 0) / array.length;
+    const result = averageRating(this.rating);
+    return result;
+  });
+
+// include virtuals in res.json
+animalSchema.set('toJSON', {
+  virtuals: true
+});
+
+
+
 const animalModel = mongoose.model('Animal', animalSchema);
 module.exports = animalModel;

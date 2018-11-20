@@ -17,7 +17,7 @@
             <p class='tagline'>
               <strong>{{ animal.species }}  |  {{ animal.age }}  |  <span ng-repeat="color in animal.color">{{ color }}</span></strong><br>
               <em> <span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
-              My Human: <a ui-sref="profileShow({ id: owner._id})">{{ animal.owner.username }}</a>
+              My Human: <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a>
             </p>
             <div class="button"><a ui-sref="bookingIndex({ id: animal._id })">Bookings</a>
             </div>
@@ -27,8 +27,8 @@
 
             <!--Holidays -->
             <div class='column is-4 has-text-centered'>
-              <p class='stat-val'>99</p>
-              <p class='stat-key'><a href="">holidays</a></p>
+              <p class='stat-val'>{{ animal.bookings.length }}</p>
+              <p class='stat-key'><a ui-sref="bookingIndex({ id: animal._id })">bookings</a></p>
             </div>
 
             <!--Reviews -->
@@ -39,8 +39,10 @@
 
             <!--Star Rating -->
             <div class='column is-4 has-text-centered'>
-              <p class='stat-val'>{{ animal.rating }}</p>
-              <p class='stat-key'><a href="#">⭐️</a></p>
+              <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
+              <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad Boy</p>
+              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a>Good Boy</p>
+              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a>Really Good Boy</p>
             </div>
 
 
