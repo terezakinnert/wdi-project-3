@@ -1,6 +1,57 @@
 <div class="card">
-<h1>{{ user.username }} </h1>
-<h1>{{ user.givenName }} </h1>
-<h1>{{ user.surname }} </h1>
-<h1>{{ user.email }} </h1>
+
 <h1 ng-repeat="animal in user.animalsOwned"> {{ animal.name }} </h1>
+
+
+
+<div class='columns is-multiline is-centered'>
+  <div class='column is-8 container profile'>
+    <div class='section profile-heading'>
+      <div class='columns is-mobile is-multiline'>
+        <div class='column is-3'>
+          <span class='header-icon user-profile-image'>
+            <img class='is-rounded' alt='' ng-src="{{ user.profileImageUrl }}" alt="{{ user.username }}">
+          </span>
+        </div>
+
+<!-- User Header -->
+        <div class="columns is-multiline column is-3">
+          <div class='column is-12 name'>
+
+            <p>
+              <span class='title is-bold'>{{ user.username }}</span>
+            </p>
+
+            <p class='tagline'>
+              <strong>{{ user.givenName }} {{ user.surname }}</strong><br>
+            </p>
+
+            <p class='tagline'>
+              {{ user.age }}
+            </p>
+          </div>
+        </div>
+
+        <!-- <div class="columns is-multiline"> -->
+
+<!--Bio -->
+        <div class="column is-6">
+          <div class='column is-12 name'>
+              <p class='stat-val'>{{ user.bio }}</p>
+            </div>
+          </div>
+
+<!--Star Rating -->
+            <!-- <div class='column is-4 has-text-centered'>
+              <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
+              <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad {{ animal.sex }}</p>
+              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a>Good {{ animal.sex }}</p>
+              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a>Really Good {{ animal.sex }}</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</div>
