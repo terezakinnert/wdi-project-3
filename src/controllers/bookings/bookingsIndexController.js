@@ -5,6 +5,8 @@ function bookingsIndexController($scope, $http, $state) {
   }).then(result => {
     $scope.allBookings = result.data;
     $scope.filteredBookings = $scope.allBookings;
+    console.log('the time is', new Date());
+    $scope.timeNow = new Date();
   });
 }
 

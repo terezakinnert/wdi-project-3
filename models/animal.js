@@ -50,6 +50,5 @@ animalSchema.set('toJSON', {
 });
 
 
-
 const animalModel = mongoose.model('Animal', animalSchema);
 module.exports = animalModel;

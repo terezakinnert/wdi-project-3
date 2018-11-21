@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require('moment');
 const env = require('../config/environment');
 const Animal = require('../models/animal');
 const User = require('../models/user');
@@ -24,8 +25,20 @@ const bookingData = [
   {
     booker: userId[1],
     animal: animalId[0],
-    pickup: new Date(),
-    dropoff: new Date()
+    pickup: moment().add(1, 'days'),
+    dropoff: moment().add(2, 'days')
+  },
+  {
+    booker: userId[2],
+    animal: animalId[0],
+    pickup: moment().subtract(2, 'days'),
+    dropoff: moment().subtract(1, 'days')
+  },
+  {
+    booker: userId[3],
+    animal: animalId[0],
+    pickup: moment().subtract(1, 'days'),
+    dropoff: moment().add(1, 'days')
   },
   {
     booker: userId[0],
