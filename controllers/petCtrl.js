@@ -3,7 +3,7 @@ const Animal = require('../models/animal');
 function indexRoute(req, res, next) {
   Animal
     .find()
-    .populate('owner bookings')
+    .populate('owner booker bookings')
     .then(animals => res.json(animals))
     .catch(next);
 }
@@ -11,6 +11,13 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next) {
   Animal.findById(req.params.id)
     .populate('owner booker bookings comments.user')
+    //this is a particular way of populating a virtual
+    .populate({
+      path: 'bookings',
+      populate: {
+        path: 'booker'
+      }
+    })
     .then(animal => res.json(animal))
     .catch(next);
 }

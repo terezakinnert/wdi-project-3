@@ -1,11 +1,7 @@
 <div class="card">
 
-<h1 ng-repeat="animal in user.animalsOwned"> {{ animal.name }} </h1>
-
-
-
 <div class='columns is-multiline is-centered'>
-  <div class='column is-8 container profile'>
+  <div class='column is-10 container profile'>
     <div class='section profile-heading'>
       <div class='columns is-mobile is-multiline'>
         <div class='column is-3'>
@@ -37,15 +33,26 @@
 <!--Bio -->
         <div class="column is-6">
           <div class='column is-12 name'>
-              <p class='stat-val'>{{ user.bio }}</p>
-            </div>
+            <p class='stat-val'>{{ user.bio }}</p>
           </div>
+
+          <div class='column is-12 name'>
+            <span><strong>{{ user.givenName }}'s pets</strong></span>
+          </div>
+
+          <div class="columns column is-12">
+            <span style="margin: 10px" ng-repeat="animal in user.animalsOwned">
+              <a ui-sref="animalsShow({ id: animal._id})">
+                <img style="border-radius: 50%" height=60px width=60px src="{{ animal.imageUrl }}">
+              </a>
+              <div>
+                {{ animal.name }}
+              </div>
+            </span>
+          </div>
+
+
+        </div>
     </div>
   </div>
 </div>
-
-
-<form>
-  <button class="button" ng-if="isAuthenticated() && user._id === userId" ui-sref="usersEdit({ id: user._id })">Edit</button>
-  <button class="button" ng-if="isAuthenticated() && user._id === userId" ng-click="handleDelete()">Delete</button>
-</form>
