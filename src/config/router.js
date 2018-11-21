@@ -71,6 +71,20 @@ function Router($urlRouterProvider, $stateProvider) {
       url: '/animals/:id/bookings/:bookingId',
       controller: bookingsShowController
     })
+    .state('bookingNew', {
+      url: '/animals/:id/bookings/new',
+      templateUrl: './views/bookings/bookingsNew.html',
+      controller: function($scope, $http, $state) {
+        $scope.handleSubmit = function() {
+          console.log('Form was submitted!', $scope.testing);
+          $http({
+            method: 'POST',
+            url: 'api/pets/:animalId/bookings',
+            data: $scope.booking
+          }).then(result => $state.go('bookingIndex'));
+        };
+      }
+    })
     .state('animalsEdit', {
       templateUrl: './views/animals/edit.html',
       url: '/animals/:id/edit',

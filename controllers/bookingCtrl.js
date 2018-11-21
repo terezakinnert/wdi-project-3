@@ -12,13 +12,20 @@ function createBooking(req, res, next) {
 }
 
 function bookingIndex(req, res, next) {
-  Booking.find()
+  Booking
+    .find({ $and: [{animal: {$in: req.params.animalId }}]
+    })
     .populate('animal booker')
     .then(bookings => res.json(bookings))
     .catch(next);
 }
 
-// show page! (booking confirmation)
+function bookingShow(req, res, next) {
+  Booking.findById(req.params.id)
+    .populate('animal booker')
+    .then(booking => res.json(booking))
+    .catch(next);
+}
 
 
 // function updateBooking(req, res, next) {
@@ -38,5 +45,6 @@ function deleteBooking(req, res, next) {
 module.exports = {
   create: createBooking,
   index: bookingIndex,
-  delete: deleteBooking
+  delete: deleteBooking,
+  show: bookingShow
 };

@@ -1,7 +1,7 @@
-function bookingsIndexController($scope, $http) {
+function bookingsIndexController($scope, $http, $state) {
   $http({
     method: 'GET',
-    url: '/api/pets/:petId/bookings'
+    url: `/api/pets/${$state.params.id}/bookings`
   }).then(result => {
     $scope.allBookings = result.data;
     $scope.filteredBookings = $scope.allBookings;

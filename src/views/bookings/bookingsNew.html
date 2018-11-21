@@ -1,0 +1,15 @@
+<h1 class="title is-1">Booking Page</h1>
+<div class="columns is-multiline">
+  <div class="column is-6">
+    <div class="columns is-multiline">
+      <div class="column is-12">
+        <form ng-submit="handleSubmit()">
+          <input type="date" class="column is-12" ng-model="booking.pickup" placeholder = "Pickup time">
+          <input type="date" class="column is-12" ng-model="booking.dropoff" placeholder = "Dropoff time">
+
+          <button class="button is-link">Book {{booking.animal.name}}</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

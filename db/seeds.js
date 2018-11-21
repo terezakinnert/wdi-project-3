@@ -20,12 +20,20 @@ const animalId = [
   '5bf4373042d7606cb408c56a'
 ];
 
-const bookingData = [{
-  booker: userId[0],
-  animal: animalId[1],
-  pickup: new Date(),
-  dropoff: new Date()
-}];
+const bookingData = [
+  {
+    booker: userId[1],
+    animal: animalId[0],
+    pickup: new Date(),
+    dropoff: new Date()
+  },
+  {
+    booker: userId[0],
+    animal: animalId[2],
+    pickup: new Date(),
+    dropoff: new Date()
+  }
+];
 
 const userData = [
   {
