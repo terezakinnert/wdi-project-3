@@ -88,12 +88,14 @@
 
 
 <!-- Comment Form -->
-      <h6 class="subtitle is-6">Add a Comment</h6>
-      <form ng-submit="createComment()">
-        <textarea name="text" ng-model="comment.text" class="textarea"></textarea>
-        <button class="button">Comment</button>
-      </form>
-    </div>
+  <div ng-if="isAuthenticated()" class="">
+    <h6 class="subtitle is-6">Add a Comment</h6>
+    <form ng-submit="createComment()">
+      <textarea name="text" ng-model="comment.text" class="textarea"></textarea>
+      <button class="button">Comment</button>
+    </form>
+  </div>
+  </div>
   </div>
 
   <div class="column is-5"> </div>

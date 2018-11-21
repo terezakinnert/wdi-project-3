@@ -22,7 +22,7 @@ function showController($state, $scope, $http) {
         $scope.animal = result.data;
         // $scope.username = result.data.comment.user.username;
         $scope.comment.text = null;
-        console.log('username?', $scope.comment.user.username);
+        // console.log('username?', $scope.comment.user.username);
       });
   };
 
