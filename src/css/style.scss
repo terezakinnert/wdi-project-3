@@ -7,9 +7,13 @@
   margin: 0 auto;
 }
 
-// h3.subtitle {
-//   color: #2600c3;
-// }
+a.navbar-item:hover {
+  color: #ffffff;
+  background: linear-gradient(45deg, #2600c3, #e7005c);
+  opacity: 0.8;
+  font-weight: bold;
+}
+
 
 h5.subtitle {
   color: #e7005c;
