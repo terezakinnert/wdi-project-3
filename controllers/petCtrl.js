@@ -10,7 +10,7 @@ function indexRoute(req, res, next) {
 
 function showRoute(req, res, next) {
   Animal.findById(req.params.id)
-    .populate('owner bookings')
+    .populate('owner bookings comments.user')
     .then(animal => res.json(animal))
     .catch(next);
 }

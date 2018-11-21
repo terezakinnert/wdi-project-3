@@ -1,4 +1,5 @@
 function showController($state, $scope, $http) {
+  $scope.comment = {};
   $http({
     method: 'GET',
     url: `/api/pets/${$state.params.id}`
@@ -13,6 +14,7 @@ function showController($state, $scope, $http) {
   };
 
   $scope.createComment = function() {
+    console.log($scope.comment);
     $http({
       method: 'POST',
       url: `/api/pets/${$state.params.id}/comments`,
@@ -20,6 +22,7 @@ function showController($state, $scope, $http) {
     })
       .then(result => {
         $scope.animal = result.data;
+        console.log('--=-=-=->', $scope.animal);
         // $scope.username = result.data.comment.user.username;
         $scope.comment.text = null;
         // console.log('username?', $scope.comment.user.username);
