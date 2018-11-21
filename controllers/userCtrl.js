@@ -25,8 +25,15 @@ function userUpdate(req, res, next) {
     .catch(next);
 }
 
+function userDelete(req, res, next) {
+  User.findById(req.params.id)
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
+
 module.exports = {
   show: showProfileRoute,
   usersIndex: usersIndex,
-  userUpdate: userUpdate
+  userUpdate: userUpdate,
+  userDelete: userDelete
 };
