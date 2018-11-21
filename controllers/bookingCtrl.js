@@ -13,6 +13,8 @@ function createBooking(req, res, next) {
 
 function bookingIndex(req, res, next) {
   Booking
+  //here we are filtering the bookings by animalId
+  //only the bookings attached to our animals will be shown on the index
     .find({ $and: [{animal: {$in: req.params.animalId }}]
     })
     .populate('animal booker')

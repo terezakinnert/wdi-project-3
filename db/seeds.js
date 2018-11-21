@@ -32,6 +32,12 @@ const bookingData = [
     animal: animalId[2],
     pickup: new Date(),
     dropoff: new Date()
+  },
+  {
+    booker: userId[3],
+    animal: animalId[2],
+    pickup: new Date(),
+    dropoff: new Date()
   }
 ];
 
