@@ -40,18 +40,12 @@
               <p class='stat-val'>{{ user.bio }}</p>
             </div>
           </div>
-
-<!--Star Rating -->
-            <!-- <div class='column is-4 has-text-centered'>
-              <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
-              <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad {{ animal.sex }}</p>
-              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a>Good {{ animal.sex }}</p>
-              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a>Really Good {{ animal.sex }}</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
     </div>
   </div>
 </div>
+
+
+<form>
+  <button class="button" ng-if="isAuthenticated() && user._id === userId" ui-sref="usersEdit({ id: user._id })">Edit</button>
+  <button class="button" ng-if="isAuthenticated() && user._id === userId" ng-click="handleDelete()">Delete</button>
+</form>

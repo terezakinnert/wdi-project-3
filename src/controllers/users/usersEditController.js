@@ -1,14 +1,14 @@
 function usersEditController($http, $scope, $state) {
   $http({
     method: 'GET',
-    url: `/api/pets/${$state.params.id}`
-  }).then(result => $scope.animal = result.data);
-  $scope.handleSubmit = function() {
+    url: `/api/users/${$state.params.id}`
+  }).then(result => $scope.user = result.data);
+  $scope.editProfile = function() {
     $http({
       method: 'PUT',
-      url: `/api/pets/${$state.params.id}`,
-      data: $scope.animal
-    }).then(() => $state.go('animalsShow', { id: $state.params.id }));
+      url: `/api/users/${$state.params.id}`,
+      data: $scope.user
+    }).then(() => $state.go('usersShow', { id: $state.params.id }));
   };
 }
 

@@ -1,0 +1,75 @@
+<section class="hero is-white is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-8 is-offset-2">
+        <h3 class="title is-3">Update Your Profile</h3>
+        <p class="subtitle has-text-grey">Make any changes you'd like</p>
+        <div class="box">
+          <form ng-submit="editProfile()">
+
+            <div class="field">
+              <div class="control">
+                <label for="username" class="label">Username</label>
+                <input class="input" ng-model="user.username" type="text" name="username" placeholder="e.g. dogowner23">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="email" class="label">Email</label>
+                <input class="input" ng-model="user.email" type="email" name="email" placeholder="e.g. jon@email.com">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="givenName" class="label">Given Name</label>
+                <input class="input" ng-model="user.givenName" type="text" name="givenName" placeholder="e.g. Jon">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="bio" class="label">Surname</label>
+                <input class="input" ng-model="user.surname" type="text" name="surname" placeholder="e.g. Doe">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="location" class="label">Location</label>
+                <input class="input" ng-model="user.location" type="text" name="location" placeholder="e.g. London, SW9">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="profileImageUrl" class="label">Your Profile Image URL</label>
+                <input class="input" ng-model="user.profileImageUrl" type="text" name="profileImageUrl" placeholder="http://...">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="age" class="label">Age</label>
+                <input class="input" ng-model="user.age" type="number" min="1" name="age" placeholder="e.g. 38">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="bio" class="label">Bio</label>
+                <textarea name="bio" ng-model="user.bio" type="text" class="textarea" placeholder="Tell us about yourself..."></textarea>
+              </div>
+            </div>
+
+        <button class="button is-block is-light is-large is-fullwidth">Update</button>
+      </form>
+    <!-- </div>
+    <p class="has-text-grey">Or</p>
+    <div class="button is-medium"><a href="/register">Sign Up</a></div>
+    <p class="has-text-grey">if you haven't got an account yet.</p>
+  </div> -->
+</div>
+</div>
+</section>
