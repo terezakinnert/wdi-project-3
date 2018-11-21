@@ -10,7 +10,7 @@ import animalsEditController from '../controllers/animals/editController';
 import animalsNewController from '../controllers/animals/newController';
 
 import bookingsIndexController from '../controllers/bookings/bookingsIndexController';
-// import bookingsShowController from '../controllers/bookings/bookingsShowContoller';
+import bookingsShowController from '../controllers/bookings/bookingsShowController';
 
 
 function Router($urlRouterProvider, $stateProvider) {
@@ -63,6 +63,25 @@ function Router($urlRouterProvider, $stateProvider) {
       templateUrl: './views/bookings/bookingsIndex.html',
       url: '/animals/:id/bookings',
       controller: bookingsIndexController
+    })
+    .state('bookingShow', {
+      templateUrl: './views/bookings/bookingsShow.html',
+      url: '/animals/:id/bookings/:bookingId',
+      controller: bookingsShowController
+    })
+    .state('bookingNew', {
+      url: '/animals/:id/bookings/new',
+      templateUrl: './views/bookings/bookingsNew.html',
+      controller: function($scope, $http, $state) {
+        $scope.handleSubmit = function() {
+          console.log('Form was submitted!', $scope.testing);
+          $http({
+            method: 'POST',
+            url: 'api/pets/:animalId/bookings',
+            data: $scope.booking
+          }).then(result => $state.go('bookingIndex'));
+        };
+      }
     });
   $urlRouterProvider.otherwise('/');
 }

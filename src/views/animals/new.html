@@ -5,12 +5,23 @@
       <div class="column is-12">
         <form ng-submit="handleSubmit()">
           <input type="text" class="column is-12" ng-model="animal.name" placeholder = "Name">
-          <input type="number" min="1" max="50" class="column is-12" ng-model="animal.age" placeholder = "Age in Years">
+          <input type="number" min="1" max="50" class="column is-12" ng-model="animal.age" placeholder = "Age (Years)">
+          <input type="text" class="column is-12" ng-model="animal.imageUrl" placeholder = "https://...">
           <input type="radio" ng-model="animal.sex" name="sex" value="boy" checked>Boy
           <input type="radio" ng-model="animal.sex" name="sex" value="girl">Girl<br>
-          <input type="text" class="column is-12" ng-model="animal.species"placeholder = "Cat/Dog (Dropdown?)">
-          <input type="text" class="column is-12" ng-model="animal.breed"placeholder = "Dropdown based on sepcies (Rob's Species API?)">
-          <input type="color" class="column is-12" ng-model="animal.colour"placeholder = "Color"><br>
+          <input type="text" class="column is-12" ng-model="animal.species"placeholder = "(Dropdown?)">
+          <input type="text" class="column is-12" ng-model="animal.breed"placeholder = "Dropdown based on species?">
+          <!-- <input type="color" class="column is-12" ng-model="animal.color"placeholder = "Color"><br> -->
+          <p>Choose your animal's colors:</p>
+          <span>
+            <input type="color" ng-model="animal.color" value="#000000">
+          </span>
+          <span>
+            <input type="color" ng-model="animal.color" value="#ffffff">
+          </span>
+          <span>
+            <input type="color" ng-model="animal.color" value="#D2691E">
+          </span><br><br>
           <textarea type="text" class="column is-12" ng-model=" animal.bio" placeholder = "Tell us about your pet"></textarea><br>
           <button class="button is-link">New</button>
         </form>
