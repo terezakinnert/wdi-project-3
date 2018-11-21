@@ -1,4 +1,90 @@
-<h1 class="title is-1">Add your Pet</h1>
+<section class="hero is-white is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-12">
+        <h3 class="title has-text-grey">Add Your Pet</h3>
+        <!-- <p class="subtitle has-text-grey">Please login to proceed.</p> -->
+        <div class="box new">
+          <form ng-submit="handleSubmit()">
+            <div class="field">
+              <div class="control">
+                <label for="password" class="label">Name</label>
+                <input class="input" ng-model="animal.name" type="text" name="password" placeholder="e.g. Reggie">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="bio" class="label">Bio</label>
+                <textarea name="bio" class="textarea" ng-model="animal.bio" type="text" placeholder="Tell us about your pet ;)"></textarea>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="age" class="label">Age</label>
+                <input name="age" class="input" ng-model="animal.age" type="number" min="1" max="50" placeholder="Age in years">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="imageUrl" class="label">Image URL</label>
+                <input name="imageUrl" class="input" ng-model="animal.imageUrl" type="text" placeholder="http://...">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control"><label for="sex" class="label">Sex</label>
+                <label for="boy" class="radio">
+                  <input name="boy" ng-model="animal.sex" type="radio" value="boy">Boy
+                </label>
+
+                <label for="girl" class="radio" name="answer">
+                  <input name="girl" ng-model="animal.sex" type="radio" value="girl">Girl
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="species" class="label">Species</label>
+                <input name="species" class="input" ng-model="animal.species" type="text" placeholder="e.g. Dog">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="breed" class="label">Breed</label>
+                <input name="breed" class="input" ng-model="animal.breed" type="text" placeholder="e.g. Labrador">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="color" class="label">What colour is your pet?</label>
+                <!-- <input name="color" class="input" ng-model="animal.color" type="text"> -->
+                <input type="color" ng-model="animal.color" value="#000000">
+                <input type="color" ng-model="animal.color" value="#ffffff">
+                <input type="color" ng-model="animal.color" value="#D2691E">
+              </div>
+            </div>
+            <button class="button is-block is-light is-fullwidth">Submit</button>
+          </form>
+        </div>
+    </div>
+  </div>
+</section>
+<!--
+<div class="field">
+  <div class="control">
+    <label for="" class="label"></label>
+    <input name="" class="input" ng-model="animal.xx" type="text" placeholder="xx">
+  </div>
+</div> -->
+
+
+<!-- <h1 class="title is-1">Add your Pet</h1>
 <div class="columns is-multiline">
   <div class="column is-6">
     <div class="columns is-multiline">
@@ -22,9 +108,9 @@
             <input type="color" ng-model="animal.color" value="#D2691E">
           </span><br><br>
           <textarea type="text" class="column is-12" ng-model="animal.bio" placeholder = "Tell us about your pet"></textarea><br>
-          <button class="button is-link">New</button>
+          <button class="button">Submit</button>
         </form>
       </div>
     </div>
   </div>
-</div>
+</div> -->

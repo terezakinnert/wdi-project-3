@@ -1,62 +1,72 @@
 <section class="hero is-white is-fullheight">
   <div class="hero-body">
     <div class="container has-text-centered">
-      <div class="column is-4 is-offset-4">
-        <h3 class="title has-text-grey">Register</h3>
+      <div class="column is-8 is-offset-2">
+        <h3 class="title is-3">Register</h3>
         <p class="subtitle has-text-grey">Please sign up to proceed.</p>
         <div class="box">
           <form ng-submit="handleRegister()">
+
             <div class="field">
               <div class="control">
-                <input class="input" ng-model="user.username" type="text" name="username" placeholder="Username">
+                <label for="username" class="label">Username</label>
+                <input class="input" ng-model="user.username" type="text" name="username" placeholder="e.g. dogowner23">
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" ng-model="user.email" type="email" name="email" placeholder="Email">
+                <label for="email" class="label">Email</label>
+                <input class="input" ng-model="user.email" type="email" name="email" placeholder="e.g. jon@email.com">
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" ng-model="user.givenName" type="text" name="givenName" placeholder="Given Name">
+                <label for="givenName" class="label">Given Name</label>
+                <input class="input" ng-model="user.givenName" type="text" name="givenName" placeholder="e.g. Jon">
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" ng-model="user.surname" type="text" name="surname" placeholder="Surname">
+                <label for="bio" class="label">Surname</label>
+                <input class="input" ng-model="user.surname" type="text" name="surname" placeholder="e.g. Doe">
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" ng-model="user.location" type="text" name="location" placeholder="Location">
+                <label for="location" class="label">Location</label>
+                <input class="input" ng-model="user.location" type="text" name="location" placeholder="e.g. London, SW9">
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" ng-model="user.profileImageUrl" type="text" name="profileImageUrl" placeholder="URL of your profile image">
+                <label for="profileImageUrl" class="label">Your Profile Image URL</label>
+                <input class="input" ng-model="user.profileImageUrl" type="text" name="profileImageUrl" placeholder="http://...">
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" ng-model="user.age" type="number" name="age" placeholder="Your age">
+                <label for="age" class="label">Age</label>
+                <input class="input" ng-model="user.age" type="number" min="1" name="age" placeholder="e.g. 38">
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" ng-model="user.bio" type="text" name="bio" placeholder="Tell us about yourself...">
+                <label for="bio" class="label">Bio</label>
+                <textarea name="bio" ng-model="user.bio" type="text" class="textarea" placeholder="Tell us about yourself..."></textarea>
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" ng-model="user.password" type="password" name="password" placeholder="Password">
+                <label for="password" class="label">Password</label>
+                <input class="input" ng-model="user.password" type="password" name="password" placeholder="At least 6 characters">
               </div>
             </div>
             <!-- <div class="field">
@@ -69,7 +79,7 @@
       </form>
     </div>
     <p class="has-text-grey">Or</p>
-    <div class="button"><a href="/register">Sign Up</a></div>
+    <div class="button is-medium"><a href="/register">Sign Up</a></div>
     <p class="has-text-grey">if you haven't got an account yet.</p>
   </div>
 </div>
