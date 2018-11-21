@@ -1,74 +1,77 @@
-<head>
-  <title>Register</title>
-</head>
-
-<body>
-  <!-- <section class="hero is-white is-fullheight">
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <div class="column is-4 is-offset-4">
-          <h3 class="title has-text-grey">Sign Up</h3>
-          <p class="subtitle has-text-grey">Please Sign Up to proceed.</p>
-          <div class="box"> -->
-
-            <form ng-submit="handleRegister()">
-              <div class="field">
-                <div class="control">
-                  <input class="input is-large" ng-model="user.username" type="text" name="username" placeholder="Username">
-                </div>
+<section class="hero is-white is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <h3 class="title has-text-grey">Register</h3>
+        <p class="subtitle has-text-grey">Please sign up to proceed.</p>
+        <div class="box">
+          <form ng-submit="handleRegister()">
+            <div class="field">
+              <div class="control">
+                <input class="input" ng-model="user.username" type="text" name="username" placeholder="Username">
               </div>
+            </div>
 
-              <div class="field">
-                <div class="control">
-                  <input class="input is-large" ng-model="user.email" type="email" name="email" placeholder="Email"  autofocus="">
-                </div>
+            <div class="field">
+              <div class="control">
+                <input class="input" ng-model="user.email" type="email" name="email" placeholder="Email">
               </div>
+            </div>
 
-              <div class="field">
-                <div class="control">
-                  <input class="input is-large" ng-model="user.givenName" type="text" name="givenName" placeholder="Given Name">
-                </div>
+            <div class="field">
+              <div class="control">
+                <input class="input" ng-model="user.givenName" type="text" name="givenName" placeholder="Given Name">
               </div>
+            </div>
 
-              <div class="field">
-                <div class="control">
-                  <input class="input is-large" ng-model="user.surname" type="text" name="surname" placeholder="Surname">
-                </div>
+            <div class="field">
+              <div class="control">
+                <input class="input" ng-model="user.surname" type="text" name="surname" placeholder="Surname">
               </div>
+            </div>
 
-              <div class="field">
-                <div class="control">
-                  <input class="input is-large" ng-model="user.location" type="text" name="location" placeholder="Location">
-                </div>
+            <div class="field">
+              <div class="control">
+                <input class="input" ng-model="user.location" type="text" name="location" placeholder="Location">
               </div>
+            </div>
 
-              <div class="field">
-                <div class="control">
-                  <input class="input is-large" ng-model="user.profileImageUrl" type="text" name="profileImageUrl" placeholder="URL of your profile image">
-                </div>
+            <div class="field">
+              <div class="control">
+                <input class="input" ng-model="user.profileImageUrl" type="text" name="profileImageUrl" placeholder="URL of your profile image">
               </div>
+            </div>
 
-              <div class="field">
-                <div class="control">
-                  <input class="input is-large" ng-model="user.password" type="password" name="password" placeholder="Password">
-                </div>
+            <div class="field">
+              <div class="control">
+                <input class="input" ng-model="user.age" type="number" name="age" placeholder="Your age">
               </div>
-              <!-- <div class="field">
-                <label class="checkbox">
-                  <input type="checkbox">
-                  Remember me
-                </label>
-              </div> -->
-              <button class="button is-block is-light is-large is-fullwidth">Register</button>
-            </form>
-          <!-- </div>
-          <p class="has-text-grey">
-            <a href="/register">Register</a>
-          </p>
-        </div>
-      </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input class="input" ng-model="user.bio" type="text" name="bio" placeholder="Tell us about yourself...">
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input class="input" ng-model="user.password" type="password" name="password" placeholder="Password">
+              </div>
+            </div>
+            <!-- <div class="field">
+            <label class="checkbox">
+            <input type="checkbox">
+            Remember me
+          </label>
+        </div> -->
+        <button class="button is-block is-light is-large is-fullwidth">Register</button>
+      </form>
     </div>
-  </section> -->
-</body>
-
-</html>
+    <p class="has-text-grey">Or</p>
+    <div class="button"><a href="/register">Sign Up</a></div>
+    <p class="has-text-grey">if you haven't got an account yet.</p>
+  </div>
+</div>
+</div>
+</section>
