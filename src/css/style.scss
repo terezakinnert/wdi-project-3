@@ -14,7 +14,7 @@ a.navbar-item:hover {
   color: white;
   background: linear-gradient(45deg, #2600c3, #e7005c);
   opacity: 0.8;
-  font-weight: bold;
+  // font-weight: bold;
 }
 
 h5.subtitle {
@@ -24,6 +24,7 @@ h5.subtitle {
 .card-content:hover {
   background: linear-gradient(45deg, #2600c3, #e7005c);
   color: #ffffff;
+  opacity: 0.8;
   .media {
     .media-content {
       p {
@@ -33,20 +34,22 @@ h5.subtitle {
   }
 }
 
+.button.is-light:hover{
+  color: #ffffff;
+}
+
 .button:hover {
   color: #ffffff;
   background: linear-gradient(45deg, #2600c3, #e7005c);
-  font-weight: bold;
+  opacity: 0.75;
   a {
     color: #ffffff;
-    font-weight: bold;
   }
 }
 
 button:hover {
   color: #ffffff;
   background: linear-gradient(45deg, #2600c3, #e7005c);
-  // font-weight: bold;
 }
 
 .content {
