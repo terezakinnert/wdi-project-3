@@ -48,7 +48,10 @@ const userData = [
     email: 'dcomer@app.com',
     givenName: 'David',
     surname: 'Comer',
-    password: 'pass'
+    password: 'pass',
+    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    age: '26',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
     _id: userId[1],
@@ -56,7 +59,10 @@ const userData = [
     email: 't@t',
     givenName: 'Tereza',
     surname: 'Kinnertova',
-    password: 'pass'
+    password: 'pass',
+    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    age: '26',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
     _id: userId[2],
@@ -64,7 +70,10 @@ const userData = [
     email: 'efarrer@app.com',
     givenName: 'Ellie',
     surname: 'Farrer',
-    password: 'pass'
+    password: 'pass',
+    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    age: '23',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
     _id: userId[3],
@@ -72,7 +81,10 @@ const userData = [
     email: 'fcoker@app.com',
     givenName: 'Femi',
     surname: 'Coker',
-    password: 'pass'
+    password: 'pass',
+    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    age: '30',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
     _id: userId[4],

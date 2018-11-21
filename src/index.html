@@ -16,7 +16,7 @@
         <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
         <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Login</a>
         <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log Out {{ username }}</a>
-        <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="profileShow({ id: userId})">My Profile</a>
+        <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="usersShow({ id: userId})">My Profile</a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             <i class="far fa-user"></i>
