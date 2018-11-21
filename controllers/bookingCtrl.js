@@ -22,18 +22,6 @@ function bookingIndex(req, res, next) {
     .catch(next);
 }
 
-// function bookingPendingIndex(req, res, next) {
-//   Booking
-//   //here we are filtering the bookings by animalId
-//   //only the bookings attached to our animals will be shown on the index
-//   //only the bookings greater than (gt) todays date and time
-//     .find({ $and: [{animal: {$in: req.params.animalId }}, {dropoff: {$gt: new Date() }}]
-//     })
-//     .populate('animal booker')
-//     .then(bookings => res.json(bookings))
-//     .catch(next);
-// }
-
 function bookingShow(req, res, next) {
   Booking.findById(req.params.id)
     .populate('animal booker')
@@ -61,5 +49,4 @@ module.exports = {
   index: bookingIndex,
   delete: deleteBooking,
   show: bookingShow
-  // pending: bookingPendingIndex
 };

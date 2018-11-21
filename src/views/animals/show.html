@@ -61,7 +61,7 @@
     <h3 class="subtitle is-3">About {{ animal.name }}</h3>
 
     <p>
-    My name is {{ animal.name }} the {{ animal.species }} and I belong to {{ animal.owner.givenName }}.</p>
+    My name is {{ animal.name }} the {{ animal.species }} and I belong to <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.givenName }}</a></p>
     <p>I am a {{ animal.age }}-year-old <span ng-repeat="breed in animal.breed">{{ breed }}</span>.
     I live in {{ animal.location }}</p>
     <p>{{ animal.bio }}</p>
@@ -107,14 +107,25 @@
 
       <div class="columns column is-12">
         <div class="column is-6">
-          <p>Pending bookings</p>
+          <p>Pending</p>
+          <div ng-repeat="booking in animal.bookings">
+            <div ng-if="booking.status === 'pending'">
+              <p><strong>Human:</strong><a ui-sref="usersShow({ id: booking.booker._id})">{{ booking.booker.givenName}}</a></p>
+              <p><strong>Pickup:</strong> {{ booking.pickup }}</p>
+            </div>
+          </div>
         </div>
 
         <div class="column is-6">
-          <p>Completed bookings</p>
-          <span ng-repeat="booking in animal.bookings">{{ booking.booker.username }}/</span>
+          <p>Completed</p>
+          <div ng-repeat="booking in animal.bookings">
+            <div ng-if="booking.status === 'complete'">
+              <p><strong>Human:</strong> <a ui-sref="usersShow({ id: booking.booker._id})">{{ booking.booker.givenName}}</a></p>
+              <p><strong>Completed:</strong> {{ booking.dropoff }}</p>
+            </div>
+          </div>
         </div>
-      </div>
+
   </div>
   <div class="column is-1"> </div>
 
