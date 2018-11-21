@@ -8,7 +8,7 @@ import animalsIndexController from '../controllers/animals/indexController';
 import animalsShowController from '../controllers/animals/showController';
 
 import bookingsIndexController from '../controllers/bookings/bookingsIndexController';
-// import bookingsShowController from '../controllers/bookings/bookingsShowContoller';
+import bookingsShowController from '../controllers/bookings/bookingsShowController';
 
 
 function Router($urlRouterProvider, $stateProvider) {
@@ -65,6 +65,11 @@ function Router($urlRouterProvider, $stateProvider) {
       templateUrl: './views/bookings/bookingsIndex.html',
       url: '/animals/:id/bookings',
       controller: bookingsIndexController
+    })
+    .state('bookingShow', {
+      templateUrl: './views/bookings/bookingsShow.html',
+      url: '/animals/:id/bookings/:bookingId',
+      controller: bookingsShowController
     })
     .state('animalsEdit', {
       templateUrl: './views/animals/edit.html',

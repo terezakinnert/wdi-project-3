@@ -21,7 +21,7 @@
               <br>
             </p>
             <p class='tagline'>
-              <strong>{{ animal.species }}  |  {{ animal.age }}  |  <span ng-repeat="color in animal.color">{{ color }}</span></strong><br>
+              <strong>{{ animal.species }}  |  {{ animal.age }}  |  <span ng-repeat="color in animal.color">{{ color }}</span> | <img height=30px width=30px src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Asexual_symbol.svg/1004px-Asexual_symbol.svg.png" style="background-color:{{animal.color }};"alt=""></strong><br>
               <em> <span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
               My Human: <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a>
             </p>
@@ -34,7 +34,7 @@
             <!--Holidays -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.bookings.length }}</p>
-              <p class='stat-key'><a ui-sref="bookingIndex({ id: animal._id })">bookings</a></p>
+              <p class='stat-key'><a ui-sref="bookingsShow({ id: animal._id })">bookings</a></p>
             </div>
 
             <!--Reviews -->
@@ -69,7 +69,7 @@
     <h3 class="subtitle is-3">About {{ animal.name }}</h3>
     <p>
     My name is {{ animal.name }} the {{ animal.species }} and I belong to {{ animal.owner.givenName }}.
-    I am a {{ animal.age }}-year-old {{ animal.colour }} <span ng-repeat="breed in animal.breed">{{ breed }}</span>.
+    I am a {{ animal.age }}-year-old <span ng-repeat="breed in animal.breed">{{ breed }}</span>.
     I live in {{ animal.location }}<br>
     {{ animal.bio }}
     </p>
