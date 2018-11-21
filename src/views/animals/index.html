@@ -5,35 +5,29 @@
   </div>
 
   <form ng-submit="handleFilterSubmit()">
-    <!-- //$scope.searchTerm is what the user types into the searchbar -->
     <input type="text" class="input" ng-model="searchTerm">
     <button class="button">🔎</button>
   </form>
 
   <div class="columns is-multiline">
-    <!-- show only the filtered animals -->
     <div ng-repeat="animal in filteredAnimals" class="column is-4">
 
       <a ui-sref="animalsShow({ id: animal._id })">
         <div class="card">
           <div class="card-image">
-            <figure class="image is-4by3">
+            <figure class="image is-4by4">
               <img ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
             </figure>
           </div>
           <div class="card-content">
             <div class="media">
-              <!-- <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                </figure>
-              </div> -->
               <div class="media-content">
-                <p class="title is-4">{{ animal.name }}</p>
-                <p class="subtitle is-6">{{ animal.breed[0] }}</p>
+                <p class="title is-4 media-content">{{ animal.name }}</p>
+                <p class="subtitle is-6 media-content">{{ animal.breed[0] }}</p>
               </div>
             </div>
-            <div class="content"> {{ animal.bio }}</div>
+            <div class="content" ng-init="limit = 205">
+            {{ animal.bio | limitTo: limit}}{{animal.bio.length > limit ? '...' : ''}}</div>
           </div>
         </div>
     </div>
