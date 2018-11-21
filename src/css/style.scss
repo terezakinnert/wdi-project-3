@@ -17,9 +17,6 @@ h5.subtitle {
 
 .card-content:hover {
   background: linear-gradient(45deg, #2600c3, #e7005c);
-  // background: #2193b0;  /* fallback for old browsers */
-  // background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-  // background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #ffffff;
   .media {
     .media-content {
@@ -33,14 +30,17 @@ h5.subtitle {
 .button:hover {
   color: #ffffff;
   background: linear-gradient(45deg, #2600c3, #e7005c);
-  // background: #2193b0;  /* fallback for old browsers */
-  // background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
-  // background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-weight: bold;
   a {
     color: #ffffff;
     font-weight: bold;
   }
+}
+
+button:hover {
+  color: #ffffff;
+  background: linear-gradient(45deg, #2600c3, #e7005c);
+  // font-weight: bold;
 }
 
 .content {
