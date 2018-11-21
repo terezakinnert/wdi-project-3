@@ -53,7 +53,7 @@ const userData = [
   {
     _id: userId[1],
     username: 'tkinnertova',
-    email: 'tkinnertova@app.com',
+    email: 't@t',
     givenName: 'Tereza',
     surname: 'Kinnertova',
     password: 'pass'
