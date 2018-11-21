@@ -4,6 +4,7 @@ function usersEditController($http, $scope, $state) {
     url: `/api/users/${$state.params.id}`
   }).then(result => $scope.user = result.data);
   $scope.editProfile = function() {
+    console.log('user?', $scope.user);
     $http({
       method: 'PUT',
       url: `/api/users/${$state.params.id}`,
