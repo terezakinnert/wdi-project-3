@@ -61,24 +61,17 @@
   <div class="column is-5">
 <!-- Bio -->
     <h3 class="subtitle is-3">About {{ animal.name }}</h3>
-<<<<<<< HEAD
     <p>
-    My name is {{ animal.name }} the {{ animal.species }} and I belong to {{ animal.owner.givenName }}.
-    I am a {{ animal.age }}-year-old <span ng-repeat="breed in animal.breed">{{ breed }}</span>.
-    I live in {{ animal.location }}<br>
-    {{ animal.bio }}
-    </p>
+    My name is {{ animal.name }} the {{ animal.species }} and I belong to {{ animal.owner.givenName }}.</p>
+    <p>I am a {{ animal.age }}-year-old <span ng-repeat="breed in animal.breed">{{ breed }}</span>.
+    I live in {{ animal.location }}</p>
+    <p>{{ animal.bio }}</p>
+
     <p>
       <button ng-if="animal.ownedBy._id === userId" ng-if="isAuthenticated()" ui-sref="animalsEdit({ id: animal._id })">Edit</button>
       <button ng-if="animal.ownedBy._id === userId" ng-if="isAuthenticated()" ng-click="handleDelete()">Delete</button><br><br><br><br><br><br>
     </p>
-=======
-    <div>
-      My name is {{ animal.name }} the {{ animal.species }} and I belong to {{ animal.owner.givenName }}.
-      I am a {{ animal.age }}-year-old {{ animal.colour }} <span ng-repeat="breed in animal.breed">{{ breed }}</span>.
-      I live in {{ animal.location }}<br>
-      {{ animal.bio }}
-    </div>
+
 <!-- Edit & Delete Buttons -->
     <div>
       <form>
@@ -86,7 +79,6 @@
         <button class="button" ng-if="isAuthenticated() && animal.owner._id === userId" ng-click="handleDelete()">Delete</button>
       </form>
     </div>
->>>>>>> development
 
 <!-- Comments -->
     <div class="comments">
