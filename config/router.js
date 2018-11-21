@@ -32,6 +32,12 @@ router.route('/users/:id')
   .get(userCtrl.show);
 // the reason this didn't run before: we didn't have any seeds in! (so it couldn't find animal => threw an error)
 
+router.route('/users/:id/edit')
+  .put(secureRoute, userCtrl.userUpdate);
+
+router.route('/users')
+  .get(userCtrl.usersIndex);
+
 router.route('/pets')
   .get(petCtrl.index)
   .post(secureRoute, petCtrl.create);
