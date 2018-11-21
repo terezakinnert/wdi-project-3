@@ -1,14 +1,13 @@
 const Animal = require('../models/animal');
 
 function createComment(req, res, next) {
-  console.log('anyone home?');
   Animal.findById(req.params.animalId)
     .then(animal => {
       req.body.user = req.tokenUserId;
       animal.comments.push(req.body);
       return animal.save();
     })
-    .then(animal => Animal.populate(animal, 'ownedBy comments.user'))
+    .then(animal => Animal.populate(animal, 'owner comments.user'))
     .then(animal => res.json(animal))
     .catch(next);
 }
@@ -20,7 +19,7 @@ function deleteComment(req, res, next) {
       comment.remove();
       return animal.save();
     })
-    .then(animal => Animal.populate(animal, 'ownedBy comments.user'))
+    .then(animal => Animal.populate(animal, 'owner comments.user'))
     .then(animal => res.json(animal))
     .catch(next);
 }
