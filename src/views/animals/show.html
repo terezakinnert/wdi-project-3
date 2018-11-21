@@ -68,10 +68,10 @@
     I live in {{ animal.location }}</p>
     <p>{{ animal.bio }}</p>
 
-    <p>
+    <div>
       <button ng-if="animal.ownedBy._id === userId" ng-if="isAuthenticated()" ui-sref="animalsEdit({ id: animal._id })">Edit</button>
-      <button ng-if="animal.ownedBy._id === userId" ng-if="isAuthenticated()" ng-click="handleDelete()">Delete</button><br><br><br><br><br><br>
-    </p>
+      <button ng-if="animal.ownedBy._id === userId" ng-if="isAuthenticated()" ng-click="handleDelete()">Delete</button>
+    </div>
 
 <!-- Edit & Delete Buttons -->
     <div>
