@@ -17,7 +17,7 @@
             <p>
               <span class='title is-bold'>{{ animal.name }}</span>
               <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
-              {{animal.species.toLowerCase()}}
+              {{ animal.species.toLowerCase() }}
               <br>
             </p>
             <p class='tagline'>
@@ -28,7 +28,6 @@
             <div class="button"><a ui-sref="bookingIndex({ id: animal._id })">Bookings</a>
             </div>
           </div>
-
           <div class="columns is-multiline">
 
 <!--Holidays -->
@@ -46,9 +45,9 @@
 <!--Star Rating -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
-              <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad {{animal.sex}}</p>
-              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a>Good {{animal.sex}}</p>
-              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a>Really Good {{animal.sex}}</p>
+              <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad {{ animal.sex }}</p>
+              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a>Good {{ animal.sex }}</p>
+              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a>Really Good {{ animal.sex }}</p>
             </div>
           </div>
         </div>
@@ -71,7 +70,7 @@
 <!-- Edit & Delete Buttons -->
     <div>
       <form>
-        <button class="button" ng-if="isAuthenticated() && animal.owner._id === userId" ui-sref="animalsEdit({ id: animal._id })" >Edit</button>
+        <button class="button" ng-if="isAuthenticated() && animal.owner._id === userId" ui-sref="animalsEdit({ id: animal._id })">Edit</button>
         <button class="button" ng-if="isAuthenticated() && animal.owner._id === userId" ng-click="handleDelete()">Delete</button>
       </form>
     </div>
@@ -85,6 +84,9 @@
         <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
       </div>
 
+
+
+
 <!-- Comment Form -->
       <h6 class="subtitle is-6">Add a Comment</h6>
       <form ng-submit="createComment()">
@@ -94,10 +96,7 @@
     </div>
   </div>
 
-  <div class="column is-5">
-  </div>
-
-  <div class="column is-1">
-  </div>
+  <div class="column is-5"> </div>
+  <div class="column is-1"> </div>
 
 </div>
