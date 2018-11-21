@@ -1,13 +1,18 @@
 function bookingsNewController($http, $scope, $state, $auth) {
   $scope.booking = {};
   $scope.handleSubmit = function() {
-    $scope.booking.createdBy = $auth.getPayload().sub;
-    // console.log('Form submitted');
+    $scope.booking.booker = $auth.getPayload().sub;
+    console.log('Now lets post to the bookings page');
     $http({
       method: 'POST',
-      url: '/api/pets/:petId/bookings/',
+      url: `/api/pets/${$state.params.id}/bookings`,
       data: $scope.booking
-    }).then(() => $state.go('bookingsIndex'));
+    }).then(result => {
+      console.log('we have our result.data._id should be 297a', result.data.animal.id);
+      $state.go('bookingIndex', {
+        id: result.data.animal.id
+      });
+    });
   };
 }
 

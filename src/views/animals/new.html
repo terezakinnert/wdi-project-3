@@ -11,8 +11,7 @@
           <input type="radio" ng-model="animal.sex" name="sex" value="girl">Girl<br>
           <input type="text" class="column is-12" ng-model="animal.species"placeholder = "(Dropdown?)">
           <input type="text" class="column is-12" ng-model="animal.breed"placeholder = "Dropdown based on species?">
-          <!-- <input type="color" class="column is-12" ng-model="animal.color"placeholder = "Color"><br> -->
-          <p>Choose your animal's colors:</p>
+          <p>What colour is your pet?</p>
           <span>
             <input type="color" ng-model="animal.color" value="#000000">
           </span>
@@ -22,7 +21,7 @@
           <span>
             <input type="color" ng-model="animal.color" value="#D2691E">
           </span><br><br>
-          <textarea type="text" class="column is-12" ng-model=" animal.bio" placeholder = "Tell us about your pet"></textarea><br>
+          <textarea type="text" class="column is-12" ng-model="animal.bio" placeholder = "Tell us about your pet"></textarea><br>
           <button class="button is-link">New</button>
         </form>
       </div>
