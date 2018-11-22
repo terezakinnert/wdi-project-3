@@ -70,7 +70,8 @@
 <!--Star Rating -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
-              <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad {{ animal.sex }}</p>
+              <p class='stat-key' ng-if="!animal.meanRating"><a href="#"></a>No ratings yet</p>
+              <p class='stat-key' ng-if="animal.meanRating >0 && animal.meanRating <2"><a href="#"></a>Bad {{ animal.sex }}</p>
               <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a>Good {{ animal.sex }}</p>
               <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a>Really Good {{ animal.sex }}</p>
             </div>
