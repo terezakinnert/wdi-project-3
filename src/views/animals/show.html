@@ -90,6 +90,10 @@
 <!-- Bio -->
     <h3 class="subtitle is-3">About {{ animal.name }}</h3>
 
+    <div class="map-container">
+      <div id="map-element" class="map"></div>
+    </div>
+
     <p>
     My name is {{ animal.name }} the {{ animal.species }} and I belong to <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.givenName }}</a></p>
     <p>I am a {{ animal.age }}-year-old <span ng-repeat="breed in animal.breed">{{ breed }}</span>.
