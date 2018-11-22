@@ -15,7 +15,11 @@ const userId = [
   '5be9aa1bac3c11cea4303506',
   '5be9aa1bac3c11cea4303507',
   '5be9aa1bac3c11cea4303508',
-  '5be9aa1bac3c11cea4303509'
+  '5be9aa1bac3c11cea4303509',
+  '5be9aa1bac3c11cea430350a',
+  '5be9aa1bac3c11cea430350b',
+  '5be9aa1bac3c11cea430350c',
+  '5be9aa1bac3c11cea430350d'
 ];
 
 const animalId = [
@@ -161,28 +165,289 @@ const userData = [
     profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
     age: '32',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    _id: userId[8],
+    username: 'jlalley',
+    email: 'jlalley@app.com',
+    givenName: 'Lil\' Joe',
+    surname: 'Lalley',
+    password: 'pass',
+    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    age: '18',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    _id: userId[9],
+    username: 'iweiershäuser',
+    email: 'iweiershauser@app.com',
+    givenName: 'Ines',
+    surname: 'weiershäuser',
+    password: 'pass',
+    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    age: '24',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   }
 ];
 
 const animalData = [
-  { _id: animalId[0], name: 'Reggie', bio: 'I was found on the side of a motorway in Oxford when I was a pup. I hate direct eye contact and my favourite foods are bacon and cushions.', sex: 'Boy', species: 'Dog', breed: ['Greyhound', 'Whippet'], age: 5, color: [ 'Brown', 'White'], imageUrl: 'https://imgur.com/bDBMlEA.png', location: 'B91 1NW', owner: userId[0], rating: [5, 5, 5, 5, 5] },
-  { _id: animalId[1], name: 'Charlie', bio: 'I am so needy you can\'t even comprehend. My humans left the fridge open once and I ate two sticks of butter and an entire birthday cake. You best pay me your full attention on walks because I will absolutely roll in shit when you\'re not looking.', sex: 'Boy', species: 'Dog', breed: ['Lurcher'], age: 3, color: [ 'Brown'], imageUrl: 'https://imgur.com/PBCkJJz.png', location: 'B91 1TR', owner: userId[0], rating: [1, 1, 1, 1, 1] },
-  { _id: animalId[2], name: 'Leila', bio: 'I am so performatively happy that I\'ve broken my tail twice by wagging it too enthusastically and hitting things. If you are eating cheese, ice cream, or cereal, watch your back. I have a particular affinity for senior citizens.', sex: 'Girl', species: 'Dog', breed: ['Labrador'], age: 11, color: [ 'Black'], imageUrl: 'https://imgur.com/DHwHBEF.png', location: 'HP5 1DL', owner: userId[2], rating: [5, 4, 5, 4, 4] },
-  { _id: animalId[3], name: 'Rocky II', bio: 'Speak up. I\'m almost too deaf to fuction. I have all the grace of an elephant at the ballet and if you stroke me, you will end up with a handful of fur', sex: 'Boy', species: 'Dog', breed: ['German Shepherd'], age: 14, color: [ 'Black', 'Orange' ], imageUrl: 'https://imgur.com/n1HT62i.png', location: 'W3 7JE', owner: userId[5], rating: [5, 5, 5, 5, 5, 4] },
-  { _id: animalId[4], name: 'Whiskey', bio: '', sex: 'Boy', species: 'Cat', breed: ['Domestic Shorthair'], age: 4, color: ['Ginger'], imageUrl: 'https://imgur.com/1TMWV99.png', location: 'W3 7JE', owner: userId[5], rating: [] },
-  // { _id: animalId[5], name: 'Sylvester', bio: '', sex: 'Boy', species: 'Cat', breed: ['Domestic Shorthair'], age: 3, color: ['White'], imageUrl: '', location: 'W3 7JE', owner: userId[5], rating: [] },
-  // { name: 'Max', bio: '', sex: 'Boy', species: 'Dog', breed: ['German Shepherd', 'Mamalute'], age: 1, color: ['Grey', 'White'], imageUrl: '', location: 'TN13 1AB ', owner: 'kadamson', rating: [] },
-  // { name: 'Nala', bio: '', sex: 'Girl', species: 'Dog', breed: ['Border Collie'], age: 1, color: ['Brown'], imageUrl: '', location: 'TN13 1AB ', owner: 'kadamson', rating: [] },
-  { _id: animalId[8], name: 'Becky', bio: 'I will literally eat anything.', sex: 'Girl', species: 'Snake', breed: ['Royal Python Morph'], age: 5, color: ['Black', 'Brown', 'White'], imageUrl: 'https://imgur.com/UJVcWq0.png', location: 'E16 1DQ', owner: userId[3], rating: [5, 4, 4, 5, 5] },
-  { _id: animalId[9], name: 'Judas', bio: 'I\'m a lover, not a biter. LOL, jk - monch monch bitch.', sex: 'Boy', species: 'Snake', breed: ['Royal Python Morph'], age: 5, color: ['Black', 'Brown', 'White'], imageUrl: 'https://imgur.com/xwVn4c6.png', location: 'E16 1DQ', owner: userId[3], rating: [2, 1, 2, 1, 1] },
-  { _id: animalId[10], name: 'Albert', bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', sex: 'Boy', species: 'Dog', breed: ['Staffordshire Bull Terrier'], age: 7, color: ['Black'], imageUrl: 'https://imgur.com/FP1DGqx.png', location: 'W6 0EZ', owner: userId[7], rating: [2, 1, 3, 2, 2] },
-  // { name: 'Sunny', bio: '', sex: 'Girl', species: 'Dog', breed: ['Golden Retreiver'], age: 1, color: ['Golden'], imageUrl: '', location: '', owner: 'zbarrington', rating: [] },
-  // { name: 'Marley', bio: '', sex: 'Boy', species: 'Dog', breed: ['Golden Labrador'], age: 1, color: ['Golden'], imageUrl: 'https://imgur.com/Ys81Fdy', location: 'SW19 7NL', owner: 'jlalley', rating: [] },
-  // { name: 'Lola', bio: '', sex: 'Girl', species: 'Cat', breed: ['Domestic Shorthair'], age: 2, color: ['White'], imageUrl: 'https://imgur.com/G0hIEpO.png', location: 'BR1 1LX', owner: 'sshamsiddin', rating: [] },
-  { _id: animalId[14], name: 'Umi', bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', sex: 'Girl', species: 'Cat', breed: ['Tabby'], age: 2, color: ['Grey', 'Black', 'White'], imageUrl: 'https://imgur.com/vc0D22W.png', location: 'BR1 1LX', owner: userId[4], rating: [5, 4, 5] },
-  // { name: 'Storm', bio: '', sex: 'Girl', species: 'Dog', breed: ['Siberian Husky', 'Pomeranian'], age: 1, color: ['Grey', 'White'], imageUrl: 'https://imgur.com/oPZSQmD', location: '', owner: 'ahaizet', rating: [] },
-  { _id: animalId[16], name: 'Bonnie', bio: 'Born in the Swiss Alps, I have stubbornly expensive taste and will only eat my family’s favourite shoes. Widely considered Bishop Stortford\'s most useless guard dog, what I lack in ferociousess I make up for in loveability!', sex: 'Girl', species: 'Dog', breed: ['Appenzeller'], age: 10, color: ['Black', 'Brown', 'White'], imageUrl: 'https://imgur.com/KTpGXKy.png', location: 'CB11 4LB', owner: userId[6], rating: [5, 5, 3, 5, 5] }
-  // { name: 'Betsy', bio: '', sex: 'Girl', species: 'Dog', breed: ['Border Collie'], age: 13, color: ['Black', 'Brown', 'White'], imageUrl: 'https://imgur.com/dUF9ewW.png', location: '69483', owner: 'iweiershauser', rating: [5, 5, 5, 5, 5] }
+  {
+    _id: animalId[0],
+    name: 'Reggie',
+    bio: 'I was found on the side of a motorway in Oxford when I was a pup. I hate direct eye contact and my favourite foods are bacon and cushions.',
+    sex: 'Boy',
+    species: 'Dog',
+    breed: ['Greyhound', 'Whippet'],
+    age: 5,
+    color: [ 'Brown', 'White'],
+    imageUrl: 'https://imgur.com/bDBMlEA.png',
+    location: 'B91 1NW',
+    owner: userId[0],
+    reviews: [
+      {
+        rating: 5,
+        text: 'Nice',
+        user: userId[1]
+      }, {
+        rating: 2,
+        text: 'Ok',
+        user: userId[2]
+      }
+    ]
+  },
+  {
+    _id: animalId[1],
+    name: 'Charlie',
+    bio: 'I am so needy you can\'t even comprehend. My humans left the fridge open once and I ate two sticks of butter and an entire birthday cake. You best pay me your full attention on walks because I will absolutely roll in shit when you\'re not looking.',
+    sex: 'Boy',
+    species: 'Dog',
+    breed: ['Lurcher'],
+    age: 3,
+    color: [ 'Brown'],
+    imageUrl: 'https://imgur.com/PBCkJJz.png',
+    location: 'B91 1TR',
+    owner: userId[0],
+    rating: [1, 1, 1, 1, 1]
+  },
+  {
+    _id: animalId[2],
+    name: 'Leila',
+    bio: 'I am so performatively happy that I\'ve broken my tail twice by wagging it too enthusastically and hitting things. If you are eating cheese, ice cream, or cereal, watch your back. I have a particular affinity for senior citizens.',
+    sex: 'Girl',
+    species: 'Dog',
+    breed: ['Labrador'],
+    age: 11,
+    color: [ 'Black'],
+    imageUrl: 'https://imgur.com/DHwHBEF.png',
+    location: 'HP5 1DL',
+    owner: userId[2],
+    rating: [5, 4, 5, 4, 4]
+  },
+  {
+    _id: animalId[3],
+    name: 'Rocky II',
+    bio: 'Speak up. I\'m almost too deaf to fuction. I have all the grace of an elephant at the ballet and if you stroke me, you will end up with a handful of fur',
+    sex: 'Boy',
+    species: 'Dog',
+    breed: ['German Shepherd'],
+    age: 14,
+    color: [ 'Black', 'Orange' ],
+    imageUrl: 'https://imgur.com/n1HT62i.png',
+    location: 'W3 7JE',
+    owner: userId[5],
+    rating: [5, 5, 5, 5, 5, 4]
+  },
+  {
+    _id: animalId[4],
+    name: 'Whiskey',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    sex: 'Boy',
+    species: 'Cat',
+    breed: ['Domestic Shorthair'],
+    age: 4,
+    color: ['Ginger'],
+    imageUrl: 'https://imgur.com/1TMWV99.png',
+    location: 'W3 7JE',
+    owner: userId[5],
+    rating: [3, 3, 4, 4, 4]
+  },
+  {
+    _id: animalId[5],
+    name: 'Sylvester',
+    bio: '',
+    sex: 'Boy',
+    species: 'Cat',
+    breed: ['Domestic Shorthair'],
+    age: 3,
+    color: ['Black', 'White'],
+    imageUrl: '',
+    location: 'W3 7JE',
+    owner: userId[5],
+    rating: []
+  },
+  {
+    _id: animalId[6],
+    name: 'Max',
+    bio: '',
+    sex: 'Boy',
+    species: 'Dog',
+    breed: ['German Shepherd', 'Mamalute'],
+    age: 1,
+    color: ['Grey', 'White'],
+    imageUrl: '',
+    location: 'TN13 1AB ',
+    rating: []
+  },
+  {
+    _id: animalId[7],
+    name: 'Nala',
+    bio: '',
+    sex: 'Girl',
+    species: 'Dog',
+    breed: ['Border Collie'],
+    age: 1,
+    color: ['Brown'],
+    imageUrl: '',
+    location: 'TN13 1AB ',
+    rating: []
+  },
+  {
+    _id: animalId[8],
+    name: 'Becky',
+    bio: 'I will literally eat anything.',
+    sex: 'Girl',
+    species: 'Snake',
+    breed: ['Royal Python Morph'],
+    age: 5,
+    color: ['Black', 'Brown', 'White'],
+    imageUrl: 'https://imgur.com/UJVcWq0.png',
+    location: 'E16 1DQ',
+    owner: userId[3],
+    rating: [5, 4, 4, 5, 5]
+  },
+  {
+    _id: animalId[9],
+    name: 'Judas',
+    bio: 'I\'m a lover, not a biter. LOL, jk - monch monch bitch.',
+    sex: 'Boy',
+    species: 'Snake',
+    breed: ['Royal Python Morph'],
+    age: 5,
+    color: ['Black', 'Brown', 'White'],
+    imageUrl: 'https://imgur.com/xwVn4c6.png',
+    location: 'E16 1DQ',
+    owner: userId[3],
+    rating: [2, 1, 2, 1, 1]
+  },
+  {
+    _id: animalId[10],
+    name: 'Albert',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    sex: 'Boy',
+    species: 'Dog',
+    breed: ['Staffordshire Bull Terrier'],
+    age: 7,
+    color: ['Black'],
+    imageUrl: 'https://imgur.com/FP1DGqx.png',
+    location: 'W6 0EZ',
+    owner: userId[7],
+    rating: [2, 1, 3, 2, 2]
+  },
+  {
+    _id: animalId[11],
+    name: 'Sunny',
+    bio: '',
+    sex: 'Girl',
+    species: 'Dog',
+    breed: ['Golden Retreiver'],
+    age: 1,
+    color: ['Golden'],
+    imageUrl: '',
+    location: '',
+    rating: []
+  },
+  {
+    _id: animalId[12],
+    name: 'Marley',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    sex: 'Boy',
+    species: 'Dog',
+    breed: ['Golden Labrador'],
+    age: 1,
+    color: ['Gold'],
+    imageUrl: 'https://imgur.com/Ys81Fdy.png',
+    location: 'SW19 7NL',
+    owner: userId[8],
+    rating: []
+  },
+  {  _id: animalId[13],
+    name: 'Lola',
+    bio: '',
+    sex: 'Girl',
+    species: 'Cat',
+    breed: ['Domestic Shorthair'],
+    age: 2,
+    color: ['White'],
+    imageUrl: 'https://imgur.com/G0hIEpO.png',
+    location: 'BR1 1LX',
+    owner: userId[4],
+    rating: []
+  },
+  {
+    _id: animalId[14],
+    name: 'Umi',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    sex: 'Girl',
+    species: 'Cat',
+    breed: ['Tabby'],
+    age: 2,
+    color: ['Grey', 'Black', 'White'],
+    imageUrl: 'https://imgur.com/vc0D22W.png',
+    location: 'BR1 1LX',
+    owner: userId[4],
+    rating: [5, 4, 5]
+  },
+  {
+    _id: animalId[15],
+    name: 'Storm',
+    bio: '',
+    sex: 'Girl',
+    species: 'Dog',
+    breed: ['Siberian Husky', 'Pomeranian'],
+    age: 1,
+    color: ['Grey', 'White'],
+    imageUrl: 'https://imgur.com/oPZSQmD',
+    location: '',
+    rating: []
+  },
+  {
+    _id: animalId[16],
+    name: 'Bonnie',
+    bio: 'Born in the Swiss Alps, I have stubbornly expensive taste and will only eat my family’s favourite shoes. Widely considered Bishop Stortford\'s most useless guard dog, what I lack in ferociousess I make up for in loveability!',
+    sex: 'Girl',
+    species: 'Dog',
+    breed: ['Appenzeller'],
+    age: 10,
+    color: ['Black', 'Brown', 'White'],
+    imageUrl: 'https://imgur.com/KTpGXKy.png',
+    location: 'CB11 4LB',
+    owner: userId[6],
+    rating: [5, 5, 3, 5, 5]
+  },
+  {
+    _id: animalId[17],
+    name: 'Betsy',
+    bio: 'You\re going to want to hold your breath for the entirety of my stay.',
+    sex: 'Girl',
+    species: 'Dog',
+    breed: ['Border Collie'],
+    age: 13,
+    color: ['Black', 'Brown', 'White'],
+    imageUrl: 'https://imgur.com/dUF9ewW.png',
+    location: '69483',
+    owner: userId[9],
+    rating: [5, 5, 5, 5, 5]
+  }
 ];
 
 Animal.collection.drop();
@@ -201,4 +466,4 @@ Animal.create(animalData)
             mongoose.connection.close();
           });
       });
-  });
+});
