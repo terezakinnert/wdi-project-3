@@ -6,6 +6,8 @@
           <span class='header-icon user-profile-image'>
             <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
           </span>
+          <div class="button"><a ui-sref="bookingNew({ id: animal._id})">Book {{ animal.name }}</a>
+          </div>
         </div>
 
 <!-- Pet Header-->
@@ -15,34 +17,38 @@
           <div class='column is-3'>
             <div>
               <span class='title is-bold'>{{ animal.name }}</span><br>
+              <em><span ng-repeat="color in animal.color"><span style="color: {{ color }}; border: solid 1px black; border-radius: 50%; background-color:{{ color }};">.......</span>  </span></em><br>
+              <br>
                 <p class='tagline'>
                   <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
-                  <em><span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
+                  <em><span ng-repeat="breed in animal.breed">{{ breed }} </span></em><br>
                 </p>
-              <i class="fas fa-map-pin"></i>
-              <strong><a href="#">{{animal.location}}</a></strong>
             </div>
-
-            <p >
-              <i class="fas fa-user"></i>
-              <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a><br>
-              <span>
-                <a ui-sref="usersShow({ id: animal.owner._id})">
-                  <img height="45px" width="45px" style="border-radius: 50%;" class='is-rounded' alt='' ng-src="{{ animal.owner.profileImageUrl }}" alt="{{ animal.owner.username }}">
-                </a>
-              </span>
-            </p>
-
-
           </div>
 
 <!-- Pet Header Right-->
           <div class='column is-9'>
-
-              <p>{{ animal.bio }}</p>
-              <div class="button"><a ui-sref="bookingNew({ id: animal._id})">Book {{ animal.name }}</a>
+            <div class="columns is-multiline">
+              <div class='column is-12'>
+                <p>{{ animal.bio }}</p>
+              </div>
+              <div class='column is-3 is-cent'>
+                <i class="fas fa-map-pin"></i><br>
+                <strong><a href="#">{{animal.location}}</a></strong>
+              </div>
+              <div class='column is-3 is-centered'>
+                <i class="fas fa-user"></i><br>
+                <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a><br>
+              </div>
+              <div class='column is-3 is-centered'>
+                <span>
+                  <a ui-sref="usersShow({ id: animal.owner._id})">
+                    <img height="45px" width="45px" style="border-radius: 50%;" class='is-rounded' alt='' ng-src="{{ animal.owner.profileImageUrl }}" alt="{{ animal.owner.username }}">
+                  </a>
+                </span>
               </div>
             </div>
+          </div>
         </div>
 
 

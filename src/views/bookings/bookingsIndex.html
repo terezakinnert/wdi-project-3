@@ -6,11 +6,13 @@
         <!-- Pet Image -->
         <div class='column is-3'>
           <span class='header-icon user-profile-image'>
-            <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
+            <a ui-sref="animalsShow({ id: animal._id})">
+              <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
+            </a>
           </span>
         </div>
         <!-- Pet Header -->
-        <div class="column is-4">
+        <div class="column is-3">
             <p>
               <span class='title is-bold'>{{ animal.name }}</span>
               <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
@@ -28,7 +30,7 @@
         </div>
 
         <!-- Pet Current Booking -->
-        <div class="column is-5">
+        <div class="column is-6">
           <p><strong>Booking in Progress</strong></p><br>
             <div ng-repeat="booking in filteredBookings">
               <div ng-if="booking.status === 'inProgress'">
@@ -42,7 +44,7 @@
 
                   <!-- Booking Details -->
                   <div class="column is-9">
-                    <span>☆☆☆☆☆ </span><br>
+                    <span><strong>{{ booking.booker.givenName }} {{ booking.booker.surname }}</strong></span><br>
                     <span><strong>Pickup:</strong> {{ booking.pickup }}</span><br>
                     <span><strong>Drop Off:</strong> {{ booking.dropoff }}</span>
                   </div>
