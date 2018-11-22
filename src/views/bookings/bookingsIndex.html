@@ -1,4 +1,3 @@
-
 <div class='columns is-multiline is-centered'>
   <div class='column is-8 container profile'>
     <div class='section profile-heading'>
@@ -6,22 +5,21 @@
 
         <div class='column is-3'>
           <span class='header-icon user-profile-image'>
-            <img class='is-rounded' alt='' ng-src="{{ booking.animal.imageUrl }}" alt="{{ animal.name }}">
+            <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
           </span>
         </div>
         <!-- Pet Header -->
         <div class="column is-9">
           <div class='column is-12 name'>
             <p>
-              <span class='title is-bold'>{{ booking.animal.name }}</span>
+              <span class='title is-bold'>{{ animal.name }}</span>
               <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
-              {{ booking.animal.species.toLowerCase() }}
               <br>
             </p>
             <p class='tagline'>
-              <strong>{{ booking.animal.species }}  |  {{ booking.animal.age }}  |  <span ng-repeat="color in animal.color">{{ color }}</span> | <img height=30px width=30px src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Asexual_symbol.svg/1004px-Asexual_symbol.svg.png" style="background-color:{{animal.color }};"alt=""></strong><br>
+              <strong>{{ animal.species }}  |  {{ animal.age }}  </strong><br>
               <em><span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
-              My Human: <a ui-sref="usersShow({ id: booking.animal.owner._id})">{{ booking.animal.owner.username }}</a>
+              My Human: <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a>
             </p>
             <div class="button"><a ui-sref="bookingNew({ id: animal._id})">Book</a>
             </div>
