@@ -29,15 +29,6 @@ function bookingShow(req, res, next) {
     .catch(next);
 }
 
-
-// function updateBooking(req, res, next) {
-//   Booking.findById(req.params.bookingId)
-//     .then(booking => booking.set(req.body))
-//     .then(booking => booking.save())
-//     .then(booking => res.json(booking))
-//     .catch(next);
-// }
-
 function deleteBooking(req, res, next) {
   Booking.findByIdAndDelete(req.params.bookingId)
     .then(() => res.sendStatus(204))
