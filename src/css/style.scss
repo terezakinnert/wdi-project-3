@@ -9,6 +9,20 @@
 .navbar.is-light .navbar-end > a.navbar-item:hover {
   color: white;
 }
+.navbar {
+  background: 
+    linear-gradient(
+      to left,
+      #5B86E5 0%,
+      // rgba(134,29,84,1) 12%,
+      // rgba(255,93,177,1) 47%,
+      #36D1DC 100%
+    )
+    left
+    bottom
+    no-repeat;
+  background-size:100% 3px ;/* if linear-gradient, we need to resize it */
+}
 
 a {
   color: #5B86E5;
