@@ -39,7 +39,7 @@ animalSchema.virtual('bookings', {
 // average rating virtual
 animalSchema.virtual('meanRating')
   .get(function() {
-    return this.reviews.reduce((total, review) => total += review.rating, 0) / this.reviews.length;
+    return (this.reviews.reduce((total, review) => total += review.rating, 0) / this.reviews.length).toFixed(2);
   });
 
 // include virtuals in res.json
