@@ -406,7 +406,7 @@ const animalData = [
   {
     _id: animalId[10],
     name: 'Albert',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    bio: 'If youre hosue isn\'t fully stocked with beer and bisuits, like seriously don\'t even bother because I have better things to be doing. Happy to travel by tube in exchange for beer and biscuits.',
     sex: 'Boy',
     species: 'Dog',
     breed: ['Staffordshire Bull Terrier'],
@@ -419,7 +419,7 @@ const animalData = [
       {
         rating: 2,
         text: 'Naughty boy.',
-        user: userId[10]
+        user: userId[8]
       }, {
         rating: 2,
         text: 'So naughty',
