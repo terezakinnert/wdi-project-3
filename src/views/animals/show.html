@@ -79,21 +79,21 @@
       </form>
     </div>
 
-<!-- Comments -->
-    <div class="comments">
-      <h5 class="subtitle is-5">Comments</h5>
-      <div ng-repeat="comment in animal.comments">
-        <span style="font-weight:bold;">{{ comment.user.username }}</span>
-        <span>{{ comment.text }}</span>
-        <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+<!-- Reviews -->
+    <div class="reviews">
+      <h5 class="subtitle is-5">Reviews</h5>
+      <div ng-repeat="review in animal.reviews">
+        <span style="font-weight:bold;">{{ review.user.username }}</span>
+        <span>{{ review.text }}</span>
+        <button ng-if="isAuthenticated() && review.user._id === userId" class="delete-button" ng-click="deleteReview(review)">x</button>
       </div>
 
-<!-- Comment Form -->
+<!-- review Form -->
       <div ng-if="isAuthenticated()" class="">
-      <h6 class="subtitle is-6">Add a Comment</h6>
-        <form ng-submit="createComment()">
-          <textarea name="text" ng-model="comment.text" class="textarea"></textarea>
-          <button class="button">Comment</button>
+      <h6 class="subtitle is-6">Add a review</h6>
+        <form ng-submit="createReview()">
+          <textarea name="text" ng-model="review.text" class="textarea"></textarea>
+          <button class="button">review</button>
         </form>
       </div>
   </div>
@@ -110,7 +110,7 @@
           <p>Pending</p>
           <div ng-repeat="booking in animal.bookings">
             <div ng-if="booking.status === 'pending'">
-              <p><strong>Human:</strong><a ui-sref="usersShow({ id: booking.booker._id})">{{ booking.booker.givenName}}</a></p>
+              <p><strong>Human: </strong><a ui-sref="usersShow({ id: booking.booker._id})">{{ booking.booker.givenName}}</a></p>
               <p><strong>Pickup:</strong> {{ booking.pickup }}</p>
             </div>
           </div>
@@ -120,7 +120,7 @@
           <p>Completed</p>
           <div ng-repeat="booking in animal.bookings">
             <div ng-if="booking.status === 'complete'">
-              <p><strong>Human:</strong> <a ui-sref="usersShow({ id: booking.booker._id})">{{ booking.booker.givenName}}</a></p>
+              <p><strong>Human: </strong> <a ui-sref="usersShow({ id: booking.booker._id})">{{ booking.booker.givenName}}</a></p>
               <p><strong>Completed:</strong> {{ booking.dropoff }}</p>
             </div>
           </div>
