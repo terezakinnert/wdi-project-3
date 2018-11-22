@@ -74,10 +74,10 @@
 <!--Star Rating -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
-              <p class='stat-key' ng-if="!animal.meanRating"><a href="#"></a>No ratings yet</p>
+              <p class='stat-key' ng-if="!animal.meanRating">No ratings yet</p>
               <p class='stat-key' ng-if="animal.meanRating >0 && animal.meanRating <2"><a href="#"></a><strong>Bad {{ animal.sex }}</strong></p>
               <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a><strong>Good {{ animal.sex }}</strong></p>
-              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a><strong><em>Really</em>Good {{ animal.sex }}</strong></p>
+              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a><strong><em>Really</em> Good {{ animal.sex }}</strong></p>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@
   <!-- Split Screen Left -->
   <div class="column is-5">
 <!-- Bio -->
-    <i class="fas fa-map-marker-alt"></i>
+    <i class="fab fa-periscope"></i>
     {{animal.name}}'s Current Location
 
     <div class="map-container">
@@ -117,21 +117,28 @@
 <!-- Split Screen Right -->
   <div class="column is-5">
     <!-- Bookings -->
-      <h3 class="subtitle">{{ animal.name }}'s Bookings</h3>
+    <i class="fas fa-star"></i>
+    Ratings for {{animal.name}}
 
       <div class="columns is-multiline">
         <div class="column is-12" ng-repeat="review in animal.reviews">
-          <span style="font-weight:bold;">{{ review.user.username }}</span>
-          <span>{{ review.text }}</span>
-          <button ng-if="isAuthenticated() && review.user._id === userId" class="delete-button" ng-click="deleteReview(review)">x</button>
-      </div>
-      <div ng-if="isAuthenticated()">
-        <a ui-sref="reviews({ id: animal._id })" class="button">Add a review</a>
-      </div>
-  </div>
-</div>
+          <div class='card columns is-multiline'>
+      <!-- Booker Profile Image -->
+            <div class="column is-3">
+              <a ui-sref="usersShow({ id: review.user._id})">
+                <img style="border-radius: 50%" height=60px width=60px  src="{{ review.user.profileImageUrl }}">
+              </a>
+            </div>
+      <!-- Booking Details -->
+            <div class="column is-9">
+              <p class='stat-key' ng-if="review.rating === 1">⭐️</p>
+              <p class='stat-key' ng-if="review.rating === 2">⭐️⭐️</p>
+              <p class='stat-key' ng-if="review.rating === 3">⭐️⭐️⭐️</p>
+              <p class='stat-key' ng-if="review.rating === 4">⭐️⭐️⭐️⭐️</p>
+              <p class='stat-key' ng-if="review.rating === 5">⭐️⭐️⭐️⭐️⭐️</p>
 
-  </div>
-  <div class="column is-1"> </div>
-
+              <span><em>"{{ review.text }}"</em>"</span>
+            </div>
+          </div><br>
+    </div>
 </div>
