@@ -56,7 +56,7 @@ describe('Animal CREATE', () => {
   });
 
   it('should return a 401 response without a token', done => {
-    api.post('/api/movies')
+    api.post('/api/pets')
       .end((err, res) => {
         expect(res.status).to.eq(401);
         done();
@@ -64,9 +64,9 @@ describe('Animal CREATE', () => {
   });
 
   it('should return a 200 response', done => {
-    api.post('/api/movies')
+    api.post('/api/pets')
       .set('Authorization', `Bearer ${token}`)
-      .send(movieData)
+      .send(animalData)
       .end((err, res) => {
         expect(res.status).to.eq(200);
         done();
@@ -74,9 +74,9 @@ describe('Animal CREATE', () => {
   });
 
   it('should return an object', done => {
-    api.post('/api/movies')
+    api.post('/api/pets')
       .set('Authorization', `Bearer ${token}`)
-      .send(movieData)
+      .send(animalData)
       .end((err, res) => {
         expect(res).to.be.an('object');
         done();
@@ -84,13 +84,13 @@ describe('Animal CREATE', () => {
   });
 
   it('should return the correct data', done => {
-    api.post('/api/movies')
+    api.post('/api/pets')
       .set('Authorization', `Bearer ${token}`)
-      .send(movieData)
+      .send(animalData)
       .end((err, res) => {
-        expect(res.body.name).to.eq(movieData.name);
-        expect(res.body.image).to.eq(movieData.image);
-        expect(res.body.yearReleased).to.eq(movieData.yearReleased);
+        expect(res.body.name).to.eq(animalData.name);
+        expect(res.body.image).to.eq(animalData.image);
+        expect(res.body.yearReleased).to.eq(animalData.yearReleased);
         done();
       });
   });

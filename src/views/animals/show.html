@@ -70,9 +70,10 @@
 <!--Star Rating -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
-              <p class='stat-key' ng-if="animal.meanRating <= 2"><a href="#"></a>Bad {{ animal.sex }}</p>
-              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a>Good {{ animal.sex }}</p>
-              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a>Really Good {{ animal.sex }}</p>
+              <p class='stat-key' ng-if="!animal.meanRating"><a href="#"></a>No ratings yet</p>
+              <p class='stat-key' ng-if="animal.meanRating >0 && animal.meanRating <2"><a href="#"></a><strong>Bad {{ animal.sex }}</strong></p>
+              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a><strong>Good {{ animal.sex }}</strong></p>
+              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a><strong><em>Really</em> Good {{ animal.sex }}</strong></p>
             </div>
           </div>
         </div>
@@ -88,6 +89,10 @@
   <div class="column is-5">
 <!-- Bio -->
     <h3 class="subtitle is-3">About {{ animal.name }}</h3>
+
+    <div class="map-container">
+      <div id="map-element" class="map"></div>
+    </div>
 
     <p>
     My name is {{ animal.name }} the {{ animal.species }} and I belong to <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.givenName }}</a></p>

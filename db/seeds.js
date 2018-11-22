@@ -282,8 +282,8 @@ const animalData = [
         user: userId[1]
       }, {
         rating: 4,
-        text: 'This dog is hella deaf y\'all',
-        user: userId[2]
+        text: 'This dog is deaf AF.',
+        user: userId[3]
       }
     ]
   },
@@ -306,7 +306,7 @@ const animalData = [
         user: userId[1]
       }, {
         rating: 4,
-        text: 'Could not have cared less about me',
+        text: 'Could not have cared less about me.',
         user: userId[2]
       }
     ]
@@ -361,9 +361,19 @@ const animalData = [
     age: 5,
     color: ['Black', 'Brown', 'White'],
     imageUrl: 'https://imgur.com/UJVcWq0.png',
-    location: 'E16 1DQ',
+    location: 'W1A 1AA',
     owner: userId[3],
-    rating: [5, 4, 4, 5, 5]
+    reviews: [
+      {
+        rating: 4,
+        text: 'I mean, i\'ts a cat. Not difficult to look after.',
+        user: userId[1]
+      }, {
+        rating: 5,
+        text: 'Could not have cared less about me.',
+        user: userId[2]
+      }
+    ]
   },
   {
     _id: animalId[9],
@@ -377,12 +387,26 @@ const animalData = [
     imageUrl: 'https://imgur.com/xwVn4c6.png',
     location: 'E16 1DQ',
     owner: userId[3],
-    rating: [2, 1, 2, 1, 1]
+    reviews: [
+      {
+        rating: 1,
+        text: 'Jesus was right about you.',
+        user: userId[8]
+      }, {
+        rating: 2,
+        text: 'Who do I see about getting my weekend back?',
+        user: userId[2]
+      }, {
+        rating: 1,
+        text: 'Like owner, like pet. Put it down.',
+        user: userId[7]
+      }
+    ]
   },
   {
     _id: animalId[10],
     name: 'Albert',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    bio: 'If youre hosue isn\'t fully stocked with beer and bisuits, like seriously don\'t even bother because I have better things to be doing. Happy to travel by tube in exchange for beer and biscuits.',
     sex: 'Boy',
     species: 'Dog',
     breed: ['Staffordshire Bull Terrier'],
@@ -391,7 +415,21 @@ const animalData = [
     imageUrl: 'https://imgur.com/FP1DGqx.png',
     location: 'W6 0EZ',
     owner: userId[7],
-    rating: [2, 1, 3, 2, 2]
+    reviews: [
+      {
+        rating: 2,
+        text: 'Naughty boy.',
+        user: userId[8]
+      }, {
+        rating: 2,
+        text: 'So naughty',
+        user: userId[6]
+      }, {
+        rating: 1,
+        text: 'I felt peaceful when Albert had gone.',
+        user: userId[0]
+      }
+    ]
   },
   // {
   //   _id: animalId[11],
@@ -418,7 +456,13 @@ const animalData = [
     imageUrl: 'https://imgur.com/Ys81Fdy.png',
     location: 'SW19 7NL',
     owner: userId[8],
-    rating: []
+    reviews: [
+      {
+        rating: 5,
+        text: 'I\'m not giving Marley back.',
+        user: userId[10]
+      }
+    ]
   },
   {  _id: animalId[13],
     name: 'Lola',
@@ -450,13 +494,13 @@ const animalData = [
   {
     _id: animalId[15],
     name: 'Storm',
-    bio: '',
+    bio: 'Half-husky, half-pomeranian, all-fluff, no joke.',
     sex: 'Girl',
     species: 'Dog',
     breed: ['Siberian Husky', 'Pomeranian'],
     age: 1,
     color: ['Grey', 'White'],
-    imageUrl: 'https://imgur.com/oPZSQmD',
+    imageUrl: 'https://imgur.com/oPZSQmD.png',
     location: '',
     rating: []
   },
@@ -506,4 +550,4 @@ Animal.create(animalData)
             mongoose.connection.close();
           });
       });
-});
+  });
