@@ -1,4 +1,4 @@
-function masterController($scope, $auth, $state) {
+function masterController($scope, $auth, $state, $transitions) {
   $scope.isAuthenticated = function () {
     if ($auth.isAuthenticated()) {
       $scope.username = $auth.getPayload().username;
@@ -10,6 +10,11 @@ function masterController($scope, $auth, $state) {
     $auth.logout()
       .then(() => $state.go('home'));
   };
+
+  $transitions.onSuccess({}, () => {
+    $scope.isHomepage = $state.$current.name === 'home';
+  });
+
 }
 
 export default masterController;

@@ -1,27 +1,40 @@
 /* global describe, it, expect, api, beforeEach */
 
-const Movie = require('../../models/movie');
+const Animal = require('../../models/animal');
+
 const userIds = [
-  '5bf17051d4a071297aa4b6ea'
+  '5be9aa1bac3c11cea4303502'
 ];
 
+const animalData = [
+  {
+    _id: animalId[0],
+    name: 'Reggie',
+    bio: 'I was found on the side of a motorway in Oxford when I was a pup. I hate direct eye contact and my favourite foods are bacon and cushions.',
+    sex: 'Boy',
+    species: 'Dog',
+    breed: ['Greyhound', 'Whippet'],
+    age: 5,
+    color: [ 'Brown', 'White'],
+    imageUrl: 'https://imgur.com/bDBMlEA.png',
+    location: 'B91 1NW',
+    owner: userId[0],
+    reviews: [
+      {
+        rating: 5,
+        text: 'Nice',
+        user: userId[0]
+      }, {
+        rating: 2,
+        text: 'Ok',
+        user: userId[0]
+      }
+    ]
+  }
+];
 
-const movieData = {
-  createdBy: userIds [0],
-  name: 'Love Actually',
-  yearReleased: 2003,
-  movieLength: '2h 15mins',
-  image: 'https://img05.mgo-images.com/image/thumbnail?id=1MVef5d2891482420b274f1c5b6fa7803b9&ql=70&sizes=310x465',
-  coverPhoto: 'https://images6.alphacoders.com/341/thumb-1920-341199.jpg',
-  writers: ['Richard Curtis'],
-  director: 'Richard Curtis',
-  actors: ['Hugh Grant', 'Martine McCutcheon', 'Liam Neeson'],
-  synopsis: 'Follows the lives of eight very different couples in dealing with their love lives in various loosely interrelated tales all set during a frantic month before Christmas in London, England.',
-  locationFilmed: ['London', 'Surrey', 'France'],
-  genres: ['Comedy', 'Romance'],
-  reviews: []
-};
-
+let token;
+let animalId;
 
 describe('Movie INDEX', () => {
 
