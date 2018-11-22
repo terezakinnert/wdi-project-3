@@ -206,11 +206,11 @@ const animalData = [
     reviews: [
       {
         rating: 5,
-        text: 'Nice',
+        text: 'So soft. So fluffy.',
         user: userId[1]
       }, {
-        rating: 2,
-        text: 'Ok',
+        rating: 5,
+        text: 'Looks, sounds and behaves like Dobby from Harry Potter. 5 stars.',
         user: userId[2]
       }
     ]
@@ -227,7 +227,17 @@ const animalData = [
     imageUrl: 'https://imgur.com/PBCkJJz.png',
     location: 'B91 1TR',
     owner: userId[0],
-    rating: [1, 1, 1, 1, 1]
+    reviews: [
+      {
+        rating: 1,
+        text: 'Crapped all over the carpet.',
+        user: userId[1]
+      }, {
+        rating: 3,
+        text: 'Fun for about 10 minutes then would not leave me alone.',
+        user: userId[2]
+      }
+    ]
   },
   {
     _id: animalId[2],
@@ -241,7 +251,17 @@ const animalData = [
     imageUrl: 'https://imgur.com/DHwHBEF.png',
     location: 'HP5 1DL',
     owner: userId[2],
-    rating: [5, 4, 5, 4, 4]
+    reviews: [
+      {
+        rating: 5,
+        text: 'Wagged tail incessantly. Loved every second.',
+        user: userId[5]
+      }, {
+        rating: 4,
+        text: 'Ate all of my things. What a joy.',
+        user: userId[6]
+      }
+    ]
   },
   {
     _id: animalId[3],
@@ -255,7 +275,17 @@ const animalData = [
     imageUrl: 'https://imgur.com/n1HT62i.png',
     location: 'W3 7JE',
     owner: userId[5],
-    rating: [5, 5, 5, 5, 5, 4]
+    reviews: [
+      {
+        rating: 5,
+        text: 'The goodest boy in all the land.',
+        user: userId[1]
+      }, {
+        rating: 4,
+        text: 'This dog is hella deaf y\'all',
+        user: userId[2]
+      }
+    ]
   },
   {
     _id: animalId[4],
@@ -268,49 +298,59 @@ const animalData = [
     color: ['Ginger'],
     imageUrl: 'https://imgur.com/1TMWV99.png',
     location: 'W3 7JE',
-    owner: userId[5],
-    rating: [3, 3, 4, 4, 4]
+    owner: userId[7],
+    reviews: [
+      {
+        rating: 4,
+        text: 'I mean, i\'ts a cat. Not difficult to look after.',
+        user: userId[1]
+      }, {
+        rating: 4,
+        text: 'Could not have cared less about me',
+        user: userId[2]
+      }
+    ]
   },
-  {
-    _id: animalId[5],
-    name: 'Sylvester',
-    bio: '',
-    sex: 'Boy',
-    species: 'Cat',
-    breed: ['Domestic Shorthair'],
-    age: 3,
-    color: ['Black', 'White'],
-    imageUrl: '',
-    location: 'W3 7JE',
-    owner: userId[5],
-    rating: []
-  },
-  {
-    _id: animalId[6],
-    name: 'Max',
-    bio: '',
-    sex: 'Boy',
-    species: 'Dog',
-    breed: ['German Shepherd', 'Mamalute'],
-    age: 1,
-    color: ['Grey', 'White'],
-    imageUrl: '',
-    location: 'TN13 1AB ',
-    rating: []
-  },
-  {
-    _id: animalId[7],
-    name: 'Nala',
-    bio: '',
-    sex: 'Girl',
-    species: 'Dog',
-    breed: ['Border Collie'],
-    age: 1,
-    color: ['Brown'],
-    imageUrl: '',
-    location: 'TN13 1AB ',
-    rating: []
-  },
+  // {
+  //   _id: animalId[5],
+  //   name: 'Sylvester',
+  //   bio: '',
+  //   sex: 'Boy',
+  //   species: 'Cat',
+  //   breed: ['Domestic Shorthair'],
+  //   age: 3,
+  //   color: ['Black', 'White'],
+  //   imageUrl: '',
+  //   location: 'W3 7JE',
+  //   owner: userId[5],
+  //   rating: []
+  // },
+  // {
+  //   _id: animalId[6],
+  //   name: 'Max',
+  //   bio: '',
+  //   sex: 'Boy',
+  //   species: 'Dog',
+  //   breed: ['German Shepherd', 'Mamalute'],
+  //   age: 1,
+  //   color: ['Grey', 'White'],
+  //   imageUrl: '',
+  //   location: 'TN13 1AB ',
+  //   rating: []
+  // },
+  // {
+  //   _id: animalId[7],
+  //   name: 'Nala',
+  //   bio: '',
+  //   sex: 'Girl',
+  //   species: 'Dog',
+  //   breed: ['Border Collie'],
+  //   age: 1,
+  //   color: ['Brown'],
+  //   imageUrl: '',
+  //   location: 'TN13 1AB ',
+  //   rating: []
+  // },
   {
     _id: animalId[8],
     name: 'Becky',
@@ -353,19 +393,19 @@ const animalData = [
     owner: userId[7],
     rating: [2, 1, 3, 2, 2]
   },
-  {
-    _id: animalId[11],
-    name: 'Sunny',
-    bio: '',
-    sex: 'Girl',
-    species: 'Dog',
-    breed: ['Golden Retreiver'],
-    age: 1,
-    color: ['Golden'],
-    imageUrl: '',
-    location: '',
-    rating: []
-  },
+  // {
+  //   _id: animalId[11],
+  //   name: 'Sunny',
+  //   bio: '',
+  //   sex: 'Girl',
+  //   species: 'Dog',
+  //   breed: ['Golden Retreiver'],
+  //   age: 1,
+  //   color: ['Golden'],
+  //   imageUrl: '',
+  //   location: '',
+  //   rating: []
+  // },
   {
     _id: animalId[12],
     name: 'Marley',
