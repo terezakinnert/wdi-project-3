@@ -1,5 +1,5 @@
 <div class='columns is-multiline is-centered'>
-  <div class='column is-8 container profile'>
+  <div class='column is-10 container profile'>
     <div class='section profile-heading'>
       <div class='columns is-mobile is-multiline'>
 
@@ -30,16 +30,60 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
 
-<div ng-repeat="booking in filteredBookings" class="column is-4">
-  <div ng-if="booking.status === 'complete'" class="column is-4">
+    <div class='columns is-multiline'>
+      <div class="column is-6">
 
-    <p>Pickup: {{ booking.pickup }}</p>
-    <p>Drop Off: {{ booking.dropoff }}</p>
-    <p>Animal: {{ booking.animal.name }}</p>
-    <p>Human: {{ booking.booker.givenName }}</p>
+        <p><strong>{{ animal.name }}'s Reviews</strong></p><br>
+        <div ng-repeat="booking in filteredBookings">
+          <div ng-if="booking.status === 'complete'">
+            <div class='card columns is-multiline'>
+              <!-- Booker Profile Image -->
+              <div class="column is-3">
+                <a ui-sref="usersShow({ id: booking.booker._id})">
+                  <img style="border-radius: 50%" height=60px width=60px  src="{{ booking.booker.profileImageUrl }}">
+                </a>
+              </div>
 
+              <!-- Booking Details -->
+              <div class="column is-9">
+                <span>⭐️⭐️⭐️⭐️⭐️ </span><br>
+                <span><strong>Pickup:</strong> {{ booking.pickup }}</span><br>
+                <span><strong>Drop Off:</strong> {{ booking.dropoff }}</span>
+              </div>
+
+            </div><br>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="column is-6">
+
+        <p><strong>Planned Bookings</strong></p><br>
+        <div ng-repeat="booking in filteredBookings">
+          <div ng-if="booking.status === 'pending'">
+            <div class='card columns is-multiline'>
+              <!-- Booker Profile Image -->
+              <div class="column is-3">
+                <a ui-sref="usersShow({ id: booking.booker._id})">
+                  <img style="border-radius: 50%" height=60px width=60px  src="{{ booking.booker.profileImageUrl }}">
+                </a>
+              </div>
+
+              <!-- Booking Details -->
+              <div class="column is-9">
+                <span>☆☆☆☆☆ </span><br>
+                <span><strong>Pickup:</strong> {{ booking.pickup }}</span><br>
+                <span><strong>Drop Off:</strong> {{ booking.dropoff }}</span>
+              </div>
+
+            </div><br>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
