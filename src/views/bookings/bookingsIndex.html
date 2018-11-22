@@ -62,24 +62,21 @@
                 <div ng-if="booking.status === 'complete'">
                   <div class='card columns is-multiline'>
               <!-- Booker Profile Image -->
-              <div class="column is-3">
-                <a ui-sref="usersShow({ id: booking.booker._id})">
-                  <img style="border-radius: 50%" height=60px width=60px  src="{{ booking.booker.profileImageUrl }}">
-                </a>
-              </div>
-
+                    <div class="column is-3">
+                      <a ui-sref="usersShow({ id: booking.booker._id})">
+                        <img style="border-radius: 50%" height=60px width=60px  src="{{ booking.booker.profileImageUrl }}">
+                      </a>
+                    </div>
               <!-- Booking Details -->
-              <div class="column is-9">
-                <span>⭐️⭐️⭐️⭐️⭐️ </span><br>
-                <span><strong>Pickup:</strong> {{ booking.pickup }}</span><br>
-                <span><strong>Drop Off:</strong> {{ booking.dropoff }}</span>
+                    <div class="column is-9">
+                      <span>⭐️⭐️⭐️⭐️⭐️ </span><br>
+                      <span><strong>Pickup:</strong> {{ booking.pickup }}</span><br>
+                      <span><strong>Drop Off:</strong> {{ booking.dropoff }}</span>
+                    </div>
+                  </div><br>
+                </div>
               </div>
-
-            </div><br>
-
-          </div>
-        </div>
-      </div>
+            </div>
 
 
       <div class="column is-6">

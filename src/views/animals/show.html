@@ -24,8 +24,8 @@
                   <em><span ng-repeat="breed in animal.breed">{{ breed }} </span></em><br>
                 </p><br>
                 <div>
-                  <button ng-if="animal.ownedBy._id === userId" ng-if="isAuthenticated()" ui-sref="animalsEdit({ id: animal._id })">Edit</button>
-                  <button ng-if="animal.ownedBy._id === userId" ng-if="isAuthenticated()" ng-click="handleDelete()">Delete</button>
+                  <button ng-if="animal.ownedBy._id === userId && isAuthenticated()" ui-sref="animalsEdit({ id: animal._id })">Edit</button>
+                  <button ng-if="animal.ownedBy._id === userId && isAuthenticated()" ng-click="handleDelete()">Delete</button>
                 </div>
             </div>
           </div>
@@ -124,14 +124,12 @@
           <span style="font-weight:bold;">{{ review.user.username }}</span>
           <span>{{ review.text }}</span>
           <button ng-if="isAuthenticated() && review.user._id === userId" class="delete-button" ng-click="deleteReview(review)">x</button>
-      </div>
-      <div ng-if="isAuthenticated()">
+        </div>
+          <div ng-if="isAuthenticated()">
         <a ui-sref="reviews({ id: animal._id })" class="button">Add a review</a>
+        </div>
       </div>
-  </div>
-</div>
+    </div>
 
-  </div>
-  <div class="column is-1"> </div>
 
 </div>
