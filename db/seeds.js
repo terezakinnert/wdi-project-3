@@ -44,6 +44,18 @@ const bookingData = [
   {
     booker: userId[3],
     animal: animalId[0],
+    pickup: moment().subtract(6, 'days'),
+    dropoff: moment().subtract(5, 'days')
+  },
+  {
+    booker: userId[4],
+    animal: animalId[0],
+    pickup: moment().subtract(8, 'days'),
+    dropoff: moment().subtract(7, 'days')
+  },
+  {
+    booker: userId[3],
+    animal: animalId[0],
     pickup: moment().subtract(1, 'days'),
     dropoff: moment().add(1, 'days')
   },
@@ -69,7 +81,7 @@ const userData = [
     givenName: 'David',
     surname: 'Comer',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/ZsWMfLz.png',
     age: '26',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
@@ -80,7 +92,7 @@ const userData = [
     givenName: 'Tereza',
     surname: 'Kinnertova',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/fTeMyC4.png',
     age: '27',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
@@ -91,7 +103,7 @@ const userData = [
     givenName: 'Ellie',
     surname: 'Farrer',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/VjNaIhJ.png',
     age: '23',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
@@ -102,7 +114,7 @@ const userData = [
     givenName: 'Femi',
     surname: 'Coker',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/uzqHnZ5.png',
     age: '30',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
@@ -113,7 +125,7 @@ const userData = [
     givenName: 'Sham',
     surname: 'Shamsiddin',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/14kSt2C.png',
     age: '28',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
@@ -124,7 +136,7 @@ const userData = [
     givenName: 'Aiman',
     surname: 'Mallah',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/6bD3YN2.png',
     age: '25',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
@@ -135,7 +147,7 @@ const userData = [
     givenName: 'Sophia',
     surname: 'Barclay',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/X3GHpcK.png',
     age: '25',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },

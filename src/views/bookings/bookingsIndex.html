@@ -1,47 +1,110 @@
-
 <div class='columns is-multiline is-centered'>
-  <div class='column is-8 container profile'>
+  <div class='column is-10 container profile'>
     <div class='section profile-heading'>
       <div class='columns is-mobile is-multiline'>
 
+        <!-- Pet Image -->
         <div class='column is-3'>
           <span class='header-icon user-profile-image'>
-            <img class='is-rounded' alt='' ng-src="{{ booking.animal.imageUrl }}" alt="{{ animal.name }}">
+            <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
           </span>
         </div>
         <!-- Pet Header -->
-        <div class="column is-9">
-          <div class='column is-12 name'>
+        <div class="column is-4">
             <p>
-              <span class='title is-bold'>{{ booking.animal.name }}</span>
+              <span class='title is-bold'>{{ animal.name }}</span>
               <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
-              {{ booking.animal.species.toLowerCase() }}
               <br>
             </p>
+
             <p class='tagline'>
-              <strong>{{ booking.animal.species }}  |  {{ booking.animal.age }}  |  <span ng-repeat="color in animal.color">{{ color }}</span> | <img height=30px width=30px src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Asexual_symbol.svg/1004px-Asexual_symbol.svg.png" style="background-color:{{animal.color }};"alt=""></strong><br>
+              <strong>{{ animal.species }}  |  {{ animal.age }}  </strong><br>
               <em><span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
-              My Human: <a ui-sref="usersShow({ id: booking.animal.owner._id})">{{ booking.animal.owner.username }}</a>
+              My Human: <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a>
             </p>
+
             <div class="button"><a ui-sref="bookingNew({ id: animal._id})">Book</a>
             </div>
+        </div>
+
+        <!-- Pet Current Booking -->
+        <div class="column is-5">
+          <p><strong>Booking in Progress</strong></p><br>
+            <div ng-repeat="booking in filteredBookings">
+              <div ng-if="booking.status === 'inProgress'">
+                <div class='card columns is-multiline'>
+                  <!-- Booker Profile Image -->
+                  <div class="column is-3">
+                    <a ui-sref="usersShow({ id: booking.booker._id})">
+                      <img style="border-radius: 50%" height=60px width=60px  src="{{ booking.booker.profileImageUrl }}">
+                    </a>
+                  </div>
+
+                  <!-- Booking Details -->
+                  <div class="column is-9">
+                    <span>☆☆☆☆☆ </span><br>
+                    <span><strong>Pickup:</strong> {{ booking.pickup }}</span><br>
+                    <span><strong>Drop Off:</strong> {{ booking.dropoff }}</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </div>
+          </div>
+
           <div class="columns is-multiline">
+            <div class="column is-6">
+              <p><strong>{{ animal.name }}'s Reviews</strong></p><br>
+              <div ng-repeat="booking in filteredBookings">
+                <div ng-if="booking.status === 'complete'">
+                  <div class='card columns is-multiline'>
+              <!-- Booker Profile Image -->
+              <div class="column is-3">
+                <a ui-sref="usersShow({ id: booking.booker._id})">
+                  <img style="border-radius: 50%" height=60px width=60px  src="{{ booking.booker.profileImageUrl }}">
+                </a>
+              </div>
+
+              <!-- Booking Details -->
+              <div class="column is-9">
+                <span>⭐️⭐️⭐️⭐️⭐️ </span><br>
+                <span><strong>Pickup:</strong> {{ booking.pickup }}</span><br>
+                <span><strong>Drop Off:</strong> {{ booking.dropoff }}</span>
+              </div>
+
+            </div><br>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="column is-6">
+
+        <p><strong>Planned Bookings</strong></p><br>
+        <div ng-repeat="booking in filteredBookings">
+          <div ng-if="booking.status === 'pending'">
+            <div class='card columns is-multiline'>
+              <!-- Booker Profile Image -->
+              <div class="column is-3">
+                <a ui-sref="usersShow({ id: booking.booker._id})">
+                  <img style="border-radius: 50%" height=60px width=60px  src="{{ booking.booker.profileImageUrl }}">
+                </a>
+              </div>
+
+              <!-- Booking Details -->
+              <div class="column is-9">
+                <span>☆☆☆☆☆ </span><br>
+                <span><strong>Pickup:</strong> {{ booking.pickup }}</span><br>
+                <span><strong>Drop Off:</strong> {{ booking.dropoff }}</span>
+              </div>
+
+            </div><br>
 
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-<div ng-repeat="booking in filteredBookings" class="column is-4">
-  <div ng-if="booking.status === 'complete'" class="column is-4">
-
-    <p>Pickup: {{ booking.pickup }}</p>
-    <p>Drop Off: {{ booking.dropoff }}</p>
-    <p>Animal: {{ booking.animal.name }}</p>
-    <p>Human: {{ booking.booker.givenName }}</p>
-
   </div>
 </div>

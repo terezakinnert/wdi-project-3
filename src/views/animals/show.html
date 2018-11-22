@@ -1,5 +1,5 @@
 <div class='columns is-multiline is-centered'>
-  <div class='column is-8 container profile'>
+  <div class='column is-10 container profile'>
     <div class='section profile-heading'>
       <div class='columns is-mobile is-multiline'>
         <div class='column is-3'>
@@ -7,26 +7,49 @@
             <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
           </span>
         </div>
-<!-- Pet Header -->
+
+<!-- Pet Header-->
         <div class="column is-9">
-          <div class='column is-12 name'>
-            <p>
-              <span class='title is-bold'>{{ animal.name }}</span>
-              <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
-              {{ animal.species.toLowerCase() }}
-              <br>
-            </p>
-            <p class='tagline'>
-              <strong>{{ animal.species }}  |  {{ animal.age }}  |  <span ng-repeat="color in animal.color">{{ color }}</span> | <img height=30px width=30px src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Asexual_symbol.svg/1004px-Asexual_symbol.svg.png" style="background-color:{{animal.color }};"alt=""></strong><br>
-              <em><span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
-              My Human: <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a>
-            </p>
-            <div class="button"><a ui-sref="bookingNew({ id: animal._id})">Book</a>
+          <div class="columns">
+<!-- Pet Header Left-->
+          <div class='column is-3'>
+            <div>
+              <span class='title is-bold'>{{ animal.name }}</span><br>
+                <p class='tagline'>
+                  <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
+                  <em><span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
+                </p>
+              <i class="fas fa-map-pin"></i>
+              <strong><a href="#">{{animal.location}}</a></strong>
             </div>
+
+            <p >
+              <i class="fas fa-user"></i>
+              <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a><br>
+              <span>
+                <a ui-sref="usersShow({ id: animal.owner._id})">
+                  <img height="45px" width="45px" style="border-radius: 50%;" class='is-rounded' alt='' ng-src="{{ animal.owner.profileImageUrl }}" alt="{{ animal.owner.username }}">
+                </a>
+              </span>
+            </p>
+
+
           </div>
+
+<!-- Pet Header Right-->
+          <div class='column is-9'>
+
+              <p>{{ animal.bio }}</p>
+              <div class="button"><a ui-sref="bookingNew({ id: animal._id})">Book {{ animal.name }}</a>
+              </div>
+            </div>
+        </div>
+
+
+<!--Stat Bar -->
           <div class="columns is-multiline">
 
-<!--Holidays -->
+<!--Bookings -->
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.bookings.length }}</p>
               <p class='stat-key'><a ui-sref="bookingIndex({ id: animal._id })">bookings</a></p>
