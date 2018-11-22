@@ -16,7 +16,6 @@ function deleteReview(req, res, next) {
   Animal.findById(req.params.animalId)
     .then(animal => {
       const review = animal.reviews.id(req.params.reviewId);
-      console.log('animal?', animal);
       review.remove();
       return animal.save();
     })
