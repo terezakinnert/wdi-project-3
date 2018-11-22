@@ -7,7 +7,7 @@
     <title>PetApp</title>
   </head>
   <body ng-controller="masterController">
-    <nav class="navbar is-light">
+    <nav class="navbar">
       <div class="navbar-start">
         <i style="font-size: 40px; padding: 5px; margin: 5px; border-radius: 50%; background-color: hsl(204, 86%, 53%);" class="fas fa-exchange-alt"></i>
       </div>
@@ -18,11 +18,11 @@
         <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="register">Register</a>
         <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Login</a>
         <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log Out {{ username }}</a>
-        <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="usersShow({ id: userId})">My Profile</a>
-        <div class="navbar-item has-dropdown is-hoverable">
+        <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="usersShow({ id: userId})"><i class="far fa-user"></i></a>
+        <!-- <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
             <i class="far fa-user"></i>
-          </a>
+          </a> -->
           <!-- <div class="navbar-dropdown">
             <a href="/option1" class="navbar-item">
               Dropdown Option 1
