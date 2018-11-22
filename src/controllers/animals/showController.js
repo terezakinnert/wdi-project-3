@@ -5,7 +5,7 @@ function showController($state, $scope, $http) {
     url: `/api/pets/${$state.params.id}`
   }).then(result => {
     $scope.animal = result.data;
-    console.log('hre are the animals', $scope.animal);
+    // console.log('hre are the animals', $scope.animal);
   });
   $scope.handleDelete = function() {
     $http({

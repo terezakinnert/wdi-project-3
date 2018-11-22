@@ -7,7 +7,7 @@ function createReview(req, res, next) {
       animal.reviews.push(req.body);
       return animal.save();
     })
-    .then(animal => Animal.populate(animal, 'owner reviews reviews.user.username'))
+    .then(animal => Animal.populate(animal, 'owner reviews'))
     .then(animal => res.json(animal))
     .catch(next);
 }

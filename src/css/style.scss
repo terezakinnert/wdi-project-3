@@ -10,6 +10,14 @@
   color: white;
 }
 
+a {
+  color: #5B86E5;
+}
+
+a:hover{
+  color: #36D1DC;
+}
+
 a.navbar-item:hover {
   color: white;
   background: #36D1DC;  /* fallback for old browsers */
