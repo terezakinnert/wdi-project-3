@@ -14,12 +14,12 @@ const animalSchema = mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'User'
   },
-  rating: [Number],
   availableOn: {
     type: mongoose.Schema.ObjectId,
     ref: 'Booking'
   },
-  comments: [{
+  reviews: [{
+    rating: Number,
     text: String,
     user: {
       type: mongoose.Schema.ObjectId,
@@ -37,12 +37,12 @@ animalSchema.virtual('bookings', {
 });
 
 // average rating virtual
-animalSchema.virtual('meanRating')
-  .get(function() {
-    const averageRating = array => array.reduce((a, b) => a + b, 0) / array.length;
-    const result = averageRating(this.rating).toFixed(2);
-    return result;
-  });
+// animalSchema.virtual('meanRating')
+//   .get(function() {
+//     const averageRating = array => array.reduce((a, b) => a + b, 0) / array.length;
+//     const result = averageRating(this.reviews.rating).toFixed(2);
+//     return result;
+//   });
 
 // include virtuals in res.json
 animalSchema.set('toJSON', {

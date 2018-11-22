@@ -1,0 +1,39 @@
+<section class="hero is-white is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <h3 class="title has-text-grey">Review</h3>
+        <p class="subtitle has-text-grey">How was your time with {{ animal.name }}</p>
+        <div class="box">
+
+          <form ng-submit="submitReview()">
+
+            <div class="field">
+              <div class="control">
+                <label for="rating" class="label">Rating</label>
+                <select class="select" name="rating">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label for="text" class="label">Comment</label>
+                <textarea name="text" ng-model="review.text" class="textarea"></textarea>
+              </div>
+            </div>
+
+            <button class="button is-block is-light is-fullwidth">Review</button>
+            <br>
+            <a ui-sref="animalsShow({ id: animal.id })" class="button is-block is-light is-fullwidth">Cancel</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

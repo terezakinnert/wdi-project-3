@@ -1,30 +1,31 @@
 const Animal = require('../models/animal');
 
-function createComment(req, res, next) {
+function createReview(req, res, next) {
   Animal.findById(req.params.animalId)
     .then(animal => {
       req.body.user = req.tokenUserId;
-      animal.comments.push(req.body);
+      animal.reviews.push(req.body);
       return animal.save();
     })
-    .then(animal => Animal.populate(animal, 'owner comments.user'))
+    .then(animal => Animal.populate(animal, 'owner reviews'))
     .then(animal => res.json(animal))
     .catch(next);
 }
 
-function deleteComment(req, res, next) {
+function deleteReview(req, res, next) {
   Animal.findById(req.params.animalId)
     .then(animal => {
-      const comment = animal.comments.id(req.params.commentId);
-      comment.remove();
+      const review = animal.reviews.id(req.params.reviewId);
+      console.log('animal?', animal);
+      review.remove();
       return animal.save();
     })
-    .then(animal => Animal.populate(animal, 'owner comments.user'))
+    .then(animal => Animal.populate(animal, 'owner reviews'))
     .then(animal => res.json(animal))
     .catch(next);
 }
 
 module.exports = {
-  create: createComment,
-  delete: deleteComment
+  create: createReview,
+  delete: deleteReview
 };

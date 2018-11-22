@@ -1,11 +1,11 @@
 function showController($state, $scope, $http) {
-  $scope.comment = {};
+  $scope.review = {};
   $http({
     method: 'GET',
     url: `/api/pets/${$state.params.id}`
   }).then(result => {
     $scope.animal = result.data;
-    console.log('hre are the animals', $scope.animal);
+    // console.log('hre are the animals', $scope.animal);
   });
   $scope.handleDelete = function() {
     $http({
@@ -14,26 +14,10 @@ function showController($state, $scope, $http) {
     }).then(() => $state.go('animalsIndex'));
   };
 
-  $scope.createComment = function() {
-    console.log($scope.comment);
-    $http({
-      method: 'POST',
-      url: `/api/pets/${$state.params.id}/comments`,
-      data: $scope.comment
-    })
-      .then(result => {
-        $scope.animal = result.data;
-        console.log('--=-=-=->', $scope.animal);
-        // $scope.username = result.data.comment.user.username;
-        $scope.comment.text = null;
-        // console.log('username?', $scope.comment.user.username);
-      });
-  };
-
-  $scope.deleteComment = function(comment) {
+  $scope.deleteReview = function(review) {
     $http({
       method: 'DELETE',
-      url: `/api/pets/${$state.params.id}/comments/${comment._id}`
+      url: `/api/pets/${$state.params.id}/reviews/${review._id}`
     }).then(result => $scope.animal = result.data);
   };
 }
