@@ -10,7 +10,7 @@ function indexRoute(req, res, next) {
 
 function showRoute(req, res, next) {
   Animal.findById(req.params.id)
-    .populate('owner booker bookings reviews')
+    .populate('owner booker bookings reviews.user')
     //this is a particular way of populating a virtual
     .populate({
       path: 'bookings',

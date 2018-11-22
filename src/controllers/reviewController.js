@@ -1,5 +1,10 @@
 function reviewController($http, $scope, $state) {
-  $scope.animal = {};
+  $http({
+    method: 'GET',
+    url: `/api/pets/${$state.params.id}`
+  }).then(result => {
+    $scope.animal = result.data;
+  });
   $scope.submitReview = function() {
     console.log($scope.review);
     $http({
@@ -9,7 +14,6 @@ function reviewController($http, $scope, $state) {
     })
       .then(result => {
         $scope.animal = result.data;
-        // console.log('--=-=-=->', $scope.animal);
         $scope.review.text = null;
       })
       .then(() => $state.go('animalsShow', { id: $state.params.id }));
