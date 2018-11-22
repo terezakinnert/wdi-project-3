@@ -4,18 +4,18 @@
     <p>Welcome back {{ username }}</p>
   </div>
 
-  <form ng-submit="handleFilterSubmit()">
+  <form ng-submit="handleFilterSubmit()" class="filter-form">
     <input type="text" class="input" ng-model="searchTerm">
     <button class="button">🔎</button>
   </form>
 
   <div class="columns is-multiline">
-    <div ng-repeat="animal in filteredAnimals" class="column is-4">
+    <div ng-repeat="animal in filteredAnimals" class="column is-3">
 
       <a ui-sref="animalsShow({ id: animal._id })">
         <div class="card">
           <div class="card-image">
-            <figure class="image is-4by4">
+            <figure class="image is-3by3">
               <img ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
             </figure>
           </div>
@@ -26,7 +26,7 @@
                 <p class="subtitle is-6 media-content">{{ animal.breed[0] }}</p>
               </div>
             </div>
-            <div class="content" ng-init="limit = 205">
+            <div class="content" ng-init="limit = 135">
             {{ animal.bio | limitTo: limit}}{{animal.bio.length > limit ? '...' : ''}}</div>
           </div>
         </div>
