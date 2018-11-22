@@ -4,9 +4,13 @@
     <p>Welcome back {{ username }}</p>
   </div>
 
-  <form ng-submit="handleFilterSubmit()" class="filter-form">
-    <input type="text" class="input" ng-model="searchTerm">
-    <button class="button">🔎</button>
+  <form ng-submit="handleFilterSubmit()" class="filter-form columns is centered">
+    <div class="column is-11">
+      <input type="text" class="input column" ng-model="searchTerm">
+    </div>
+    <div class="column is-1">
+      <button class="button">🔎</button>
+    </div>
   </form>
 
   <div class="columns is-multiline">

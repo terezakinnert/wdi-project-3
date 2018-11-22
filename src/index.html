@@ -16,7 +16,7 @@
   <body ng-controller="masterController">
     <nav class="navbar">
       <div class="navbar-start">
-        <i style="font-size: 40px; padding: 5px; margin: 5px; border-radius: 50%; background-color: hsl(204, 86%, 53%);" class="fas fa-exchange-alt"></i>
+        <i class="fas fa-exchange-alt logo"></i>
       </div>
       <div class="navbar-end">
         <a class="navbar-item" ui-sref="home">Home</a>
@@ -32,12 +32,8 @@
     <main class="container" ng-if="!isHomepage">
       <div ui-view></div>
     </main>
-    <!-- NOTE: This is so the background image can fill the screen -->
     <div ui-view ng-if="isHomepage"></div>
-    
-    <!-- <div class="container">
-      <div ui-view></div>
-    </div> -->
+
     <footer class="footer is-white has-text-centered"><br>
       <div class="has-text-centered">
         A Terezid Production 🐶
