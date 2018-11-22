@@ -3,41 +3,62 @@
     <div class='section profile-heading'>
       <div class='columns is-mobile is-multiline'>
 
+        <!-- Pet Image -->
         <div class='column is-3'>
           <span class='header-icon user-profile-image'>
             <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
           </span>
         </div>
         <!-- Pet Header -->
-        <div class="column is-9">
-          <div class='column is-12 name'>
+        <div class="column is-4">
             <p>
               <span class='title is-bold'>{{ animal.name }}</span>
               <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
               <br>
             </p>
+
             <p class='tagline'>
               <strong>{{ animal.species }}  |  {{ animal.age }}  </strong><br>
               <em><span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
               My Human: <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a>
             </p>
+
             <div class="button"><a ui-sref="bookingNew({ id: animal._id})">Book</a>
             </div>
-          </div>
-          <div class="columns is-multiline">
-
-          </div>
         </div>
-      </div>
-    </div>
 
-    <div class='columns is-multiline'>
-      <div class="column is-6">
+        <!-- Pet Current Booking -->
+        <div class="column is-5">
+          <p><strong>Booking in Progress</strong></p><br>
+            <div ng-repeat="booking in filteredBookings">
+              <div ng-if="booking.status === 'inProgress'">
+                <div class='card columns is-multiline'>
+                  <!-- Booker Profile Image -->
+                  <div class="column is-3">
+                    <a ui-sref="usersShow({ id: booking.booker._id})">
+                      <img style="border-radius: 50%" height=60px width=60px  src="{{ booking.booker.profileImageUrl }}">
+                    </a>
+                  </div>
 
-        <p><strong>{{ animal.name }}'s Reviews</strong></p><br>
-        <div ng-repeat="booking in filteredBookings">
-          <div ng-if="booking.status === 'complete'">
-            <div class='card columns is-multiline'>
+                  <!-- Booking Details -->
+                  <div class="column is-9">
+                    <span>☆☆☆☆☆ </span><br>
+                    <span><strong>Pickup:</strong> {{ booking.pickup }}</span><br>
+                    <span><strong>Drop Off:</strong> {{ booking.dropoff }}</span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <div class="columns is-multiline">
+            <div class="column is-6">
+              <p><strong>{{ animal.name }}'s Reviews</strong></p><br>
+              <div ng-repeat="booking in filteredBookings">
+                <div ng-if="booking.status === 'complete'">
+                  <div class='card columns is-multiline'>
               <!-- Booker Profile Image -->
               <div class="column is-3">
                 <a ui-sref="usersShow({ id: booking.booker._id})">
