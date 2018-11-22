@@ -3,7 +3,7 @@
     <div class="container has-text-centered">
       <div class="column is-4 is-offset-4">
         <h3 class="title has-text-grey">Review</h3>
-        <p class="subtitle has-text-grey">How was your time with {{ animal.}}</p>
+        <p class="subtitle has-text-grey">How was your time with {{ animal.name }}</p>
         <div class="box">
 
           <form ng-submit="submitReview()">
@@ -11,7 +11,6 @@
             <div class="field">
               <div class="control">
                 <label for="rating" class="label">Rating</label>
-                <!-- <input class="input" ng-model="animal.rating" type="number" name="rating" placeholder=""  autofocus=""> -->
                 <select class="select" name="rating">
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -24,17 +23,16 @@
 
             <div class="field">
               <div class="control">
-                <label for="password" class="label">Password</label>
-                <input class="input" ng-model="user.password" type="password" name="password" placeholder="Password">
+                <label for="text" class="label">Comment</label>
+                <textarea name="text" ng-model="review.text" class="textarea"></textarea>
               </div>
             </div>
 
-            <button class="button is-block is-light is-fullwidth">Login</button>
+            <button class="button is-block is-light is-fullwidth">Review</button>
+            <br>
+            <a ui-sref="animalsShow({ id: animal._id })" class="button is-block is-light is-fullwidth">Cancel</a>
           </form>
         </div>
-        <p class="has-text-grey">Or</p>
-        <div class="button"><a href="/register">Sign Up</a></div>
-        <p class="has-text-grey">if you haven't got an account yet.</p>
       </div>
     </div>
   </div>

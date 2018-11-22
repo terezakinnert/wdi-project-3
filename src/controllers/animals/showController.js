@@ -14,20 +14,6 @@ function showController($state, $scope, $http) {
     }).then(() => $state.go('animalsIndex'));
   };
 
-  $scope.createReview = function() {
-    console.log($scope.review);
-    $http({
-      method: 'POST',
-      url: `/api/pets/${$state.params.id}/reviews`,
-      data: $scope.review
-    })
-      .then(result => {
-        $scope.animal = result.data;
-        console.log('--=-=-=->', $scope.animal);
-        $scope.review.text = null;
-      });
-  };
-
   $scope.deleteReview = function(review) {
     $http({
       method: 'DELETE',

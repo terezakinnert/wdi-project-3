@@ -80,6 +80,7 @@
     </div>
 
 <!-- Reviews -->
+    <br>
     <div class="reviews">
       <h5 class="subtitle is-5">Reviews</h5>
       <div ng-repeat="review in animal.reviews">
@@ -89,12 +90,8 @@
       </div>
 
 <!-- review Form -->
-      <div ng-if="isAuthenticated()" class="">
-      <h6 class="subtitle is-6">Add a review</h6>
-        <form ng-submit="createReview()">
-          <textarea name="text" ng-model="review.text" class="textarea"></textarea>
-          <button class="button">review</button>
-        </form>
+      <div ng-if="isAuthenticated()">
+        <a ui-sref="reviews({ id: animal._id })" class="button">Add a review</a>
       </div>
   </div>
 </div>

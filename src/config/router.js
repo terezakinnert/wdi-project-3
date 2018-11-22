@@ -14,6 +14,8 @@ import bookingsIndexController from '../controllers/bookings/bookingsIndexContro
 import bookingsShowController from '../controllers/bookings/bookingsShowController';
 import bookingsNewController from '../controllers/bookings/bookingsNewController';
 
+import reviewController from '../controllers/reviewController';
+
 function Router($urlRouterProvider, $stateProvider) {
   $stateProvider
     .state('home', {
@@ -79,6 +81,11 @@ function Router($urlRouterProvider, $stateProvider) {
       templateUrl: './views/users/editProfile.html',
       url: '/users/:id/edit',
       controller: usersEditController
+    })
+    .state('reviews', {
+      templateUrl: './views/review.html',
+      url: '/animals/:id/reviews',
+      controller: reviewController
     });
   $urlRouterProvider.otherwise('/');
 }
