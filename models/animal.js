@@ -37,12 +37,10 @@ animalSchema.virtual('bookings', {
 });
 
 // average rating virtual
-// animalSchema.virtual('meanRating')
-//   .get(function() {
-//     const averageRating = array => array.reduce((a, b) => a + b, 0) / array.length;
-//     const result = averageRating(this.reviews.rating).toFixed(2);
-//     return result;
-//   });
+animalSchema.virtual('meanRating')
+  .get(function() {
+    return this.reviews.reduce((total, review) => total += review.rating, 0) / this.reviews.length;
+  });
 
 // include virtuals in res.json
 animalSchema.set('toJSON', {
