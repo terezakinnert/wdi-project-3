@@ -1,5 +1,11 @@
 function bookingsNewController($http, $scope, $state, $auth) {
   $scope.booking = {};
+  $http({
+    method: 'GET',
+    url: `/api/pets/${$state.params.id}`
+  }).then(result => {
+    $scope.animal = result.data;
+  });
   $scope.handleSubmit = function() {
     $scope.booking.booker = $auth.getPayload().sub;
     console.log('Now lets post to the bookings page');
