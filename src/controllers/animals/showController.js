@@ -1,3 +1,5 @@
+import mapLib from '../../lib/map';
+
 function showController($state, $scope, $http) {
   $scope.review = {};
   $http({
@@ -23,6 +25,19 @@ function showController($state, $scope, $http) {
       console.log('$scope.animal', $scope.animal);
     });
   };
+  $scope.$watch('animal', function(){
+    if($scope.animal){
+      $http({
+        method: 'GET',
+        url: `https://api.postcodes.io/postcodes/${$scope.animal.location}`
+      }).then(result => {
+        $scope.searchResults = result.data.result;
+        console.log('this is $scope.searchResults ', $scope.searchResults, $scope.animal);
+        mapLib.create('map-element', [$scope.searchResults.latitude, $scope.searchResults.longitude], 13);
+        mapLib.addMarker([$scope.searchResults.latitude, $scope.searchResults.longitude], $scope.animal.name);
+      });
+    }
+  });
 }
 
 export default showController;
