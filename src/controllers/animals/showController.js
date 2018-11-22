@@ -18,7 +18,10 @@ function showController($state, $scope, $http) {
     $http({
       method: 'DELETE',
       url: `/api/pets/${$state.params.id}/reviews/${review._id}`
-    }).then(result => $scope.animal = result.data);
+    }).then(result => {
+      $scope.animal = result.data;
+      console.log('$scope.animal', $scope.animal);
+    });
   };
 }
 

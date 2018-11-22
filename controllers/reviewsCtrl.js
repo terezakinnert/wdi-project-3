@@ -19,7 +19,7 @@ function deleteReview(req, res, next) {
       review.remove();
       return animal.save();
     })
-    .then(animal => Animal.populate(animal, 'owner reviews'))
+    .then(animal => Animal.populate(animal, 'owner reviews.user'))
     .then(animal => res.json(animal))
     .catch(next);
 }
