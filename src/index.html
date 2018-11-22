@@ -19,39 +19,22 @@
         <a ng-if="!isAuthenticated()" class="navbar-item" ui-sref="login">Login</a>
         <a ng-if="isAuthenticated()" class="navbar-item" ng-click="handleLogout()">Log Out {{ username }}</a>
         <a ng-if="isAuthenticated()" class="navbar-item" ui-sref="usersShow({ id: userId})"><i class="far fa-user"></i></a>
-        <!-- <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            <i class="far fa-user"></i>
-          </a> -->
-          <!-- <div class="navbar-dropdown">
-            <a href="/option1" class="navbar-item">
-              Dropdown Option 1
-            </a>
-            <a href="/option2" class="navbar-item">
-              Dropdown Option 2
-            </a>
-            <a href="/option3" class="navbar-item">
-              Dropdown Option 3
-            </a>
-            <a href="/option4" class="navbar-item">
-              Dropdown Option 4
-            </a>
-            <a href="/option5" class="navbar-item">
-              Dropdown Option 5
-            </a>
-          </div> -->
-          </div>
-        </div>
       </div>
     </nav>
-    <div class="container">
+
+    <main class="container" ng-if="!isHomepage">
       <div ui-view></div>
-    </div>
-    <footer class="footer is-light has-text-centered"><br>
+    </main>
+    <!-- NOTE: This is so the background image can fill the screen -->
+    <div ui-view ng-if="isHomepage"></div>
+    
+    <!-- <div class="container">
+      <div ui-view></div>
+    </div> -->
+    <footer class="footer is-white has-text-centered"><br>
       <div class="has-text-centered">
         A Terezid Production 🐶
       </div><br>
-
     </footer>
   </body>
 </html>
