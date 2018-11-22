@@ -89,6 +89,12 @@ h5.subtitle {
   color: #ffffff;
 }
 
+.is-centered .button:hover {
+  font-weight: bold;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
 .button:hover {
   color: #ffffff;
   background-image: linear-gradient(141deg,#04a6d7 0,#209cee 71%,#3287f5 100%);
