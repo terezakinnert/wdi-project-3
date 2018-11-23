@@ -524,7 +524,7 @@ const animalData = [
       {
         rating: 5,
         text: 'I\'m not giving Marley back.',
-        user: userId[10]
+        user: userId[6]
       }
     ]
   },
