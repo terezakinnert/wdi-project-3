@@ -136,9 +136,8 @@
           <span class='stat-key' ng-if="review.rating === 4">⭐️⭐️⭐️⭐️</span>
           <span class='stat-key' ng-if="review.rating === 5">⭐️⭐️⭐️⭐️⭐️</span>
           <br>
-          <span><em>"{{ review.text }}"</em>"</span>
-          <div>
-            <span ng-if="isAuthenticated() && comment.user._id === userId" class="button" ng-click="deleteComment(comment)">x</span>
+          <span><em>"{{ review.text }}"</em></span>
+          <div ng-if="isAuthenticated() && comment.user._id === userId" ng-click="deleteComment(comment)">x
           </div>
         </div>
 
