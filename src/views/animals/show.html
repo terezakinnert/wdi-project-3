@@ -10,74 +10,72 @@
           </div>
         </div>
 
-<!-- Pet Header-->
+        <!-- Pet Header-->
         <div class="column is-9">
           <div class="columns">
-<!-- Pet Header Left-->
-          <div class='column is-3'>
-            <div>
-              <span class='title is-bold'>{{ animal.name }}</span><br>
-              <em><span ng-repeat="color in animal.color"><span style="color: {{ color }}; border: solid 1px black; border-radius: 50%; background-color:{{ color }};">.......</span>  </span></em><br>
-              <br>
+            <!-- Pet Header Left-->
+            <div class='column is-3'>
+              <div>
+                <span class='title is-bold'>{{ animal.name }}</span><br>
+                <em><span ng-repeat="color in animal.color"><span style="color: {{ color }}; border: solid 1px black; border-radius: 50%; background-color:{{ color }};">.......</span>  </span></em><br>
+                <span><strong>{{ animal.species }} | {{ animal.age }}</strong></span><br><br>
+
                 <p class='tagline'>
-                  <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
-                  <em><span ng-repeat="breed in animal.breed">{{ breed }} </span></em><br>
+                  <span ng-repeat="breed in animal.breed"><i class="fas fa-{{animal.species.toLowerCase()}}"></i> | <em>{{ breed }}</em><br></span>
                 </p><br>
                 <div>
                   <button ng-if="animal.ownedBy._id === userId && isAuthenticated()" ui-sref="animalsEdit({ id: animal._id })">Edit</button>
                   <button ng-if="animal.ownedBy._id === userId && isAuthenticated()" ng-click="handleDelete()">Delete</button>
                 </div>
-            </div>
-          </div>
-
-<!-- Pet Header Right-->
-          <div class='column is-9'>
-            <div class="columns is-multiline">
-              <div class='column is-12'>
-                <p><em>"{{ animal.bio }}"</em></p>
-              </div>
-              <div class='column is-3 is-cent'>
-                <i class="fas fa-map-pin"></i><br>
-                <strong><a href="#">{{animal.location}}</a></strong>
-              </div>
-              <div class='column is-3 is-centered'>
-                <i class="fas fa-user"></i><br>
-                <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a><br>
-              </div>
-              <div class='column is-3 is-centered'>
-                <span>
-                  <a ui-sref="usersShow({ id: animal.owner._id})">
-                    <img height="45px" width="45px" style="border-radius: 50%;" class='is-rounded' alt='' ng-src="{{ animal.owner.profileImageUrl }}" alt="{{ animal.owner.username }}">
-                  </a>
-                </span>
               </div>
             </div>
-          </div>
-        </div>
+
+            <!-- Pet Header Right-->
+            <div class='column is-9'>
+              <div class="columns is-multiline">
+                <div class='column is-12'>
+                  <p><em>"{{ animal.bio }}"</em></p>
+                </div>
+                <div class='column is-3 is-centered has-text-centered'>
+                  <i class="fas fa-map-pin"></i><br>
+                  <strong><a href="#">{{animal.location}}</a></strong>
+                </div>
+                <div class='column is-3 is-centered has-text-centered'>
+                  <i class="fas fa-user"></i><br>
+                  <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a><br>
+                </div>
+                <div class='column is-3 is-centered has-text-centered'>
+                  <span>
+                    <a ui-sref="usersShow({ id: animal.owner._id})">
+                      <img height="45px" width="45px" style="border-radius: 50%;" class='is-rounded' alt='' ng-src="{{ animal.owner.profileImageUrl }}" alt="{{ animal.owner.username }}">
+                    </a>
+                  </span>
+                </div>
 
 
-<!--Stat Bar -->
-          <div class="columns is-multiline">
+                <!--Stat Bar -->
+                <!-- <div class="columns is-multiline"> -->
 
-<!--Bookings -->
-            <div class='column is-4 has-text-centered'>
-              <p class='stat-val'>{{ animal.bookings.length }}</p>
-              <p class='stat-key'><a ui-sref="bookingIndex({ id: animal._id })">bookings</a></p>
-            </div>
+                <!--Bookings -->
+                <div class='column is-3 has-text-centered'>
+                </div>
 
-<!--Reviews -->
-            <div class='column is-4 has-text-centered'>
-              <p class='stat-val'>99</p>
-              <p class='stat-key'><a href="#">reviews</a></p>
-            </div>
+                <!--Reviews -->
+                <div class='column is-3 has-text-centered'>
+                  <p class='stat-val'>{{ animal.bookings.length }}</p>
+                  <p class='stat-key'><a ui-sref="bookingIndex({ id: animal._id })">bookings</a></p>
+                </div>
 
-<!--Star Rating -->
-            <div class='column is-4 has-text-centered'>
-              <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
-              <p class='stat-key' ng-if="!animal.meanRating"><a href="#"></a>No ratings yet</p>
-              <p class='stat-key' ng-if="animal.meanRating >0 && animal.meanRating <2"><a href="#"></a><strong>Bad {{ animal.sex }}</strong></p>
-              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a><strong>Good {{ animal.sex }}</strong></p>
-              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a><strong><em>Really</em>Good {{ animal.sex }}</strong></p>
+                <!--Star Rating -->
+                <div class='column is-4 has-text-centered'>
+                  <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
+                  <p class='stat-key' ng-if="!animal.meanRating">No ratings yet</p>
+                  <p class='stat-key' ng-if="animal.meanRating >0 && animal.meanRating <2"><strong>Bad {{ animal.sex }}</strong></p>
+                  <p class='stat-key' ng-if="animal.meanRating >=2 && animal.meanRating <3"><strong>Cheeky {{ animal.sex }}</strong></p>
+                  <p class='stat-key' ng-if="animal.meanRating >=3 && animal.meanRating <4"><strong>Good {{ animal.sex }}</strong></p>
+                  <p class='stat-key' ng-if="animal.meanRating >=4"><strong><em>Really</em> Good {{ animal.sex }}</strong></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -85,14 +83,14 @@
     </div>
   </div>
 </div>
+</div>
 
 <div class='columns is-multiline is-centered'>
-  <div class="column is-1"></div>
 
   <!-- Split Screen Left -->
   <div class="column is-5">
-<!-- Bio -->
-    <i class="fas fa-map-marker-alt"></i>
+    <!-- Map -->
+    <i class="fab fa-periscope"></i>
     {{animal.name}}'s Current Location
 
     <div class="map-container">
@@ -101,35 +99,43 @@
 
 
 
-<!-- Edit & Delete Buttons -->
+    <!-- Edit & Delete Buttons -->
     <div>
       <form>
         <button class="button" ng-if="isAuthenticated() && animal.owner._id === userId" ui-sref="animalsEdit({ id: animal._id })">Edit</button>
         <button class="button" ng-if="isAuthenticated() && animal.owner._id === userId" ng-click="handleDelete()">Delete</button>
       </form>
     </div>
+  </div>
 
 
-
-</div>
-
-
-<!-- Split Screen Right -->
+  <!-- Split Screen Right -->
   <div class="column is-5">
     <!-- Bookings -->
-      <h3 class="subtitle">{{ animal.name }}'s Bookings</h3>
+    <i class="fas fa-star"></i>
+    Ratings for {{animal.name}}
 
-      <div class="columns is-multiline">
-        <div class="column is-12" ng-repeat="review in animal.reviews">
-          <span style="font-weight:bold;">{{ review.user.username }}</span>
-          <span>{{ review.text }}</span>
-          <button ng-if="isAuthenticated() && review.user._id === userId" class="delete-button" ng-click="deleteReview(review)">x</button>
+    <div class="column is-12" ng-repeat="review in animal.reviews">
+
+      <!-- Rating Card-->
+      <div class='card columns is-multiline'>
+        <!-- Booker Profile Image -->
+        <div class="column is-3">
+          <a ui-sref="usersShow({ id: review.user._id})">
+            <img style="border-radius: 50%" height=60px width=60px  src="{{ review.user.profileImageUrl }}">
+          </a>
         </div>
-          <div ng-if="isAuthenticated()">
-        <a ui-sref="reviews({ id: animal._id })" class="button">Add a review</a>
+        <!-- Booking Details -->
+        <div class="column is-9">
+          <span class='stat-key' ng-if="review.rating === 1">⭐️</span>
+          <span class='stat-key' ng-if="review.rating === 2">⭐️⭐️</span>
+          <span class='stat-key' ng-if="review.rating === 3">⭐️⭐️⭐️</span>
+          <span class='stat-key' ng-if="review.rating === 4">⭐️⭐️⭐️⭐️</span>
+          <span class='stat-key' ng-if="review.rating === 5">⭐️⭐️⭐️⭐️⭐️</span>
+          <br>
+          <span><em>"{{ review.text }}"</em>"</span>
         </div>
-      </div>
+
+      </div><br>
+
     </div>
-
-
-</div>

@@ -19,7 +19,9 @@ const userId = [
   '5be9aa1bac3c11cea430350a',
   '5be9aa1bac3c11cea430350b',
   '5be9aa1bac3c11cea430350c',
-  '5be9aa1bac3c11cea430350d'
+  '5be9aa1bac3c11cea430350d',
+  '5be9aa1bac3c11cea430350e',
+  '5be9aa1bac3c11cea430350f'
 ];
 
 const animalId = [
@@ -29,7 +31,17 @@ const animalId = [
   '5bf4373042d7606cb408c56a',
   '5bf4373042d7606cb408c56b',
   '5bf4373042d7606cb408c56c',
-  '5bf4373042d7606cb408c56d'
+  '5bf4373042d7606cb408c56d',
+  '5bf4373042d7606cb408c56e',
+  '5bf4373042d7606cb408c56f',
+  '5bf6ff3ba7d1172a5dd53bd6',
+  '5bf6ff3ba7d1172a5dd53bd7',
+  '5bf6ff3ba7d1172a5dd53bd8',
+  '5bf6ff3ba7d1172a5dd53bd9',
+  '5bf6ff3ba7d1172a5dd53bda',
+  '5bf6ff3ba7d1172a5dd53bdb',
+  '5bf6ff3ba7d1172a5dd53bdc',
+  '5bf6ff3ba7d1172a5dd53bdd'
 ];
 
 const bookingData = [
@@ -64,6 +76,36 @@ const bookingData = [
     dropoff: moment().add(1, 'days')
   },
   {
+    booker: userId[8],
+    animal: animalId[1],
+    pickup: moment().add(1, 'days'),
+    dropoff: moment().add(2, 'days')
+  },
+  {
+    booker: userId[2],
+    animal: animalId[2],
+    pickup: moment().subtract(2, 'days'),
+    dropoff: moment().subtract(1, 'days')
+  },
+  {
+    booker: userId[3],
+    animal: animalId[3],
+    pickup: moment().subtract(6, 'days'),
+    dropoff: moment().subtract(5, 'days')
+  },
+  {
+    booker: userId[4],
+    animal: animalId[4],
+    pickup: moment().subtract(8, 'days'),
+    dropoff: moment().subtract(7, 'days')
+  },
+  {
+    booker: userId[3],
+    animal: animalId[5],
+    pickup: moment().subtract(1, 'days'),
+    dropoff: moment().add(1, 'days')
+  },
+  {
     booker: userId[0],
     animal: animalId[2],
     pickup: new Date(),
@@ -87,6 +129,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/ZsWMfLz.png',
     age: '26',
+    location: 'Wapping',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -98,6 +141,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/fTeMyC4.png',
     age: '27',
+    location: 'London',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -109,6 +153,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/VjNaIhJ.png',
     age: '23',
+    location: 'Chesham',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -120,6 +165,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/uzqHnZ5.png',
     age: '30',
+    location: 'Canning Town',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -131,6 +177,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/14kSt2C.png',
     age: '28',
+    location: 'Bromley',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -142,6 +189,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/6bD3YN2.png',
     age: '25',
+    location: 'Limehouse',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -153,6 +201,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/X3GHpcK.png',
     age: '25',
+    location: 'Pimlico',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -164,7 +213,8 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
     age: '32',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    location: 'London',
+    bio: 'Will take payment in Pret vouchers.'
   },
   {
     _id: userId[8],
@@ -173,19 +223,33 @@ const userData = [
     givenName: 'Lil\' Joe',
     surname: 'Lalley',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/EboFMS4.png',
     age: '18',
-    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    location: 'Fulham',
+    bio: 'Roadman.'
   },
   {
     _id: userId[9],
     username: 'iweiershäuser',
     email: 'iweiershauser@app.com',
     givenName: 'Ines',
-    surname: 'weiershäuser',
+    surname: 'Weiershäuser',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/C7AccGB.png',
     age: '24',
+    location: 'Marburg',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    _id: userId[9],
+    username: 'ahaizet',
+    email: 'ahaizet@app.com',
+    givenName: 'Astrid',
+    surname: 'Haizet',
+    password: 'pass',
+    profileImageUrl: 'https://imgur.com/RV5jdP2.png',
+    age: '26',
+    location: 'London',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   }
 ];
@@ -231,7 +295,7 @@ const animalData = [
       {
         rating: 1,
         text: 'Crapped all over the carpet.',
-        user: userId[1]
+        user: userId[5]
       }, {
         rating: 3,
         text: 'Fun for about 10 minutes then would not leave me alone.',
@@ -298,7 +362,7 @@ const animalData = [
     color: ['Ginger'],
     imageUrl: 'https://imgur.com/1TMWV99.png',
     location: 'W3 7JE',
-    owner: userId[7],
+    owner: userId[5],
     reviews: [
       {
         rating: 4,
@@ -354,23 +418,23 @@ const animalData = [
   {
     _id: animalId[8],
     name: 'Becky',
-    bio: 'I will literally eat anything.',
+    bio: 'I\'ve been told I have good hair.',
     sex: 'Girl',
     species: 'Snake',
     breed: ['Royal Python Morph'],
     age: 5,
     color: ['Black', 'Brown', 'White'],
     imageUrl: 'https://imgur.com/UJVcWq0.png',
-    location: 'W1A 1AA',
+    location: 'E16 1PJ',
     owner: userId[3],
     reviews: [
       {
-        rating: 4,
-        text: 'I mean, i\'ts a cat. Not difficult to look after.',
+        rating: 5,
+        text: 'Looked after Becky for a dare. She charmed me.',
         user: userId[1]
       }, {
-        rating: 5,
-        text: 'Could not have cared less about me.',
+        rating: 3,
+        text: 'Not the most interesting thing to babysit.',
         user: userId[2]
       }
     ]
@@ -385,7 +449,7 @@ const animalData = [
     age: 5,
     color: ['Black', 'Brown', 'White'],
     imageUrl: 'https://imgur.com/xwVn4c6.png',
-    location: 'E16 1DQ',
+    location: 'E16 1PJ',
     owner: userId[3],
     reviews: [
       {
@@ -426,7 +490,7 @@ const animalData = [
         user: userId[6]
       }, {
         rating: 1,
-        text: 'I felt peaceful when Albert had gone.',
+        text: 'I have never known peace like I did when Albert left.',
         user: userId[0]
       }
     ]
@@ -466,7 +530,7 @@ const animalData = [
   },
   {  _id: animalId[13],
     name: 'Lola',
-    bio: '',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     sex: 'Girl',
     species: 'Cat',
     breed: ['Domestic Shorthair'],
@@ -475,7 +539,13 @@ const animalData = [
     imageUrl: 'https://imgur.com/G0hIEpO.png',
     location: 'BR1 1LX',
     owner: userId[4],
-    rating: []
+    reviews: [
+      {
+        rating: 3,
+        text: 'Didn\'t take her hat off once. Rude',
+        user: userId[3]
+      }
+    ]
   },
   {
     _id: animalId[14],
@@ -489,7 +559,13 @@ const animalData = [
     imageUrl: 'https://imgur.com/vc0D22W.png',
     location: 'BR1 1LX',
     owner: userId[4],
-    rating: [5, 4, 5]
+    reviews: [
+      {
+        rating: 3,
+        text: 'There is true evil in this creature\'s eyes.',
+        user: userId[7]
+      }
+    ]
   },
   {
     _id: animalId[15],
@@ -502,7 +578,13 @@ const animalData = [
     color: ['Grey', 'White'],
     imageUrl: 'https://imgur.com/oPZSQmD.png',
     location: '',
-    rating: []
+    reviews: [
+      {
+        rating: 3,
+        text: 'There is true evil in this creature\'s eyes.',
+        user: userId[9]
+      }
+    ]
   },
   {
     _id: animalId[16],
@@ -516,7 +598,18 @@ const animalData = [
     imageUrl: 'https://imgur.com/KTpGXKy.png',
     location: 'CB11 4LB',
     owner: userId[6],
-    rating: [5, 5, 3, 5, 5]
+    reviews: [
+      {
+        rating: 3,
+        text: 'The poshest dog I\'ve ever met.',
+        user: userId[2]
+      },
+      {
+        rating: 3,
+        text: 'Even Bonnie\'s woof is classy.',
+        user: userId[0]
+      }
+    ]
   },
   {
     _id: animalId[17],
@@ -530,7 +623,13 @@ const animalData = [
     imageUrl: 'https://imgur.com/dUF9ewW.png',
     location: '69483',
     owner: userId[9],
-    rating: [5, 5, 5, 5, 5]
+    reviews: [
+      {
+        rating: 3,
+        text: 'I worked in wastewater services at Thames Water and even I would call Betsy too smelly.',
+        user: userId[0]
+      }
+    ]
   }
 ];
 

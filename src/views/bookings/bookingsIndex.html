@@ -12,21 +12,18 @@
           </span>
         </div>
         <!-- Pet Header -->
-        <div class="column is-3">
-            <p>
-              <span class='title is-bold'>{{ animal.name }}</span>
-              <i class="fas fa-{{animal.species.toLowerCase()}}"></i>
-              <br>
-            </p>
 
-            <p class='tagline'>
-              <strong>{{ animal.species }}  |  {{ animal.age }}  </strong><br>
-              <em><span ng-repeat="breed in animal.breed">{{ breed }}</span></em><br>
-              My Human: <a ui-sref="usersShow({ id: animal.owner._id})">{{ animal.owner.username }}</a>
-            </p>
 
-            <div class="button"><a ui-sref="bookingNew({ id: animal._id})">Book</a>
-            </div>
+        <div class='column is-3'>
+          <div>
+            <span class='title is-bold'>{{ animal.name }}</span><br>
+            <em><span ng-repeat="color in animal.color"><span style="color: {{ color }}; border: solid 1px black; border-radius: 50%; background-color:{{ color }};">.......</span>  </span></em><br>
+            <br>
+              <p class='tagline'>
+
+                <span ng-repeat="breed in animal.breed"><i class="fas fa-{{animal.species.toLowerCase()}}"></i> | <em>{{ breed }}</em><br></span>
+              </p>
+          </div>
         </div>
 
         <!-- Pet Current Booking -->
