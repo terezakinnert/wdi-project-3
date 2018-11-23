@@ -16,7 +16,7 @@
   <body ng-controller="masterController">
     <nav class="navbar">
       <div class="navbar-start">
-        <i class="fas fa-exchange-alt logo"></i>
+        <a ui-sref="home"><i class="fas fa-exchange-alt logo"></i></a>
       </div>
       <div class="navbar-end">
         <a class="navbar-item" ui-sref="home">Home</a>
@@ -34,7 +34,7 @@
     </main>
     <div ui-view ng-if="isHomepage"></div>
 
-    <footer class="footer is-white has-text-centered"><br>
+    <footer class="footer has-text-centered"><br>
       <div class="has-text-centered">
         A Terezid Production 🐶
       </div><br>

@@ -29,7 +29,8 @@ function showController($state, $scope, $http) {
     if($scope.animal){
       $http({
         method: 'GET',
-        url: `https://api.postcodes.io/postcodes/${$scope.animal.location}`
+        url: `https://api.postcodes.io/postcodes/${$scope.animal.location}`,
+        skipAuthorization: true
       }).then(result => {
         $scope.searchResults = result.data.result;
         console.log('this is $scope.searchResults ', $scope.searchResults, $scope.animal);

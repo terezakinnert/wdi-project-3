@@ -70,8 +70,8 @@ const bookingData = [
     dropoff: moment().subtract(7, 'days')
   },
   {
-    booker: userId[3],
-    animal: animalId[0],
+    booker: userId[5],
+    animal: animalId[6],
     pickup: moment().subtract(1, 'days'),
     dropoff: moment().add(1, 'days')
   },
@@ -82,25 +82,25 @@ const bookingData = [
     dropoff: moment().add(2, 'days')
   },
   {
-    booker: userId[2],
+    booker: userId[6],
     animal: animalId[2],
     pickup: moment().subtract(2, 'days'),
     dropoff: moment().subtract(1, 'days')
   },
   {
-    booker: userId[3],
+    booker: userId[7],
     animal: animalId[3],
     pickup: moment().subtract(6, 'days'),
     dropoff: moment().subtract(5, 'days')
   },
   {
-    booker: userId[4],
+    booker: userId[8],
     animal: animalId[4],
     pickup: moment().subtract(8, 'days'),
     dropoff: moment().subtract(7, 'days')
   },
   {
-    booker: userId[3],
+    booker: userId[9],
     animal: animalId[5],
     pickup: moment().subtract(1, 'days'),
     dropoff: moment().add(1, 'days')
@@ -241,7 +241,7 @@ const userData = [
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
-    _id: userId[9],
+    _id: userId[10],
     username: 'ahaizet',
     email: 'ahaizet@app.com',
     givenName: 'Astrid',
@@ -470,7 +470,7 @@ const animalData = [
   {
     _id: animalId[10],
     name: 'Albert',
-    bio: 'If youre hosue isn\'t fully stocked with beer and bisuits, like seriously don\'t even bother because I have better things to be doing. Happy to travel by tube in exchange for beer and biscuits.',
+    bio: 'If your house isn\'t fully stocked with beer and biscuits, like seriously don\'t even bother because I have better things to be doing. Happy to travel by tube in exchange for beer and biscuits.',
     sex: 'Boy',
     species: 'Dog',
     breed: ['Staffordshire Bull Terrier'],
@@ -524,7 +524,7 @@ const animalData = [
       {
         rating: 5,
         text: 'I\'m not giving Marley back.',
-        user: userId[6]
+        user: userId[10]
       }
     ]
   },
