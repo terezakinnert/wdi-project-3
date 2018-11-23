@@ -7,8 +7,8 @@
           <form ng-submit="handleSubmit()">
             <div class="field">
               <div class="control">
-                <label for="password" class="label">Name</label>
-                <input class="input" ng-model="animal.name" type="text" name="password" placeholder="e.g. Reggie">
+                <label for="name" class="label">Name</label>
+                <input class="input" ng-model="animal.name" type="text" name="name" placeholder="e.g. Reggie">
               </div>
             </div>
 
@@ -61,11 +61,8 @@
 
             <div class="field">
               <div class="control">
-                <label for="color" class="label">What colour is your pet?</label>
-                <!-- <input name="color" class="input" ng-model="animal.color" type="text"> -->
-                <input type="color" ng-model="animal.color" value="#000000">
-                <input type="color" ng-model="animal.color" value="#ffffff">
-                <input type="color" ng-model="animal.color" value="#D2691E">
+                <label for="color" class="label">Color</label>
+                <input name="color" class="input" ng-model="animal.color" type="text" placeholder="e.g. Black">
               </div>
             </div>
             <button class="button is-block is-light is-fullwidth">Update</button>
@@ -76,67 +73,3 @@
     </div>
   </div>
 </section>
-
-<!--
-<div class="field">
-  <div class="control">
-    <label for="" class="label"></label>
-    <input name="" class="input" ng-model="animal.xx" type="text" placeholder="xx">
-  </div>
-</div> -->
-
-
-<!-- <h1 class="title is-1">Add your Pet</h1>
-<div class="columns is-multiline">
-  <div class="column is-6">
-    <div class="columns is-multiline">
-      <div class="column is-12">
-        <form ng-submit="handleSubmit()">
-          <input type="text" class="column is-12" ng-model="animal.name" placeholder = "Name">
-          <input type="number" min="1" max="50" class="column is-12" ng-model="animal.age" placeholder = "Age (Years)">
-          <input type="text" class="column is-12" ng-model="animal.imageUrl" placeholder = "https://...">
-          <input type="radio" ng-model="animal.sex" name="sex" value="boy" checked>Boy
-          <input type="radio" ng-model="animal.sex" name="sex" value="girl">Girl<br>
-          <input type="text" class="column is-12" ng-model="animal.species"placeholder = "(Dropdown?)">
-          <input type="text" class="column is-12" ng-model="animal.breed"placeholder = "Dropdown based on species?">
-          <p>What colour is your pet?</p>
-          <span>
-            <input type="color" ng-model="animal.color" value="#000000">
-          </span>
-          <span>
-            <input type="color" ng-model="animal.color" value="#ffffff">
-          </span>
-          <span>
-            <input type="color" ng-model="animal.color" value="#D2691E">
-          </span><br><br>
-          <textarea type="text" class="column is-12" ng-model="animal.bio" placeholder = "Tell us about your pet"></textarea><br>
-          <button class="button">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
-<!-- <h1 class="title is-1">Edit your Pet</h1>
-<div class="columns is-multiline">
-  <div class="column is-6">
-    <div class="columns is-multiline">
-      <div class="column is-12">
-        <form ng-submit="handleSubmit()">
-          <input class="column is-12" ng-model=" animal.name" placeholder = "Name">
-          <input class="column is-12" ng-model=" animal.age" placeholder = "Dropdown (Year + Months) / or enter birthdate">
-          <input class="column is-12"ng-model=" animal.bio" placeholder = "Tell us about {{ animal.name }}">
-          <input class="column is-12"ng-model=" animal.sex"placeholder = "Male / Female (Radio buttons)">
-          <input class="column is-12"ng-model=" animal.species"placeholder = "Cat/Dog (Dropdown?)">
-          <input class="column is-12"ng-model=" animal.breed"placeholder = "Dropdown based on sepcies (Ext Api?)">
-          <input class="column is-12"ng-model=" animal.colour"placeholder = "Colours (Dropdown? Pallet?)"><br>
-          <input class="column is-12"ng-model=" animal.owner.location"placeholder = "Prepopulate User?"><br>
-          <input class="column is-12"ng-model=" animal.availableOn"placeholder = "Calendar select (I will ask Ellie)"><br>
-          <button class="button">Edit</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->

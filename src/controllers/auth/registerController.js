@@ -4,7 +4,7 @@ function registerController($scope, $state, $auth) {
       .then(() => {
         $auth.login($scope.user)
           .then(() => {
-            $state.go('home');
+            $state.go('animalsIndex');
           });
       })
       .catch(err => console.log('there was an error', err));
