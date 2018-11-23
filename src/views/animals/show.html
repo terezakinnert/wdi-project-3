@@ -6,7 +6,10 @@
           <span class='header-icon user-profile-image'>
             <img class='is-rounded' alt='' ng-src="{{ animal.imageUrl }}" alt="{{ animal.name }}">
           </span>
-          <div class="button"><a ui-sref="bookingNew({ id: animal._id})">Book {{ animal.name }}</a>
+          <div class="button"ng-if="isAuthenticated()"><a ui-sref="bookingNew({ id: animal._id})">Book {{ animal.name }}</a>
+          </div>
+          <div ng-if="isAuthenticated()">
+            <a ui-sref="reviews({ id: animal._id })" class="button">Add a Review</a>
           </div>
         </div>
 
@@ -136,6 +139,9 @@
           <span><em>"{{ review.text }}"</em>"</span>
         </div>
 
-      </div><br>
 
+      </div><br>
+      <div>
+        <button ng-if="isAuthenticated() && comment.user._id === userId" class="delete-button" ng-click="deleteComment(comment)">x</button>
+      </div>
     </div>

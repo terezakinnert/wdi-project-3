@@ -8,7 +8,7 @@ function bookingsNewController($http, $scope, $state, $auth) {
   });
   $scope.handleSubmit = function() {
     $scope.booking.booker = $auth.getPayload().sub;
-    console.log('Now lets post to the bookings page');
+    // console.log('$scope.booking.booker', $scope.booking.booker);
     $http({
       method: 'POST',
       url: `/api/pets/${$state.params.id}/bookings`,
