@@ -70,8 +70,8 @@ const bookingData = [
     dropoff: moment().subtract(7, 'days')
   },
   {
-    booker: userId[3],
-    animal: animalId[0],
+    booker: userId[5],
+    animal: animalId[6],
     pickup: moment().subtract(1, 'days'),
     dropoff: moment().add(1, 'days')
   },
@@ -82,25 +82,25 @@ const bookingData = [
     dropoff: moment().add(2, 'days')
   },
   {
-    booker: userId[2],
+    booker: userId[6],
     animal: animalId[2],
     pickup: moment().subtract(2, 'days'),
     dropoff: moment().subtract(1, 'days')
   },
   {
-    booker: userId[3],
+    booker: userId[7],
     animal: animalId[3],
     pickup: moment().subtract(6, 'days'),
     dropoff: moment().subtract(5, 'days')
   },
   {
-    booker: userId[4],
+    booker: userId[8],
     animal: animalId[4],
     pickup: moment().subtract(8, 'days'),
     dropoff: moment().subtract(7, 'days')
   },
   {
-    booker: userId[3],
+    booker: userId[9],
     animal: animalId[5],
     pickup: moment().subtract(1, 'days'),
     dropoff: moment().add(1, 'days')
@@ -231,7 +231,7 @@ const userData = [
   {
     _id: userId[9],
     username: 'iweiershäuser',
-    email: 'iweiershauser@app.com',
+    email: 'iwei@app.com',
     givenName: 'Ines',
     surname: 'Weiershäuser',
     password: 'pass',
@@ -241,7 +241,7 @@ const userData = [
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
-    _id: userId[9],
+    _id: userId[10],
     username: 'ahaizet',
     email: 'ahaizet@app.com',
     givenName: 'Astrid',
@@ -258,7 +258,7 @@ const animalData = [
   {
     _id: animalId[0],
     name: 'Reggie',
-    bio: 'I was found on the side of a motorway in Oxford when I was a pup. I hate direct eye contact and my favourite foods are bacon and cushions.',
+    bio: 'I was found on the side of a motorway in Oxford. I hate direct eye contact and my favourite foods are bacon and cushions.',
     sex: 'Boy',
     species: 'Dog',
     breed: ['Greyhound', 'Whippet'],
@@ -313,7 +313,7 @@ const animalData = [
     age: 11,
     color: [ 'Black'],
     imageUrl: 'https://imgur.com/DHwHBEF.png',
-    location: 'HP5 1DL',
+    location: 'E1 7PU',
     owner: userId[2],
     reviews: [
       {
@@ -357,7 +357,7 @@ const animalData = [
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     sex: 'Boy',
     species: 'Cat',
-    breed: ['Domestic Shorthair'],
+    breed: ['Shorthair'],
     age: 4,
     color: ['Ginger'],
     imageUrl: 'https://imgur.com/1TMWV99.png',
@@ -381,7 +381,7 @@ const animalData = [
   //   bio: '',
   //   sex: 'Boy',
   //   species: 'Cat',
-  //   breed: ['Domestic Shorthair'],
+  //   breed: ['Shorthair'],
   //   age: 3,
   //   color: ['Black', 'White'],
   //   imageUrl: '',
@@ -470,7 +470,7 @@ const animalData = [
   {
     _id: animalId[10],
     name: 'Albert',
-    bio: 'If youre hosue isn\'t fully stocked with beer and bisuits, like seriously don\'t even bother because I have better things to be doing. Happy to travel by tube in exchange for beer and biscuits.',
+    bio: 'If your house isn\'t fully stocked with beer and biscuits, like seriously don\'t even bother because I have better things to be doing. Happy to travel by tube in exchange for beer and biscuits.',
     sex: 'Boy',
     species: 'Dog',
     breed: ['Staffordshire Bull Terrier'],
@@ -533,7 +533,7 @@ const animalData = [
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     sex: 'Girl',
     species: 'Cat',
-    breed: ['Domestic Shorthair'],
+    breed: ['Shorthair'],
     age: 2,
     color: ['White'],
     imageUrl: 'https://imgur.com/G0hIEpO.png',
@@ -577,11 +577,12 @@ const animalData = [
     age: 1,
     color: ['Grey', 'White'],
     imageUrl: 'https://imgur.com/oPZSQmD.png',
-    location: '',
+    location: 'E1 7PU',
+    owner: userId[10],
     reviews: [
       {
-        rating: 3,
-        text: 'There is true evil in this creature\'s eyes.',
+        rating: 5,
+        text: 'I cried with joy when Storm arrived and wept with grief when she left.',
         user: userId[9]
       }
     ]
@@ -600,12 +601,12 @@ const animalData = [
     owner: userId[6],
     reviews: [
       {
-        rating: 3,
+        rating: 4,
         text: 'The poshest dog I\'ve ever met.',
         user: userId[2]
       },
       {
-        rating: 3,
+        rating: 5,
         text: 'Even Bonnie\'s woof is classy.',
         user: userId[0]
       }
@@ -614,14 +615,14 @@ const animalData = [
   {
     _id: animalId[17],
     name: 'Betsy',
-    bio: 'You\re going to want to hold your breath for the entirety of my stay.',
+    bio: 'You\'re going to want to hold your breath for the entirety of my stay.',
     sex: 'Girl',
     species: 'Dog',
     breed: ['Border Collie'],
     age: 13,
     color: ['Black', 'Brown', 'White'],
     imageUrl: 'https://imgur.com/dUF9ewW.png',
-    location: '69483',
+    location: 'B30 1HA',
     owner: userId[9],
     reviews: [
       {
