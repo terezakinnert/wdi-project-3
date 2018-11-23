@@ -76,6 +76,36 @@ const bookingData = [
     dropoff: moment().add(1, 'days')
   },
   {
+    booker: userId[8],
+    animal: animalId[1],
+    pickup: moment().add(1, 'days'),
+    dropoff: moment().add(2, 'days')
+  },
+  {
+    booker: userId[2],
+    animal: animalId[2],
+    pickup: moment().subtract(2, 'days'),
+    dropoff: moment().subtract(1, 'days')
+  },
+  {
+    booker: userId[3],
+    animal: animalId[3],
+    pickup: moment().subtract(6, 'days'),
+    dropoff: moment().subtract(5, 'days')
+  },
+  {
+    booker: userId[4],
+    animal: animalId[4],
+    pickup: moment().subtract(8, 'days'),
+    dropoff: moment().subtract(7, 'days')
+  },
+  {
+    booker: userId[3],
+    animal: animalId[5],
+    pickup: moment().subtract(1, 'days'),
+    dropoff: moment().add(1, 'days')
+  },
+  {
     booker: userId[0],
     animal: animalId[2],
     pickup: new Date(),
@@ -111,6 +141,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/fTeMyC4.png',
     age: '27',
+    location: 'London',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -122,6 +153,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/VjNaIhJ.png',
     age: '23',
+    location: 'Chesham',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -133,6 +165,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/uzqHnZ5.png',
     age: '30',
+    location: 'Canning Town',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -144,6 +177,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/14kSt2C.png',
     age: '28',
+    location: 'Bromley',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -155,6 +189,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/6bD3YN2.png',
     age: '25',
+    location: 'Limehouse',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -166,6 +201,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/X3GHpcK.png',
     age: '25',
+    location: 'Pimlico',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
   {
@@ -177,6 +213,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
     age: '32',
+    location: 'London',
     bio: 'Will take payment in Pret vouchers.'
   },
   {
@@ -188,6 +225,7 @@ const userData = [
     password: 'pass',
     profileImageUrl: 'https://imgur.com/EboFMS4.png',
     age: '18',
+    location: 'Fulham',
     bio: 'Roadman.'
   },
   {
@@ -195,10 +233,23 @@ const userData = [
     username: 'iweiershäuser',
     email: 'iweiershauser@app.com',
     givenName: 'Ines',
-    surname: 'weiershäuser',
+    surname: 'Weiershäuser',
     password: 'pass',
-    profileImageUrl: 'https://i.pinimg.com/originals/a0/4e/04/a04e04e18eb82df58ab2fa73dd567fc5.png',
+    profileImageUrl: 'https://imgur.com/C7AccGB.png',
     age: '24',
+    location: 'Marburg',
+    bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+  },
+  {
+    _id: userId[9],
+    username: 'ahaizet',
+    email: 'ahaizet@app.com',
+    givenName: 'Astrid',
+    surname: 'Haizet',
+    password: 'pass',
+    profileImageUrl: 'https://imgur.com/RV5jdP2.png',
+    age: '26',
+    location: 'London',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   }
 ];
@@ -244,7 +295,7 @@ const animalData = [
       {
         rating: 1,
         text: 'Crapped all over the carpet.',
-        user: userId[1]
+        user: userId[5]
       }, {
         rating: 3,
         text: 'Fun for about 10 minutes then would not leave me alone.',
@@ -439,7 +490,7 @@ const animalData = [
         user: userId[6]
       }, {
         rating: 1,
-        text: 'I have never known peave like I did when Albert left.',
+        text: 'I have never known peace like I did when Albert left.',
         user: userId[0]
       }
     ]
