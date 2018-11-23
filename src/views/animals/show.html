@@ -129,6 +129,7 @@
           </a>
         </div>
         <!-- Booking Details -->
+        <!-- <div ng-if="isAuthenticated() && comment.user._id === userId" ng-click="deleteComment(comment)">x</div> -->
         <div class="column is-9">
           <span class='stat-key' ng-if="review.rating === 1">⭐️</span>
           <span class='stat-key' ng-if="review.rating === 2">⭐️⭐️</span>
@@ -137,10 +138,7 @@
           <span class='stat-key' ng-if="review.rating === 5">⭐️⭐️⭐️⭐️⭐️</span>
           <br>
           <span><em>"{{ review.text }}"</em></span>
-          <div ng-if="isAuthenticated() && comment.user._id === userId" ng-click="deleteComment(comment)">x
-          </div>
+
         </div>
-
-
       </div><br>
     </div>
