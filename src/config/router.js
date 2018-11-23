@@ -1,7 +1,6 @@
 import loginController from '../controllers/auth/loginController';
 import registerController from '../controllers/auth/registerController';
 
-import usersIndexController from '../controllers/users/usersIndexController';
 import usersShowController from '../controllers/users/usersShowController';
 import usersEditController from '../controllers/users/usersEditController';
 
@@ -32,11 +31,11 @@ function Router($urlRouterProvider, $stateProvider) {
       url: '/login',
       controller: loginController
     })
-    .state('usersIndex', {
-      templateUrl: './views/users/index.html',
-      url: '/users',
-      controller: usersIndexController
-    })
+    // .state('usersIndex', {
+    //   templateUrl: './views/users/index.html',
+    //   url: '/users',
+    //   controller: usersIndexController
+    // })
     .state('usersShow', {
       templateUrl: './views/users/show.html',
       url: '/users/:id',
