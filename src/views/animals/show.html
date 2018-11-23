@@ -75,9 +75,10 @@
             <div class='column is-4 has-text-centered'>
               <p class='stat-val'>{{ animal.meanRating }} ⭐️</p>
               <p class='stat-key' ng-if="!animal.meanRating">No ratings yet</p>
-              <p class='stat-key' ng-if="animal.meanRating >0 && animal.meanRating <2"><a href="#"></a><strong>Bad {{ animal.sex }}</strong></p>
-              <p class='stat-key' ng-if="animal.meanRating >2 && animal.meanRating <3.5"><a href="#"></a><strong>Good {{ animal.sex }}</strong></p>
-              <p class='stat-key' ng-if="animal.meanRating >3.5"><a href="#"></a><strong><em>Really</em> Good {{ animal.sex }}</strong></p>
+              <p class='stat-key' ng-if="animal.meanRating >0 && animal.meanRating <2"><strong>Bad {{ animal.sex }}</strong></p>
+              <p class='stat-key' ng-if="animal.meanRating >=2 && animal.meanRating <3"><strong>Cheeky {{ animal.sex }}</strong></p>
+              <p class='stat-key' ng-if="animal.meanRating >=3 && animal.meanRating <4"><strong>Good {{ animal.sex }}</strong></p>
+              <p class='stat-key' ng-if="animal.meanRating >=4"><strong><em>Really</em> Good {{ animal.sex }}</strong></p>
             </div>
           </div>
         </div>
@@ -87,11 +88,10 @@
 </div>
 
 <div class='columns is-multiline is-centered'>
-  <div class="column is-1"></div>
 
   <!-- Split Screen Left -->
   <div class="column is-5">
-<!-- Bio -->
+<!-- Map -->
     <i class="fab fa-periscope"></i>
     {{animal.name}}'s Current Location
 
@@ -108,9 +108,6 @@
         <button class="button" ng-if="isAuthenticated() && animal.owner._id === userId" ng-click="handleDelete()">Delete</button>
       </form>
     </div>
-
-
-
 </div>
 
 
@@ -120,8 +117,9 @@
     <i class="fas fa-star"></i>
     Ratings for {{animal.name}}
 
-      <div class="columns is-multiline">
         <div class="column is-12" ng-repeat="review in animal.reviews">
+
+      <!-- Rating Card-->
           <div class='card columns is-multiline'>
       <!-- Booker Profile Image -->
             <div class="column is-3">
@@ -131,14 +129,15 @@
             </div>
       <!-- Booking Details -->
             <div class="column is-9">
-              <p class='stat-key' ng-if="review.rating === 1">⭐️</p>
-              <p class='stat-key' ng-if="review.rating === 2">⭐️⭐️</p>
-              <p class='stat-key' ng-if="review.rating === 3">⭐️⭐️⭐️</p>
-              <p class='stat-key' ng-if="review.rating === 4">⭐️⭐️⭐️⭐️</p>
-              <p class='stat-key' ng-if="review.rating === 5">⭐️⭐️⭐️⭐️⭐️</p>
-
+              <span class='stat-key' ng-if="review.rating === 1">⭐️</span>
+              <span class='stat-key' ng-if="review.rating === 2">⭐️⭐️</span>
+              <span class='stat-key' ng-if="review.rating === 3">⭐️⭐️⭐️</span>
+              <span class='stat-key' ng-if="review.rating === 4">⭐️⭐️⭐️⭐️</span>
+              <span class='stat-key' ng-if="review.rating === 5">⭐️⭐️⭐️⭐️⭐️</span>
+              <br>
               <span><em>"{{ review.text }}"</em>"</span>
             </div>
+
           </div><br>
-    </div>
+
 </div>
