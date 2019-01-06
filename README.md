@@ -44,7 +44,7 @@ Prerequisites: MongoDB installed and `mongod` running
 RuffTrade is an app where users can arrange to look after other users' pets, similarly to BorrowMyDoggy. Before registering or logging in, users can only view pets' and owners' profiles. When logged in, it is possible to book a particular pet for a specified time period, leave reviews, add pets (as well as edit and delete them), etc.
 
 
-### Brief
+### Brief
 
 The project's requirements were as follows:
 
@@ -86,14 +86,14 @@ In the planning stage we sketched out a few broad wireframes.
 _images coming soon_
 
 
-### Trello
+### Trello
 
 Our team used a Trello board to keep track of tasks, progress and blockers. It was very useful to know what the other person is currently working on.
 
 ![Trello board](screenshots/trello.png)
 
 
-### Screenshots
+### Screenshots
 
 _coming soon_
 
@@ -103,14 +103,14 @@ _coming soon_
 Our instructors divided the class into several groups for this project. It was the first time we worked on the same codebase individually, which also taught us about Git branching, merging and merge conflicts. After a planning session, David and I started the project with pair programming, and then branched off (pun couldn't be helped). I set up the backend routes and controllers, while David started to put together the data for our API. Later on we tried to divide tasks in a way that we're both challenged, and when we couldn't solve a problem we asked each other for help.
 
 
-## Challenges and Wins
+## Challenges and Wins
 
 - Figuring out how to use Git in a team took some time, but once it clicked I saw how powerful and useful tool it is. Despite having a few problems and losing a few lines of code it made me a lot more confident at using it.
 - Planning in a team is also more difficult than in a solo project. We ended up having to re-plan our model and the way our reviews worked, which was frustrating and took time, but confirmed to me how important it is to think ahead.
 - I learned to work with and really appreciate new tools (as mentioned earlier with Git), mainly the REST client Insomnia, which we used to make sure our back end was working properly before moving on to the front end. That helped us avoid some potentially tricky problems!
 
 
-## Future Work
+## Future Work
 
 If I had the time I'd like to add a quicker filter on the Menagerie page, that updates the results as user types. Also having results listed by distance, and showing how far a pet is from a user would be a great addition.
 
