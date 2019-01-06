@@ -67,8 +67,7 @@ The project's requirements were as follows:
 | MongoDB (v4.0.2)     | HTML5            | Trello |
 | Mongoose (v5.3.12)   | CSS3             | Insomnia |
 | bcrypt (v3.0.2)      | SCSS             | Heroku |
-| JSON Web Token (v2.1.3) | EJS (v2.6.1)  |  |
-|                      | Bulma            |  |
+| JSON Web Token (v2.1.3) | Bulma         |  |
 |                      | Moment.js (v2.22.2)  |   |
 |                      | Leaflet.js (v1.3.4)  |   |
 |                      | Mocha (v5.2.0)   |   |
