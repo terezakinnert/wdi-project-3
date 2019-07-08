@@ -9,7 +9,9 @@
     "build": "webpack",
     "seed": "node db/seeds",
     "start": "yarn build && node index",
-    "test": "nyc mocha test/**/*_spec.js --require test/spec_helper --recursive --exit"
+    "test": "nyc mocha test/**/*_spec.js --require test/spec_helper --recursive --exit",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.20",
@@ -23,7 +25,8 @@
     "moment": "^2.22.2",
     "mongoose": "^5.3.12",
     "morgan": "^1.9.1",
-    "satellizer": "^0.15.5"
+    "satellizer": "^0.15.5",
+    "snyk": "^1.192.4"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -43,5 +46,6 @@
     "url-loader": "^0.6.2",
     "webpack": ">=3.1.11",
     "webpack-dev-server": "^2.11.1"
-  }
+  },
+  "snyk": true
 }
